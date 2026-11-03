@@ -25,4 +25,6 @@ The webpage service is separate from stdio and browser tabs. Reuse checks librar
 
 ## Publication gate
 
+See the [Code signing policy](docs/CODE_SIGNING_POLICY.md). SignPath Foundation approval is pending; all current Windows programs remain unsigned. MFA for GitHub and SignPath is mandatory for future signing members but was not verified in this preparation. No trusted signing integration or approved binary release is claimed.
+
 Review current source, full Git history, assets, archives and licenses. A clean current tree does not sanitize old commits. Public upload stops on sensitive findings; history is never rewritten without explicit owner authorization. SHA256 is integrity checking, not Authenticode trust. Never disable Windows protection or bypass security warnings for a preview.

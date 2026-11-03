@@ -1,6 +1,13 @@
 # Changelog
 
-## 0.3.0-preview.20 — local only, unreleased
+## Documentation preparation — 2026-11-04 (unreleased)
+
+- Add complete eight-language READMEs with shared navigation and a dedicated Donate page using the existing maintainer configuration.
+- Prepare a pending Code signing policy and factual SignPath application assessment; no submission, approval, signing or binary release.
+- Clarify source-only availability and future installation routes. Product version remains `0.3.0-preview.20`; no product feature or core logic changes.
+- Replace the README illustration with an actual preview.20 capture from a new synthetic library; preserve the earlier image and record screenshot provenance.
+
+## 0.3.0-preview.20 — public source preview; no binary release
 
 - Restore the navigation tree as the primary note browser. Quick notes, Projects and each project expand/collapse independently of the right pane; selecting a note opens its content without collapsing other branches.
 - Remove Quick notes/project overview pages and their return-to-overview action. Migrate old overview tabs to the last selected note or an empty reading pane, preserving note tabs and utility views. Existing reader-state schemas remain readable for compatibility.
@@ -106,7 +113,7 @@
 - Add checksum-verified, inspect-first MCP registration, refusing conflicting existing entries.
 - Prepare English documentation, security policy, source/history audit and public upload inventory.
 
-Public upload is paused for owner review. Signing, real clients, clean Windows and history findings are reported separately.
+Historical preview.1 publication status: upload was paused for owner review. As of 2026-11-04, the reviewed preview.20 source is public with fresh history; binary distribution remains pending signing and acceptance. Real clients, clean Windows and private-history findings are reported separately.
 
 ## 0.2.0-preview.4 — local candidate
 

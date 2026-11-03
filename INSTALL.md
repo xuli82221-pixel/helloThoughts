@@ -2,6 +2,8 @@
 
 No public release is created by this preparation. These instructions apply when a reviewed release exists in [hello-Thoughts-](https://github.com/xuli82221-pixel/hello-Thoughts-). Precompiled packages need no Thoughts account, API key, Node, Go, Python or Docker. Install your AI client separately; its own account requirements still apply.
 
+**Code signing policy:** [Pending — SignPath Foundation application not yet approved](docs/CODE_SIGNING_POLICY.md). All current Windows programs remain unsigned. No approved installer, portable ZIP or MCPB download is available. The Foundation application has not been submitted by this preparation; a future core signature alone will not satisfy the installer/helper release gates.
+
 ## Ordinary Windows users
 
 **Current availability — 2026-11-04:** reviewed source is public, but there are no approved Release binaries. The current preview runs locally on the author's machine. Developers can follow README.md / CONTRIBUTING.md to build the source; ordinary users should wait for a signed, accepted package. The steps below describe installation once that package is published.

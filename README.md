@@ -1,4 +1,8 @@
+[English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md)
+
 # Thoughts
+
+[Install](INSTALL.md) · [Documentation](docs/README.md) · [Donate](DONATE.md) · [Code signing policy](docs/CODE_SIGNING_POLICY.md)
 
 Free, open-source, local-first notes for Windows x64. Let your AI assistant manage Markdown files and read them in an independent local webpage.
 
@@ -12,7 +16,7 @@ The Go executable embeds the React webpage. **Precompiled releases need no Node.
 
 ## How users will install
 
-When a reviewed release is available, download **`thoughts-<version>-windows-amd64-setup.exe`** from GitHub Releases, verify its checksum and publisher signature, double-click it and click **Install**. Setup initializes the shared home and creates desktop/Start-menu shortcuts without administrator privileges. Existing data is retained; uninstall removes the launcher/shortcuts and retains the shared home for other clients. A portable ZIP is available for manual installation.
+When a reviewed release is available, download **`thoughts-<version>-windows-amd64-setup.exe`** from [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases), verify its checksum and publisher signature, double-click it and click **Install**. Setup initializes the shared home and creates desktop/Start-menu shortcuts without administrator privileges. Existing data is retained; uninstall removes the launcher/shortcuts and retains the shared home for other clients. A portable ZIP is planned for manual installation in that reviewed release; neither package is currently an approved download.
 
 Claude Desktop users can instead import the release's `.mcpb` extension. Codex and Claude Code users register the executable from the ZIP as a local stdio MCP server. The webpage can also run without an AI client. Follow the [end-user quick start](INSTALL.md#ordinary-windows-users) for the supported commands. GitHub's **Code → Download ZIP** downloads source code, not the precompiled application.
 
@@ -43,9 +47,9 @@ These are target integrations; actual acceptance status is in the release review
 
 Conflict protection rejects stale writes; automatic revision history is not implemented. Back up your library separately. An open tab can retain a draft during a conflict/disconnection; draft recovery after closing it or restarting Windows is not guaranteed.
 
-![Thoughts with isolated acceptance material](docs/assets/preview.png)
+![Thoughts 0.3.0-preview.20 with synthetic demonstration notes](docs/assets/preview-0.3.0-preview.20.jpg)
 
-This screenshot shows an earlier layout; it is not an image of the current candidate. The latest local alignment/language checks used a separate synthetic library. No personal notes are used for the public screenshot.
+Actual `0.3.0-preview.20` UI, captured on 2026-11-04 in a new isolated temporary library with fictional notes. No personal notes, real images, local machine paths or credentials are shown. The [earlier-layout screenshot](docs/assets/preview.png) is preserved as historical material, not presented as the current version. Screenshot verification is not installer or client acceptance.
 
 ## Install
 
@@ -88,4 +92,10 @@ See [SECURITY.md](SECURITY.md), [PRIVACY.md](PRIVACY.md), [CHANGELOG.md](CHANGEL
 
 Never commit real notes, personal screenshots, credentials, session files or logs. Report vulnerabilities privately to hello@spxipo.com. Settings offers optional sponsorship using the owner's Base mainnet address. The QR contains only the address; select Base explicitly in your wallet. Thoughts does not connect wallets, request private keys, select an asset/amount, or process payments. All features remain free.
 
-简体中文：Thoughts 是免费的 Windows 本地 Markdown 笔记工具。三个 AI 客户端通过本地 MCP 使用同一资料库，网页独立运行。不需要 Thoughts 账号，不做云同步或付费功能。公开发布仍需完成安全与历史审查、签名和客户端验收。
+## Code signing policy
+
+**Pending — SignPath Foundation application not yet approved.** All current Windows programs remain unsigned. If approved, free code signing provided by SignPath.io, certificate by SignPath Foundation. See the [Code signing policy](docs/CODE_SIGNING_POLICY.md) and [application preparation](docs/SIGNPATH_APPLICATION.md) for scope, real team roles and outstanding requirements. No application has been submitted by this preparation.
+
+## Donate
+
+Support is voluntary and unlocks no features. See the dedicated [Donate page](DONATE.md) for the maintainer's existing Base address, address-only QR and privacy boundaries. You can also help through issues, translations and documentation. There is no wallet connection or payment processing in Thoughts.

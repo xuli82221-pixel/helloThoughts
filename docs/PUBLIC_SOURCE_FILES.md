@@ -2,15 +2,24 @@
 
 The owner authorized publishing this reviewed current-source snapshot on 2026-11-04 with a fresh public history. No original private Git objects, local libraries, personal screenshots, logs, caches, credentials, binaries or historical local reports are included. Future snapshots still require their own review; this authorization does not approve unsigned binary releases or publication of the original private history.
 
+
 - `.gitattributes`
 - `.github/workflows/ci.yml`
 - `.gitignore`
 - `CHANGELOG.md`
 - `CONTRIBUTING.md`
+- `DONATE.md`
 - `INSTALL.md`
 - `LICENSE`
 - `PRIVACY.md`
+- `README.de.md`
+- `README.es.md`
+- `README.fr.md`
+- `README.ja.md`
+- `README.ko.md`
 - `README.md`
+- `README.zh-CN.md`
+- `README.zh-TW.md`
 - `SECURITY.md`
 - `THIRD_PARTY_NOTICES.txt`
 - `adapters/claude-desktop/assets/icon.png`
@@ -20,7 +29,9 @@ The owner authorized publishing this reviewed current-source snapshot on 2026-11
 - `branding/icon.png`
 - `branding/icon.svg`
 - `cmd/memo/main.go`
+- `docs/CODE_SIGNING_POLICY.md`
 - `docs/DEPENDENCIES.md`
+- `docs/OPEN_SOURCE_READINESS_20261104.md`
 - `docs/PROJECT_WORKSPACE_POLISH.md`
 - `docs/PUBLIC_RELEASE_REVIEW.md`
 - `docs/PUBLIC_SCOPE.md`
@@ -29,10 +40,13 @@ The owner authorized publishing this reviewed current-source snapshot on 2026-11
 - `docs/RELEASE_READINESS_20261104.md`
 - `docs/SECURITY_AUDIT.md`
 - `docs/SHARED_LIBRARY_UPGRADE_ACCEPTANCE.md`
+- `docs/SIGNPATH_APPLICATION.md`
 - `docs/UI_TABS_IMAGES_ACCEPTANCE.md`
 - `docs/WINDOWS_NATIVE_TESTS_20261104.md`
 - `docs/WINDOWS_SECURITY_COMPATIBILITY.md`
 - `docs/WORKSPACE_LAYOUT.md`
+- `docs/assets/README.md`
+- `docs/assets/preview-0.3.0-preview.20.jpg`
 - `docs/assets/preview.png`
 - `go.mod`
 - `go.sum`
@@ -85,6 +99,7 @@ The owner authorized publishing this reviewed current-source snapshot on 2026-11
 - `scripts/build-desktop-adapters.ps1`
 - `scripts/build-windows-installer.ps1`
 - `scripts/build.ps1`
+- `scripts/check-docs.py`
 - `scripts/generate-branding.ps1`
 - `scripts/generate-support-qr.py`
 - `scripts/installer-smoke.py`

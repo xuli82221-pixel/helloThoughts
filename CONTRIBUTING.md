@@ -56,3 +56,15 @@ or treat a passing test as acceptance of arbitrary short-path/reparse aliases.
 CI checks Windows and Linux source changes with read-only GitHub permissions.
 It does not publish releases. Signing, clean-machine acceptance and native-client
 acceptance must be recorded independently; a green CI run is not release approval.
+
+Follow the [Code signing policy](docs/CODE_SIGNING_POLICY.md) and consult the
+[SignPath application draft](docs/SIGNPATH_APPLICATION.md) before release work.
+The Foundation application is not approved; GitHub/SignPath MFA, trusted build
+provenance, artifact metadata and manual signing approvals remain to be verified
+or configured. Documentation and translations use README.md as the English
+content baseline; preserve commands, paths, privacy boundaries and unsigned status.
+
+For documentation changes, run `python scripts/check-docs.py` to check all eight
+READMEs, relative links and anchors, and inclusion of linked files in the public
+source export. Review translation meaning manually as well; the script cannot
+judge linguistic accuracy or certify external services.
