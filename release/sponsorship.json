@@ -1,0 +1,9 @@
+{
+  "enabled": true,
+  "network": "Base",
+  "chainId": 8453,
+  "address": "0x2579590c8528A34278b5532931711cE2eEAF2406",
+  "qrPayload": "address-only",
+  "asset": null,
+  "amount": null
+}

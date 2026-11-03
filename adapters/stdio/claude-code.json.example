@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "thoughts": {
+      "type": "stdio",
+      "command": "C:\\Tools\\Thoughts\\memo.exe",
+      "args": ["mcp"],
+      "env": { "THOUGHTS_HOME": "auto" }
+    }
+  }
+}

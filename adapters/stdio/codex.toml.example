@@ -1,0 +1,7 @@
+# Replace the executable path with the reviewed installed path before use.
+# Add this table only; do not replace the rest of your Codex configuration.
+# auto uses the same Windows-user Thoughts home as Claude Desktop/Claude Code.
+[mcp_servers.thoughts]
+command = 'C:\Tools\Thoughts\memo.exe'
+args = ['mcp']
+env = { THOUGHTS_HOME = 'auto' }

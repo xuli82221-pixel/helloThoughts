@@ -1,0 +1,60 @@
+.tools/
+node_modules/
+web/node_modules/
+internal/webui/dist/
+dist/
+.artifacts/
+*.log
+*.exe
+.DS_Store
+__pycache__/
+deferred/macos/artifacts/
+*.tsbuildinfo
+
+Windows测试包/
+
+# Local historical material and workstation navigation are not public source.
+/历史归档/
+/开始这里.md
+
+# Personal libraries, recovery data and local credentials
+.memo/
+.env
+.env.*
+!.env.example
+*.pem
+*.pfx
+*.p12
+*.key
+/runtime.json
+/config.json
+/backups/
+/vault/
+/Inbox/
+/Projects/
+
+# Local screenshots/audit inventories may contain actual user material.
+/docs/screenshots/
+/docs/DATA_RELIABILITY_RESULTS.json
+/docs/REBOOT_CHECK_RESULTS.json
+
+# Original input archive and unrelated media are local only.
+/Memo_Codex_Development_Package_v2.zip
+/episode01-comic18-animatic.mp4
+
+# Public documentation assets are reviewed isolated acceptance screenshots only.
+!docs/assets/
+!docs/assets/preview.png
+
+# Publication exports and inventories are local review artifacts.
+/public-source-review/
+/release-review/
+
+# Host accounts and local tool state never belong in source.
+/.codex/
+/.claude/
+/.aws/
+/.env.local
+
+# Machine-specific shortcut for the locally installed managed launcher.
+/打开已安装的Thoughts.cmd
