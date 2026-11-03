@@ -10,6 +10,11 @@ Compiler tooling is a build dependency; end users do not install it.
 Fresh npm audit reported zero known vulnerabilities; Go checks are recorded in the
 [release readiness report](RELEASE_READINESS_20261104.md). No new npm/Go runtime dependency was added.
 
+Clean-checkout CI follow-up: Node.js 24 type declarations are now explicit locked
+development dependencies (`@types/node` and its MIT-licensed `undici-types` dependency).
+They type-check the existing Node test files and are not bundled into the application.
+CI uses the locally reviewed Go 1.27.3 patch rather than the minimum go.mod patch.
+
 - Project code remains MIT licensed with the existing credited author.
 - 337 npm lock entries reviewed; 193 production entries. Windows-inapplicable optional packages not installed locally were checked using lockfile metadata.
 - Detected licenses: 0BSD, Apache-2.0, BSD-3-Clause, CC-BY-4.0, ISC, MIT, MPL-2.0, OFL-1.1.
