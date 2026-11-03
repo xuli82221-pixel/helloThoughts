@@ -35,6 +35,12 @@ Linux can test the platform-independent Go code and cross-compile with
 Linux skips Windows-only assertions; native Windows testing remains required.
 The Windows installer compiler and actual installation tests require Windows.
 
+Windows canonical-path tests require a normal long-form temporary directory.
+If TEMP/TMP contains a DOS 8.3 alias, select a dedicated existing long-form test
+directory for those variables before running Go tests; CI uses `runner.temp`.
+This changes test fixtures only. Do not relax path checks, change security policy
+or treat a passing test as acceptance of arbitrary short-path/reparse aliases.
+
 ## Data and review boundaries
 
 - Use new temporary homes and clearly labelled synthetic fixtures for testing.

@@ -75,6 +75,11 @@ The home holds `config/` and the default `library/`. Use automatic selection for
 
 Older Memo users: inspect and back up the existing library. No automatic migration/merge happens. Do not point a new home at existing material casually; a different home means a separate library.
 
+For a deliberately customized home, use the ordinary long-form local path. DOS
+8.3 aliases and reparse/junction aliases are not accepted compatibility targets
+for the managed core and may be refused by its strict path checks. Keep the
+automatic shared home for ordinary installation.
+
 When the common default is absent but the known old Windows-user `AppData/Roaming/Memo/config.json` exists, automatic initialization stops for migration instead of creating an empty replacement. Explicit `MEMO_CONFIG_DIR` remains available for legacy/testing use. Old Store-app-specific or custom locations still require deliberate review; they are not searched or merged automatically. Prefer one migrated shared home rather than leaving different clients on legacy overrides.
 
 Repeat `init` preserves an existing configured library. Supplying a different `--vault` is rejected rather than replacing that selection. For a deliberate migration, stop writes, back up configuration and all library files, copy to the stable destination, verify file hashes, then configure all clients to use the same home. Keep the original until verification is complete. Updating an executable or reinstalling an extension must not remove this home.
