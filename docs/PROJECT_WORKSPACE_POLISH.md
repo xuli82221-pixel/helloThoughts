@@ -1,6 +1,12 @@
-# Project management and workspace polish — 2026-11-03
+# Historical project/workspace checks — preview.1–20
 
-Current local candidate/core: **0.3.0-preview.19**, Windows x64. Local only; no commit, push or public release. **M0 remains not passed.**
+This is a version-scoped historical test report. Current published preview.21 status and remaining acceptance requirements are in [release readiness](RELEASE_READINESS_20261104.md). Its local-only statements, test counts, hashes and earlier language counts apply to the named earlier versions.
+
+<!-- historical-records:start -->
+
+## Historical records / 历史记录
+
+Local candidate/core at the recorded stage: **0.3.0-preview.19**, Windows x64. Local only; no commit, push or public release. **M0 remains not passed.**
 
 ## Tree-first navigation correction — preview.20 source only, NOT installed
 

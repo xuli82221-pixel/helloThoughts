@@ -1,7 +1,6 @@
 # Public source files
 
-The owner authorized publishing this reviewed current-source snapshot on 2026-11-04 with a fresh public history. No original private Git objects, local libraries, personal screenshots, logs, caches, credentials, binaries or historical local reports are included. Future snapshots still require their own review; this authorization does not approve unsigned binary releases or publication of the original private history.
-
+This inventory covers the allowlisted public source tree and source-export inputs, not binary availability. The separate [preview.21 unsigned binary Release](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21) is public. Compiled binaries are excluded from source exports and are provided only as Release assets. Source publication and the later unsigned prerelease received separate maintainer authorization; neither authorizes original private-history disclosure or a signed stable release.
 
 
 - `.gitattributes`
@@ -120,6 +119,7 @@ The owner authorized publishing this reviewed current-source snapshot on 2026-11
 - `scripts/release_metadata.py`
 - `scripts/runtime-smoke.py`
 - `scripts/sign-windows-artifacts.ps1`
+- `scripts/test_docs_status.py`
 - `scripts/test_legal_notices.py`
 - `scripts/test_release_preflight.py`
 - `scripts/validate-desktop-adapters.py`

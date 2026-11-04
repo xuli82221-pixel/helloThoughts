@@ -26,7 +26,10 @@ python scripts/release-preflight.py
 
 On Windows, the normal full package entry point is documented in README.md and
 requires `-InnoCompiler`. It produces an offline Setup.exe, portable ZIP, MCPB,
-checksums and an explicit pending-publication report in a new directory. Existing
+checksums and a build-time acceptance/signing report in a new directory.
+The default local candidate mode does not publish anything. The explicit
+`-UnsignedPreview` mode records authorized experimental build provenance;
+`-PublicRelease` retains the trusted-signature requirements for stable candidates. Existing
 outputs are never deleted. Use a trusted isolated toolchain if SAC rejects your
 local compiler; never disable SAC or alter execution policy for a build.
 

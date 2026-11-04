@@ -1,6 +1,12 @@
-# Windows-specific native test results — 2026-11-04
+# Historical preview.20 native Windows tests — 2026-11-04
 
-The ten tests previously skipped by the Linux build container were run using the compiled Windows AMD64 test executable on Windows. **All ten top-level tests passed, with zero failures, zero skips and process exit code 0.** The first test also passed both installation-order subtests.
+This is a version-scoped historical test report. Current published preview.21 status and remaining acceptance requirements are in [release readiness](RELEASE_READINESS_20261104.md). Its local-only statements, test counts, hashes and earlier language counts apply to the named earlier versions.
+
+<!-- historical-records:start -->
+
+## Historical records / 历史记录
+
+For preview.20, the ten tests previously skipped by the Linux build container were run using the compiled Windows AMD64 test executable on Windows. **All ten top-level tests passed, with zero failures, zero skips and process exit code 0.** The first test also passed both installation-order subtests.
 
 The compiled Go source snapshot was compared with the current source before execution and matched. Test executable SHA256: `c7414e29a819eaa8c2b65c7d00bf3c4193d7515a50b6d7e213881feb8f370561`.
 

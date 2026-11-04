@@ -1,8 +1,14 @@
-# Open-source security review — 2026-11-01
+# Historical source/history security audit
+
+The original private history remains excluded from the public repository. Current [preview.21 release status](RELEASE_READINESS_20261104.md) is public unsigned prerelease; its source/run/checksums are documented in [unsigned preview evidence](UNSIGNED_PREVIEW.md). Nothing in the earlier audit below overrides that release or certifies it as signed, stable or independently security-audited.
+
+<!-- historical-records:start -->
+
+## Historical records — source import and earlier candidates
 
 ## Reviewed source publication
 
-The target is `https://github.com/xuli82221-pixel/hello-Thoughts-.git`. On 2026-11-04 the owner authorized the reviewed current-source snapshot to be published with a fresh public history. The repository was verified empty before import. The original private repository and `origin` are preserved. This source publication does not include binary Releases, original private history, personal libraries or credentials.
+The target is `https://github.com/xuli82221-pixel/hello-Thoughts-.git`. On 2026-11-04 the owner authorized the reviewed current-source snapshot to be published with a fresh public history. The repository was verified empty before import. The original private repository and `origin` are preserved. That source-import operation excluded binaries, original private history, personal libraries and credentials; the later preview.21 binary release was a separate explicitly authorized operation.
 
 ## History findings
 
@@ -29,7 +35,7 @@ export-time scanning, including the new installer script and explicit CI file.
 Raw machine-specific inventories and test logs remain local. A reviewed source
 snapshot does not rewrite history or authorize publication.
 
-The .2 working-tree scan, including ignored local artifacts, produced 156 location-only findings, including local runtime/session credentials and workstation paths. These files must remain excluded, not be copied wholesale into a public repository. A separate source-allowlist check is saved per local iteration; neither that check nor UI acceptance replaces a fresh complete pre-publication audit. No new source export, commit or push was made; earlier exported snapshots are stale. Dependency caches and binary/video contents were inventoried rather than treated as reviewed source; unrelated media and original input archives are excluded. No other project was modified.
+The .2 working-tree scan, including ignored local artifacts, produced 156 location-only findings, including local runtime/session credentials and workstation paths. These files must remain excluded, not be copied wholesale into a public repository. A separate source-allowlist check is saved per local iteration; neither that check nor UI acceptance replaces a fresh complete pre-publication audit. At that historical audit stage, no new source export, commit or push was performed; source publication and later preview.21 release followed separate reviews and authorizations. Dependency caches and binary/video contents were inventoried rather than treated as reviewed source; unrelated media and original input archives are excluded. No other project was modified.
 
 The proposed source is an explicit allowlist: core, frontend, three client adapters, build/test scripts, publisher metadata, licenses and selected public documentation. It excludes real libraries/images, original screenshots, chats, `.env`, logs, runtime records, caches, user configuration, compiled binaries, private legacy plugin packaging and historical local reports. The only public screenshot is newly captured from a clearly labelled isolated acceptance library, using the candidate's actual standalone webpage. Source-export scanning runs before copying and reports locations/rules only.
 

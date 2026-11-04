@@ -18,7 +18,7 @@ The installer is offline and per-user. Program/shortcut files live under `%LOCAL
 
 Use **Windows Settings → Apps → Installed apps → Thoughts → Uninstall** to remove the launcher, shortcuts and installer registration. **Uninstall intentionally retains the shared home, configuration and managed executable versions**, because other MCP clients may still use them. It does not wipe notes/images or stop an unrelated/shared client service. Independent note backups remain the user's responsibility; software rollback is not a note backup.
 
-The final local unsigned installer was actually blocked by SAC with Windows error 4551. It is a review artifact, not an accepted end-user package. Earlier local installer-flow passes do not certify the final file. Stop if Windows blocks it; keep protection enabled. This historical block remains relevant to unsigned previews. Signed stable distribution still requires trusted signing and clean-machine testing; this preview is separately authorized and does not claim to resolve SAC trust.
+The historical preview.20 local unsigned installer was blocked by SAC with Windows error 4551. It is a review artifact, not an accepted end-user package. Earlier local installer-flow passes do not certify the final file. Stop if Windows blocks it; keep protection enabled. This historical block remains relevant to unsigned previews. Signed stable distribution still requires trusted signing and clean-machine testing; this preview is separately authorized and does not claim to resolve SAC trust.
 
 ### Portable ZIP alternative
 

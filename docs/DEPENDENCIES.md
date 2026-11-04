@@ -21,7 +21,7 @@ CI uses the locally reviewed Go 1.27.3 patch rather than the minimum go.mod patc
 - No GPL/AGPL, unknown or UNLICENSED metadata was found by the scanner. Metadata alone is not a comprehensive compliance proof.
 - MPL-2.0 and CC-BY-4.0 entries are listed below. They are not relicensed under MIT. Build-only tooling is not bundled into the runtime; production notices retain shipped third-party terms.
 - Embedded font files retain OFL-1.1 terms and reserved-name conditions. Fonts have not been renamed or sold separately.
-- Go runtime/dependency license texts and production JavaScript/font notices are reproduced in THIRD_PARTY_NOTICES.txt and included in both candidate packages.
+- Go runtime/dependency license texts and production JavaScript/font notices are reproduced in THIRD_PARTY_NOTICES.txt and included in the portable/MCPB archives and installed notice files.
 - The WebP test fixture retains its separate WEBP_LICENSE.
 - Vendored shadcn/ui-derived component code must retain the upstream MIT attribution in THIRD_PARTY_NOTICES.txt.
 

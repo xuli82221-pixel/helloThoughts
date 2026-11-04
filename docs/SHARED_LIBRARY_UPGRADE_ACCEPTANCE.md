@@ -1,6 +1,12 @@
-# Shared library, local upgrade and reading-state acceptance
+# Historical shared-library and upgrade checks — preview.7–8
 
-Date: 2026-11-01. Current candidate: **0.3.0-preview.8**, Windows x64. Local changes only; no commit, push or public release. **M0 has not passed.**
+This is a version-scoped historical test report. Current published preview.21 status and remaining acceptance requirements are in [release readiness](RELEASE_READINESS_20261104.md). Its local-only statements, test counts, hashes and earlier language counts apply to the named earlier versions.
+
+<!-- historical-records:start -->
+
+## Historical records / 历史记录
+
+Date: 2026-11-01. Historical candidate: **0.3.0-preview.8**, Windows x64. Local changes only; no commit, push or public release. **M0 has not passed.**
 
 ## Default sharing follow-up — preview.8
 

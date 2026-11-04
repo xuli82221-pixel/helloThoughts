@@ -10,7 +10,7 @@
 | `docs/` | Current reports and documentation; `assets/` contains the reviewed isolated screenshot |
 | `plugins/` | Preserved local Codex desktop-preview integration, outside the proposed public stdio distribution |
 | `deferred/macos/` | Deferred implementation/history; not a supported platform or an active Windows build input |
-| `Windows测试包/` | Local, ignored review copies: one clearly labelled current candidate and separate old versions |
+| `Windows测试包/` | Local, ignored review copies and earlier versions; public availability is determined by GitHub Releases |
 | `dist/windows/<version>/` | Immutable build outputs; preserve paths while test services use them |
 | `历史归档/` | Local-only original requirements, historical reports/screenshots, early executable and unrelated media |
 | `.artifacts/` | Local test libraries, sessions, reports and build caches; may contain private runtime state |

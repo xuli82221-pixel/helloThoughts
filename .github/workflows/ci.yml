@@ -45,6 +45,10 @@ jobs:
       - run: python scripts/test_legal_notices.py
       - run: python -m unittest discover -s scripts -p "test_release_preflight.py"
       - run: python scripts/release-preflight.py
+      - name: Documentation links and release-status consistency
+        run: python scripts/check-docs.py
+      - name: Release-status regression tests
+        run: python -m unittest discover -s scripts -p "test_docs_status.py"
       - name: Dependency audit
         run: npm audit --audit-level=moderate
         working-directory: web

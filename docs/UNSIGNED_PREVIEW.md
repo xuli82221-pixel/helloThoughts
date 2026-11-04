@@ -27,6 +27,14 @@ The workflow runs frontend and native backend tests, package structure/checksum 
 
 Only the explicit package files and sanitized summaries are uploaded. Raw QA homes, local sessions, tokens, logs, user paths and private libraries are excluded. `BUILDINFO.json` records the public source commit and Actions run. The release tag must point to that exact commit. Checksums are verified again after download and upload.
 
+## Build-time metadata and later publication
+
+Some package/index fields were written before CI acceptance and the separate manual upload: `publicDistributionReady: false`, `publicSubmission: false`, `runtimeAccepted: false` and `hostAccepted: false`. They are conservative build-stage gate records, not a live query of GitHub Releases. The signed stable gate remains incomplete, and complete native AI-host acceptance is still pending. Do not interpret those fields as proof that no public preview exists or change them to claim signing/stable acceptance.
+
+The public GitHub release and its tag establish publication. `BUILDINFO.json` identifies the exact build source/run, and the later `ACCEPTANCE.json` records the actual bounded stdio/installer passes. Raw build/index records are not retroactively promoted to full acceptance. The source preflight's `publicDistributionReady: false` likewise states that a source check does not authorize a signed stable release.
+
+Documents inside the archives are frozen at the release build commit and can retain build-stage wording. Updated installation and status guides are maintained on `main`; this documentation correction does not silently replace archive contents, change release asset digests or move the version tag.
+
 ## Signing and privacy
 
 **Pending — SignPath Foundation application not yet approved.** The application has not been submitted by this work. If approved, free code signing provided by SignPath.io, certificate by SignPath Foundation. See [Code signing policy](CODE_SIGNING_POLICY.md) and the [application draft](SIGNPATH_APPLICATION.md). Future signing requires provider review and a trusted SignPath integration; an unsigned CI build is not SignPath verification.

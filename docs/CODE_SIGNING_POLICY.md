@@ -30,7 +30,7 @@ Inspection of `scripts/build-desktop-adapters.ps1`, `scripts/pack-desktop-adapte
 
 Never sign another project, an upstream executable/DLL, build tools, AI clients or third-party software using Thoughts' signing identity. Dependencies retain their notices and licenses. Shipping a third-party runtime inside an installer does not make that runtime Thoughts-authored source.
 
-The current local `-PublicRelease` build gate requires trusted signatures for the core, registration script and Setup.exe. Signing only `thoughts.exe` will **not** satisfy that gate. The generated uninstaller also needs release-time signature verification. The installer/helper path must be resolved and reviewed before any formal binary distribution; this policy changes no build logic and grants no release exception.
+The current local `-PublicRelease` build gate requires trusted signatures for the core, registration script and Setup.exe. Signing only `thoughts.exe` will **not** satisfy that gate. The generated uninstaller also needs release-time signature verification. The installer/helper signing path must be resolved before a signed stable distribution. A separate explicitly authorized `-UnsignedPreview` mode produced the public preview.21 experimental packages; it does not satisfy or disable the signed `-PublicRelease` gate. See [published unsigned preview](UNSIGNED_PREVIEW.md).
 
 ## Build provenance
 
@@ -74,9 +74,9 @@ When a user authorizes Claude Desktop, Claude Code, OpenAI Codex or another onli
 - [ ] Maintainer reviews [application materials](SIGNPATH_APPLICATION.md), verifies contact details and submits the official application manually.
 - [ ] Receive Foundation approval and confirmation of artifact scope; approval is not guaranteed.
 - [ ] Verify GitHub and SignPath MFA; configure real members, roles and manual approvals.
-- [ ] Review and implement public commit/tag-based automated release builds, trusted provenance integration, PE metadata restrictions and least-privilege signing access.
+- [ ] Review the existing public commit/tag-based unsigned build and implement SignPath trusted provenance integration, PE metadata restrictions and least-privilege signing access.
 - [ ] Resolve installer, uninstaller and registration-script signing outside the initial core-only scope; retain existing release gates.
 - [ ] Validate signatures, timestamp chains, final package checksums, clean Windows/SAC behavior and all target clients.
-- [ ] Approve a formal release manually; only then publish accepted artifacts and update download/signing statements to match evidence.
+- [ ] Obtain separate human approval for a signed stable release after its signing and acceptance checks; the explicitly authorized unsigned prerelease is already public.
 
-No application, CI signing integration, approval, certificate issuance, signed artifact acceptance or formal binary release is completed by writing this document.
+The unsigned preview is public. This policy does not establish Foundation approval, certificate issuance, CI signing integration, signed-artifact acceptance or a signed stable release.
