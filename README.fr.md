@@ -6,7 +6,7 @@
 
 Un outil de notes gratuit et open source pour Windows x64, qui privilégie le stockage local. Confiez la gestion de vos fichiers Markdown à votre assistant IA et consultez-les ou modifiez-les dans une page web locale indépendante.
 
-**Aperçu non signé — 2026-11-04 :** `0.3.0-preview.21` harmonise les noms du code source, de l’exécutable et des configurations clientes sous Thoughts. Le mainteneur a autorisé une [préversion expérimentale non signée](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21) ; les fichiers seront disponibles après compilation et vérification. **Aucune signature d’éditeur de confiance ni validation de version stable n’est revendiquée.** L’approbation de SignPath Foundation reste en attente. Si Windows SAC/SmartScreen bloque l’exécution, arrêtez-vous et gardez la protection active. Voir la [préparation de la distribution](docs/RELEASE_READINESS_20261104.md), l’[installation](INSTALL.md) et les [précédents tests Windows natifs](docs/WINDOWS_NATIVE_TESTS_20261104.md).
+**Aperçu non signé — 2026-11-04 :** `0.3.0-preview.21` harmonise les noms du code source, de l’exécutable et des configurations clientes sous Thoughts. Le mainteneur a autorisé une [préversion expérimentale non signée](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21) ; les fichiers sont disponibles après la réussite de la compilation Windows publique et des vérifications. **Aucune signature d’éditeur de confiance ni validation de version stable n’est revendiquée.** L’approbation de SignPath Foundation reste en attente. Si Windows SAC/SmartScreen bloque l’exécution, arrêtez-vous et gardez la protection active. Voir la [préparation de la distribution](docs/RELEASE_READINESS_20261104.md), l’[installation](INSTALL.md) et les [précédents tests Windows natifs](docs/WINDOWS_NATIVE_TESTS_20261104.md).
 
 ## Vos notes, sur votre ordinateur
 
@@ -14,7 +14,7 @@ Thoughts ne propose ni compte, ni base de données cloud, ni service d’envoi d
 
 L’exécutable Go embarque la page React. **Les versions précompilées n’ont besoin ni de Node.js, ni de Go, ni de Python, ni de Docker à l’exécution.** Le client IA que vous choisissez a ses propres exigences d’installation et de compte.
 
-## Comment l’installation sera proposée
+## Téléchargement et installation
 
 Cet aperçu expérimental propose **`thoughts-<version>-windows-amd64-setup.exe`**, un ZIP portable et un MCPB Claude Desktop via [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases). Le programme s’appelle **`thoughts.exe`**. Vérifiez SHA256 avant utilisation. Les fichiers actuels **n’ont pas de signature Authenticode** ; une somme concordante n’authentifie pas l’éditeur. Arrêtez-vous si Windows bloque l’exécution. L’installation par utilisateur initialise le dossier partagé et crée les raccourcis du bureau et du menu Démarrer sans droits administrateur. Les données existantes sont conservées ; la désinstallation retire lanceurs et raccourcis et garde le dossier partagé pour les autres clients. Les paquets stables signés restent en attente.
 
@@ -63,7 +63,7 @@ Interface réelle de `0.3.0-preview.20`, capturée le 2026-11-04 dans une nouvel
   backups/     Previous runtime pins; not a backup of note bodies
 ```
 
-Utilisez normalement le dossier partagé par défaut. L’ancien réglage explicite la configuration existante reste disponible ; cette version ne migre ni ne fusionne automatiquement une bibliothèque existante. Si vous personnalisez le dossier de base, tous les clients devant partager le contenu doivent utiliser le même dossier physique.
+Utilisez normalement le dossier partagé par défaut. Les anciens réglages explicites restent pris en charge ; cette version ne migre ni ne fusionne automatiquement une bibliothèque existante. Si vous personnalisez le dossier de base, tous les clients devant partager le contenu doivent utiliser le même dossier physique.
 
 Les installations et mises à jour doivent préserver ce dossier. L’état de lecture stocke les chemins et positions de défilement, pas le texte non enregistré. Les mises à jour du cœur exigent actuellement un exécutable local révisé et son SHA256, fournis explicitement ; aucune mise à jour réseau ne s’effectue en arrière-plan. La mise à jour de l’extension cliente et celle du cœur partagé sont deux opérations distinctes. Voir les [instructions de mise à niveau](INSTALL.md#managed-core-updates-and-rollback).
 

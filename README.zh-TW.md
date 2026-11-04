@@ -6,7 +6,7 @@
 
 免費、開放原始碼的 Windows x64 本機優先筆記工具。讓 AI 助理管理 Markdown 檔案，並在獨立的本機網頁中閱讀與編輯。
 
-**未簽章預覽 — 2026-11-04：**`0.3.0-preview.21` 將原始碼、執行檔與用戶端設定統一命名為 Thoughts。維護者已授權發布[未簽章實驗預覽版](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21)，檔案會在建置與檢查完成後提供。**不代表已有可信發行者簽章或穩定版驗收。**SignPath Foundation 尚未核准申請。Windows SAC/SmartScreen 可能封鎖；遇到封鎖請停止並保持防護啟用。請見[發行準備](docs/RELEASE_READINESS_20261104.md)、[安裝說明](INSTALL.md)與[先前的原生 Windows 測試](docs/WINDOWS_NATIVE_TESTS_20261104.md)。
+**未簽章預覽 — 2026-11-04：**`0.3.0-preview.21` 將原始碼、執行檔與用戶端設定統一命名為 Thoughts。維護者已授權發布[未簽章實驗預覽版](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21)，檔案已在公開 Windows 建置與檢查通過後提供。**不代表已有可信發行者簽章或穩定版驗收。**SignPath Foundation 尚未核准申請。Windows SAC/SmartScreen 可能封鎖；遇到封鎖請停止並保持防護啟用。請見[發行準備](docs/RELEASE_READINESS_20261104.md)、[安裝說明](INSTALL.md)與[先前的原生 Windows 測試](docs/WINDOWS_NATIVE_TESTS_20261104.md)。
 
 ## 筆記留在你的電腦上
 
@@ -14,7 +14,7 @@ Thoughts 不需要帳號，沒有雲端資料庫、筆記上傳服務、遙測�
 
 Go 執行檔內嵌 React 網頁。**預先編譯版本執行時不需要 Node.js、Go、Python 或 Docker。**你選用的 AI 用戶端另有自己的安裝與帳號要求。
 
-## 未來如何安裝
+## 下載與安裝
 
 本實驗預覽版透過 [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases) 提供 **`thoughts-<version>-windows-amd64-setup.exe`**、可攜式 ZIP 與 Claude Desktop MCPB，內部程式名稱為 **`thoughts.exe`**。使用前請核對 SHA256；目前檔案**沒有 Authenticode 簽章**，雜湊相符無法證明發行者身分。Windows 可能拒絕執行，遇到封鎖請停止。安裝程式按使用者安裝，無需系統管理員權限，會初始化共用主目錄並建立桌面與開始功能表捷徑。既有資料保留；解除安裝移除入口與捷徑，保留共用主目錄供其他用戶端使用。已簽章穩定版仍待完成。
 
@@ -63,7 +63,7 @@ SHA256 核對、先檢查後執行的指令與三種用戶端步驟請見 [INSTA
   backups/     Previous runtime pins; not a backup of note bodies
 ```
 
-一般安裝請使用共用預設目錄。舊版明確設定的 既有設定 仍可使用；本版不會自動遷移或合併既有資料庫。若主動自訂目錄，需要共用內容的用戶端應使用同一個實體資料夾。
+一般安裝請使用共用預設目錄。舊版的明確設定仍可使用；本版不會自動遷移或合併既有資料庫。若主動自訂目錄，需要共用內容的用戶端應使用同一個實體資料夾。
 
 安裝與更新必須保留此主目錄。閱讀狀態只記錄路徑與捲動位置，不記錄尚未儲存的文字。核心更新目前需明確提供經過審查的本機執行檔與 SHA256，沒有背景連網更新程式。用戶端擴充功能與共用核心須分別更新，請見[升級說明](INSTALL.md#managed-core-updates-and-rollback)。
 

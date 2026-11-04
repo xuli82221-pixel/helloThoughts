@@ -6,7 +6,7 @@
 
 Kostenlose, quelloffene Notizen für Windows x64 mit lokaler Datenhaltung. Lass deinen KI-Assistenten Markdown-Dateien verwalten und lies und bearbeite sie auf einer eigenständigen lokalen Webseite.
 
-**Unsignierte Vorschau — 2026-11-04:** `0.3.0-preview.21` vereinheitlicht Quellcode, Programmdatei und Client-Konfiguration unter dem Namen Thoughts. Der Maintainer hat eine [unsignierte experimentelle Vorabversion](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21) freigegeben; die Dateien werden nach Build und Prüfung bereitgestellt. **Eine vertrauenswürdige Herausgebersignatur oder Abnahme als stabile Version wird nicht behauptet.** Die Genehmigung der SignPath Foundation steht aus. Wenn Windows SAC/SmartScreen die Ausführung blockiert, brich sie ab und lasse den Schutz aktiv. Siehe [Veröffentlichungsvorbereitung](docs/RELEASE_READINESS_20261104.md), [Installation](INSTALL.md) und [frühere native Windows-Tests](docs/WINDOWS_NATIVE_TESTS_20261104.md).
+**Unsignierte Vorschau — 2026-11-04:** `0.3.0-preview.21` vereinheitlicht Quellcode, Programmdatei und Client-Konfiguration unter dem Namen Thoughts. Der Maintainer hat eine [unsignierte experimentelle Vorabversion](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21) freigegeben; die Dateien sind nach erfolgreichem öffentlichem Windows-Build und Prüfung verfügbar. **Eine vertrauenswürdige Herausgebersignatur oder Abnahme als stabile Version wird nicht behauptet.** Die Genehmigung der SignPath Foundation steht aus. Wenn Windows SAC/SmartScreen die Ausführung blockiert, brich sie ab und lasse den Schutz aktiv. Siehe [Veröffentlichungsvorbereitung](docs/RELEASE_READINESS_20261104.md), [Installation](INSTALL.md) und [frühere native Windows-Tests](docs/WINDOWS_NATIVE_TESTS_20261104.md).
 
 ## Deine Notizen auf deinem Computer
 
@@ -14,7 +14,7 @@ Thoughts hat keine Konten, Cloud-Datenbank, Upload-Dienste für Notizen, Telemet
 
 Die Go-Anwendung enthält die React-Webseite. **Vorkompilierte Pakete benötigen zur Laufzeit weder Node.js noch Go, Python oder Docker.** Für deinen gewählten KI-Client gelten dessen eigene Installations- und Kontovoraussetzungen.
 
-## So wird die Installation möglich sein
+## Download und Installation
 
 Diese experimentelle Vorschau bietet **`thoughts-<version>-windows-amd64-setup.exe`**, ein portables ZIP und ein Claude-Desktop-MCPB über [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases). Die Programmdatei heißt **`thoughts.exe`**. Prüfe vor der Nutzung SHA256. Die Dateien haben derzeit **keine Authenticode-Signatur**; eine passende Prüfsumme bestätigt nicht den Herausgeber. Brich ab, wenn Windows die Ausführung blockiert. Das Setup installiert pro Benutzer und erstellt ohne Administratorrechte das gemeinsame Basisverzeichnis sowie Desktop- und Startmenüverknüpfungen. Vorhandene Daten bleiben erhalten; die Deinstallation entfernt Starter und Verknüpfungen und behält das Basisverzeichnis für andere Clients. Signierte stabile Pakete stehen noch aus.
 
@@ -63,7 +63,7 @@ Tatsächliche Oberfläche von `0.3.0-preview.20`, aufgenommen am 2026-11-04 in e
   backups/     Previous runtime pins; not a backup of note bodies
 ```
 
-Verwende normalerweise den gemeinsamen Standard. Das ausdrücklich gesetzte ältere die bisherige Konfiguration bleibt verfügbar; diese Version migriert oder vereinigt bestehende Bibliotheken nicht automatisch. Bei einem eigenen Basisverzeichnis müssen Clients, die Inhalte teilen sollen, denselben physischen Ordner verwenden.
+Verwende normalerweise den gemeinsamen Standard. Eine ausdrücklich gesetzte ältere Konfiguration bleibt verfügbar; diese Version migriert oder vereinigt bestehende Bibliotheken nicht automatisch. Bei einem eigenen Basisverzeichnis müssen Clients, die Inhalte teilen sollen, denselben physischen Ordner verwenden.
 
 Installation und Aktualisierungen müssen dieses Verzeichnis erhalten. Der Lesestatus speichert Pfade und Scrollpositionen, keinen ungespeicherten Text. Kernaktualisierungen benötigen derzeit eine ausdrücklich angegebene, geprüfte lokale Programmdatei samt SHA256; es gibt keinen automatischen Netzwerk-Updater im Hintergrund. Client-Erweiterung und gemeinsamer Kern werden getrennt aktualisiert. Siehe [Aktualisierung und Rollback](INSTALL.md#managed-core-updates-and-rollback).
 

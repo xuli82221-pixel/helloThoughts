@@ -68,3 +68,9 @@ For documentation changes, run `python scripts/check-docs.py` to check all eight
 READMEs, relative links and anchors, and inclusion of linked files in the public
 source export. Review translation meaning manually as well; the script cannot
 judge linguistic accuracy or certify external services.
+
+The separately authorized experimental preview uses the manual read-only
+[unsigned build workflow](.github/workflows/unsigned-preview.yml). It records
+commit/run provenance and unsigned status without signing or publishing a release.
+See [preview boundaries](docs/UNSIGNED_PREVIEW.md); signed stable-release gates
+remain unchanged.

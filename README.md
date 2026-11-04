@@ -6,7 +6,7 @@
 
 Free, open-source, local-first notes for Windows x64. Let your AI assistant manage Markdown files and read them in an independent local webpage.
 
-**Unsigned preview — 2026-11-04:** `0.3.0-preview.21` standardizes the source, executable and client configuration names as Thoughts. The maintainer has authorized an **unsigned experimental prerelease** at [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21); assets are available once the build and checks complete. **No trusted publisher signature or stable-release acceptance is claimed.** SignPath Foundation approval is pending. Windows SAC/SmartScreen may block it; stop if blocked and keep protection enabled. See [release readiness](docs/RELEASE_READINESS_20261104.md), [installation](INSTALL.md) and [earlier native Windows tests](docs/WINDOWS_NATIVE_TESTS_20261104.md).
+**Unsigned preview — 2026-11-04:** `0.3.0-preview.21` standardizes the source, executable and client configuration names as Thoughts. The maintainer has authorized an **unsigned experimental prerelease** at [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21); the assets are now available after a successful public Windows build and checks. **No trusted publisher signature or stable-release acceptance is claimed.** SignPath Foundation approval is pending. Windows SAC/SmartScreen may block it; stop if blocked and keep protection enabled. See [release readiness](docs/RELEASE_READINESS_20261104.md), [installation](INSTALL.md) and [earlier native Windows tests](docs/WINDOWS_NATIVE_TESTS_20261104.md).
 
 ## Your notes, on your computer
 
@@ -14,7 +14,7 @@ Thoughts has no account, cloud database, note upload service, telemetry, built-i
 
 The Go executable embeds the React webpage. **Precompiled releases need no Node.js, Go, Python or Docker at runtime.** Your chosen AI client has its own installation/account requirements.
 
-## How users will install
+## Downloads and installation
 
 This experimental preview offers **`thoughts-<version>-windows-amd64-setup.exe`**, a portable ZIP and a Claude Desktop MCPB through [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases). The program inside is **`thoughts.exe`**. Verify SHA256 before use; the current files have **no Authenticode signature**. Do not treat a matching hash as publisher authentication. Windows may refuse to run them; stop if blocked. Setup is per-user, initializes the shared home and creates desktop/Start-menu shortcuts without administrator privileges. Existing data is retained; uninstall removes launchers/shortcuts and retains the shared home for other clients. Signed stable packages remain pending.
 
@@ -63,7 +63,7 @@ See [INSTALL.md](INSTALL.md) for SHA256 checks, inspect-first commands and all t
   backups/     Previous runtime pins; not a backup of note bodies
 ```
 
-Use the shared default for normal installations. Explicit legacy the legacy configuration override remains available; this release does not automatically migrate or merge an existing library. If deliberately customizing the home, use the same physical folder across the clients that should share it.
+Use the shared default for normal installations. The legacy configuration override remains available; this release does not automatically migrate or merge an existing library. If deliberately customizing the home, use the same physical folder across the clients that should share it.
 
 Installations and updates must retain this home. Reading state stores paths and scroll positions, not unsaved text. Core updates currently require an explicitly supplied, reviewed local executable and SHA256; there is no background network updater. Updating a client extension and updating the shared core are separate steps. See the [upgrade instructions](INSTALL.md#managed-core-updates-and-rollback).
 

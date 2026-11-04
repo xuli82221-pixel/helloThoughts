@@ -69,7 +69,7 @@ When a user authorizes Claude Desktop, Claude Code, OpenAI Codex or another onli
 
 ## Pending checklist
 
-- [ ] Resolve the existing-release and verifiable-reputation eligibility gaps with the Foundation; do not distribute an unapproved binary to manufacture eligibility.
+- [ ] Present the explicitly authorized unsigned prerelease to the Foundation for released-form review, and resolve the verifiable-reputation gap; no Foundation acceptance is implied.
 - [ ] Review all bundled component/font/installer licenses against the Foundation's component requirements.
 - [ ] Maintainer reviews [application materials](SIGNPATH_APPLICATION.md), verifies contact details and submits the official application manually.
 - [ ] Receive Foundation approval and confirmation of artifact scope; approval is not guaranteed.

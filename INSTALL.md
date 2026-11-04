@@ -1,12 +1,12 @@
 # Install Thoughts — Windows x64
 
-An explicitly authorized unsigned experimental prerelease is being published in [hello-Thoughts-](https://github.com/xuli82221-pixel/hello-Thoughts-). Precompiled packages need no Thoughts account, API key, Node, Go, Python or Docker. Install your AI client separately; its own account requirements still apply.
+An explicitly authorized unsigned experimental prerelease is available in [hello-Thoughts-](https://github.com/xuli82221-pixel/hello-Thoughts-). Precompiled packages need no Thoughts account, API key, Node, Go, Python or Docker. Install your AI client separately; its own account requirements still apply.
 
 **Code signing policy:** [Pending — SignPath Foundation application not yet approved](docs/CODE_SIGNING_POLICY.md). All current Windows programs remain unsigned. The experimental preview offers unsigned Setup.exe/ZIP/MCPB assets; no signed stable package is available. The Foundation application has not been submitted by this preparation; a future core signature alone will not satisfy the installer/helper release gates.
 
 ## Ordinary Windows users
 
-**Current availability — 2026-11-04:** `0.3.0-preview.21` is an explicitly authorized **unsigned experimental prerelease**. Download assets from its GitHub Release once the automated build and checks complete. The executable is `thoughts.exe`. No trusted publisher signature, clean-SAC acceptance or complete native AI-client acceptance is claimed. Ordinary users who need those assurances should wait for a signed stable release. Stop if Windows blocks the files; do not disable protection or bypass warnings.
+**Current availability — 2026-11-04:** `0.3.0-preview.21` is an explicitly authorized **unsigned experimental prerelease**. Download assets from its GitHub Release. The public Windows build and checks completed successfully. The executable is `thoughts.exe`. No trusted publisher signature, clean-SAC acceptance or complete native AI-client acceptance is claimed. Ordinary users who need those assurances should wait for a signed stable release. Stop if Windows blocks the files; do not disable protection or bypass warnings.
 
 The preview includes an **offline installer**:
 
@@ -85,6 +85,10 @@ automatic shared home for ordinary installation.
 When the common default is absent but the known old Windows-user `AppData/Roaming/Memo/config.json` exists, automatic initialization stops for migration instead of creating an empty replacement. Explicit `MEMO_CONFIG_DIR` remains available for legacy/testing use. Old Store-app-specific or custom locations still require deliberate review; they are not searched or merged automatically. Prefer one migrated shared home rather than leaving different clients on legacy overrides.
 
 Repeat `init` preserves an existing configured library. Supplying a different `--vault` is rejected rather than replacing that selection. For a deliberate migration, stop writes, back up configuration and all library files, copy to the stable destination, verify file hashes, then configure all clients to use the same home. Keep the original until verification is complete. Updating an executable or reinstalling an extension must not remove this home.
+
+## Migrating an earlier local development installation
+
+This is the first public binary preview. Earlier local-development MCP launchers must be deliberately re-registered to the new package's `thoughts.exe` when migrating. An old launcher may reject the newly named runtime pin. Save drafts, back up the library and configuration, close the clients, and review the existing managed-update procedure before changing a shared installation. The release does not update any installed client or core automatically. Old runtime files and backups are preserved; reading legacy pins does not imply every old launcher understands a new filename.
 
 ## Managed core updates and rollback
 

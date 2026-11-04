@@ -42,7 +42,7 @@ Read against the official [application page](https://signpath.org/apply.html) an
 | --- | --- | --- |
 | Open-source license; no proprietary components or commercial dual licensing | Project code is MIT; no commercial dual-license offering identified. Mixed third-party/font/installer licenses are documented, not automatically Foundation-approved. | Review the full shipped dependency/license inventory, including OFL fonts and the Inno Setup runtime, with the provider. |
 | Active maintenance | Recent public source and CI activity support current maintenance. | Continue maintenance; no long-term support guarantee is inferred. |
-| Already released in the form to be signed | The earlier source-only snapshot did not meet this requirement. A separately authorized unsigned preview is now being built and published; its actual public assets must be supplied to the Foundation for review. | Ask whether a source-only preview is eligible or must defer. Do not publish an unsigned/unaccepted formal release to satisfy a checkbox. |
+| Already released in the form to be signed | The earlier source-only snapshot did not meet this requirement. A separately authorized [unsigned preview is now public](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21), with Setup.exe/ZIP/MCPB and source-linked build evidence. The Foundation must decide whether this prerelease meets its released-form requirement. | Ask whether a source-only preview is eligible or must defer. Do not publish an unsigned/unaccepted formal release to satisfy a checkbox. |
 | Functionality documented on project/download page | README and INSTALL describe scope, local data boundaries and future package routes. | Publish this reviewed documentation manually; an approved binary download remains unavailable. |
 | Verifiable reputation and project control | Control is supported by authenticated admin permission. **Reputation is not established:** very young repository and 0-star/0-fork snapshot; no usage evidence or user counts. | Provide only real independent evidence if it develops; Foundation decides sufficiency. No minimum star threshold is invented. |
 | Own project / own binaries only | First-party `thoughts.exe` has a documented source path. | Restrict artifact filters to it; resolve bundled runtime/installer scope explicitly. Never sign upstream binaries as Thoughts. |
@@ -61,7 +61,7 @@ Read against the official [application page](https://signpath.org/apply.html) an
 
 - [ ] Review all facts, licenses and contact ownership; update dated GitHub evidence.
 - [ ] Review and manually commit/push only the intended public documentation/source snapshot; preserve private historical material. This preparation performs neither action.
-- [ ] Decide whether to ask the Foundation about the source-only/reputation gaps now or defer the application. Do not claim an existing binary release.
+- [ ] Decide whether to ask the Foundation about the source-only/reputation gaps now or defer the application. Use the actual unsigned prerelease and its build evidence; do not claim a signed or stable release.
 - [ ] Confirm the first-party-only scope, installer/runtime questions and one-person role arrangement with SignPath.
 - [ ] Confirm GitHub MFA, enroll in SignPath and enable MFA there; never share recovery codes.
 - [ ] Manually submit at the official application page and retain the actual response privately.

@@ -6,7 +6,7 @@
 
 Una herramienta de notas gratuita y de código abierto para Windows x64 que prioriza el almacenamiento local. Deja que tu asistente de IA gestione archivos Markdown y léelos o edítalos en una página web local independiente.
 
-**Vista previa sin firmar — 2026-11-04:** `0.3.0-preview.21` unifica los nombres del código fuente, el ejecutable y las configuraciones de clientes como Thoughts. El responsable ha autorizado una [versión preliminar experimental sin firmar](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21); los archivos estarán disponibles al terminar la compilación y las comprobaciones. **No se afirma que tenga una firma de editor de confianza ni validación como versión estable.** La aprobación de SignPath Foundation sigue pendiente. Si Windows SAC/SmartScreen bloquea la ejecución, detente y mantén la protección activada. Consulta la [preparación de la publicación](docs/RELEASE_READINESS_20261104.md), la [instalación](INSTALL.md) y las [pruebas nativas de Windows anteriores](docs/WINDOWS_NATIVE_TESTS_20261104.md).
+**Vista previa sin firmar — 2026-11-04:** `0.3.0-preview.21` unifica los nombres del código fuente, el ejecutable y las configuraciones de clientes como Thoughts. El responsable ha autorizado una [versión preliminar experimental sin firmar](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21); los archivos están disponibles tras superar la compilación pública de Windows y las comprobaciones. **No se afirma que tenga una firma de editor de confianza ni validación como versión estable.** La aprobación de SignPath Foundation sigue pendiente. Si Windows SAC/SmartScreen bloquea la ejecución, detente y mantén la protección activada. Consulta la [preparación de la publicación](docs/RELEASE_READINESS_20261104.md), la [instalación](INSTALL.md) y las [pruebas nativas de Windows anteriores](docs/WINDOWS_NATIVE_TESTS_20261104.md).
 
 ## Tus notas, en tu ordenador
 
@@ -14,7 +14,7 @@ Thoughts no tiene cuentas, base de datos en la nube, servicio de subida de notas
 
 El ejecutable de Go incorpora la página React. **Las versiones precompiladas no necesitan Node.js, Go, Python ni Docker para ejecutarse.** El cliente de IA que elijas tiene sus propios requisitos de instalación y de cuenta.
 
-## Cómo se podrá instalar
+## Descarga e instalación
 
 Esta vista previa experimental ofrece **`thoughts-<version>-windows-amd64-setup.exe`**, un ZIP portátil y un MCPB de Claude Desktop en [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases). El programa se llama **`thoughts.exe`**. Comprueba SHA256 antes de usarlo. Los archivos actuales **no tienen firma Authenticode**; una suma coincidente no autentica al editor. Si Windows bloquea la ejecución, detente. La instalación por usuario inicializa el directorio compartido y crea accesos directos en el escritorio y el menú Inicio sin permisos de administrador. Los datos existentes se conservan; la desinstalación quita lanzadores y accesos directos y mantiene el directorio compartido para otros clientes. Los paquetes estables firmados siguen pendientes.
 
@@ -63,7 +63,7 @@ Interfaz real de `0.3.0-preview.20`, capturada el 2026-11-04 en una biblioteca t
   backups/     Previous runtime pins; not a backup of note bodies
 ```
 
-En las instalaciones normales, usa el directorio compartido predeterminado. La configuración explícita antigua la configuración anterior sigue disponible; esta versión no migra ni combina automáticamente bibliotecas existentes. Si personalizas el directorio base, usa la misma carpeta física en los clientes que deban compartir contenido.
+En las instalaciones normales, usa el directorio compartido predeterminado. Las configuraciones antiguas explícitas siguen siendo compatibles; esta versión no migra ni combina automáticamente bibliotecas existentes. Si personalizas el directorio base, usa la misma carpeta física en los clientes que deban compartir contenido.
 
 Las instalaciones y actualizaciones deben conservar ese directorio. El estado de lectura guarda rutas y posiciones de desplazamiento, no texto sin guardar. Actualmente las actualizaciones del núcleo requieren un ejecutable local revisado y su SHA256 indicados expresamente; no hay actualizaciones de red en segundo plano. La extensión del cliente y el núcleo compartido se actualizan por separado. Consulta las [instrucciones de actualización](INSTALL.md#managed-core-updates-and-rollback).
 

@@ -1,5 +1,7 @@
 # Public release preparation — 2026-11-01
 
+**Subsequent status:** the maintainer later authorized Thoughts naming standardization and the `0.3.0-preview.21` unsigned experimental prerelease. See [unsigned preview](UNSIGNED_PREVIEW.md). The source-only status and preview.20 test/blocking records below describe the earlier preparation stage; they are not current signing or stable-release approval.
+
 **Current status — 2026-11-04: SOURCE-ONLY PUBLIC PREVIEW; NO BINARY RELEASE.** The owner authorized importing the reviewed current-source snapshot as a fresh public history. The original private repository/history remains preserved. Current locally installed core is the alignment/eight-language `0.3.0-preview.20`, executable SHA256 `df959a3a34d051d8587f586f9418d2f9b6c13df17a2c1af28b3b9d791678bfda`. Preview.19 remains preserved. Older sections below record earlier preparation states, not a prohibition on this authorized source import.
 
 ## Current Windows testing and end-user installation

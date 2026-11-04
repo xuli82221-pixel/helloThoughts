@@ -6,7 +6,7 @@
 
 Windows x64용 무료 오픈 소스 로컬 우선 노트 도구입니다. AI 어시스턴트로 Markdown 파일을 관리하고, 독립적인 로컬 웹페이지에서 읽고 편집할 수 있습니다.
 
-**미서명 미리보기 — 2026-11-04:** `0.3.0-preview.21`은 소스, 실행 파일, 클라이언트 설정의 이름을 Thoughts로 통일합니다. 관리자가 [미서명 실험용 사전 릴리스](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21) 공개를 승인했으며, 빌드와 검증이 끝나면 파일을 제공합니다. **신뢰할 수 있는 게시자 서명이나 안정 버전 검증을 뜻하지 않습니다.** SignPath Foundation 승인은 아직 받지 않았습니다. Windows SAC/SmartScreen이 차단하면 실행을 멈추고 보호를 유지하세요. [배포 준비](docs/RELEASE_READINESS_20261104.md), [설치 안내](INSTALL.md), [이전 네이티브 Windows 테스트](docs/WINDOWS_NATIVE_TESTS_20261104.md)를 확인하세요.
+**미서명 미리보기 — 2026-11-04:** `0.3.0-preview.21`은 소스, 실행 파일, 클라이언트 설정의 이름을 Thoughts로 통일합니다. 관리자가 [미서명 실험용 사전 릴리스](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21) 공개를 승인했으며, 공개 Windows 빌드와 검증을 통과한 파일을 제공합니다. **신뢰할 수 있는 게시자 서명이나 안정 버전 검증을 뜻하지 않습니다.** SignPath Foundation 승인은 아직 받지 않았습니다. Windows SAC/SmartScreen이 차단하면 실행을 멈추고 보호를 유지하세요. [배포 준비](docs/RELEASE_READINESS_20261104.md), [설치 안내](INSTALL.md), [이전 네이티브 Windows 테스트](docs/WINDOWS_NATIVE_TESTS_20261104.md)를 확인하세요.
 
 ## 노트는 내 컴퓨터에
 
@@ -14,7 +14,7 @@ Thoughts에는 계정, 클라우드 데이터베이스, 노트 업로드 서비�
 
 Go 실행 파일에 React 웹페이지가 내장되어 있습니다. **미리 빌드된 배포 파일은 실행 시 Node.js, Go, Python 또는 Docker가 필요하지 않습니다.** 선택한 AI 클라이언트에는 해당 클라이언트의 설치 및 계정 요건이 별도로 적용됩니다.
 
-## 향후 설치 방법
+## 다운로드 및 설치
 
 이 실험용 미리보기는 [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases)에서 **`thoughts-<version>-windows-amd64-setup.exe`**, 포터블 ZIP, Claude Desktop MCPB를 제공합니다. 내부 프로그램 이름은 **`thoughts.exe`**입니다. 사용 전 SHA256을 확인하세요. 현재 파일에는 **Authenticode 서명이 없으며**, 해시 일치가 게시자 신원을 증명하지는 않습니다. Windows가 차단하면 실행을 멈추세요. 설치는 사용자별로 이루어지며 관리자 권한 없이 공유 홈과 바탕 화면·시작 메뉴 바로가기를 만듭니다. 기존 자료는 보존하고 제거 후에도 다른 클라이언트를 위해 공유 홈을 남깁니다. 서명된 안정 버전은 아직 제공하지 않습니다.
 
@@ -63,7 +63,7 @@ SHA256 확인, 실행 전 점검할 명령 및 세 클라이언트의 절차는 
   backups/     Previous runtime pins; not a backup of note bodies
 ```
 
-일반 설치에는 공유 기본 홈을 사용하세요. 명시적으로 지정한 기존 기존 설정도 계속 지원하지만, 이 버전은 기존 라이브러리를 자동으로 이전하거나 합치지 않습니다. 홈을 직접 바꾸면 공유하려는 클라이언트 모두에서 동일한 물리 폴더를 사용하세요.
+일반 설치에는 공유 기본 홈을 사용하세요. 명시적으로 지정한 기존 설정도 계속 지원하지만, 이 버전은 기존 라이브러리를 자동으로 이전하거나 합치지 않습니다. 홈을 직접 바꾸면 공유하려는 클라이언트 모두에서 동일한 물리 폴더를 사용하세요.
 
 설치와 업데이트는 홈을 보존해야 합니다. 읽기 상태에는 경로와 스크롤 위치가 저장되며 미저장 본문은 저장되지 않습니다. 코어 업데이트에는 검토된 로컬 실행 파일과 SHA256을 명시적으로 제공해야 하며, 백그라운드 네트워크 업데이트 기능은 없습니다. 클라이언트 확장과 공유 코어는 별도로 업데이트합니다. [업그레이드 안내](INSTALL.md#managed-core-updates-and-rollback)를 확인하세요.
 

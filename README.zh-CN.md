@@ -6,7 +6,7 @@
 
 免费的开源 Windows x64 本地优先笔记工具。让 AI 助手管理 Markdown 文件，在独立的本地网页中阅读和编辑。
 
-**未签名预览 — 2026-11-04：**`0.3.0-preview.21` 将源码、可执行文件和客户端配置统一命名为 Thoughts。维护者已授权发布[未签名实验预览版](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21)，文件在构建和检查完成后提供。**不代表已有可信发布者签名或稳定版验收。**SignPath Foundation 尚未批准申请。Windows SAC/SmartScreen 可能拦截；遇到拦截请停止，保持防护开启。参见[发行准备](docs/RELEASE_READINESS_20261104.md)、[安装说明](INSTALL.md)和[此前的原生 Windows 测试](docs/WINDOWS_NATIVE_TESTS_20261104.md)。
+**未签名预览 — 2026-11-04：**`0.3.0-preview.21` 将源码、可执行文件和客户端配置统一命名为 Thoughts。维护者已授权发布[未签名实验预览版](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21)，文件已在公开 Windows 构建与检查通过后提供。**不代表已有可信发布者签名或稳定版验收。**SignPath Foundation 尚未批准申请。Windows SAC/SmartScreen 可能拦截；遇到拦截请停止，保持防护开启。参见[发行准备](docs/RELEASE_READINESS_20261104.md)、[安装说明](INSTALL.md)和[此前的原生 Windows 测试](docs/WINDOWS_NATIVE_TESTS_20261104.md)。
 
 ## 笔记就在你的电脑上
 
@@ -14,7 +14,7 @@ Thoughts 不需要账号，没有云端数据库、笔记上传服务、遥测�
 
 Go 可执行文件内嵌 React 网页。**预编译版本运行时不需要 Node.js、Go、Python 或 Docker。**你选择的 AI 客户端有自己的安装和账号要求。
 
-## 将来如何安装
+## 下载与安装
 
 本实验预览版通过 [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases) 提供 **`thoughts-<version>-windows-amd64-setup.exe`**、便携 ZIP 和 Claude Desktop MCPB，内部程序名为 **`thoughts.exe`**。使用前请核对 SHA256；当前文件**没有 Authenticode 签名**，哈希一致不能证明发布者身份。Windows 可能拒绝运行，遇到拦截请停止。安装器按用户安装，无需管理员权限，会初始化共享主目录并创建桌面和开始菜单快捷方式。已有资料保留；卸载移除入口与快捷方式，保留共享主目录供其他客户端使用。已签名稳定版仍待完成。
 
@@ -63,7 +63,7 @@ SHA256 核验、先检查后执行的命令和三个客户端步骤见 [INSTALL.
   backups/     Previous runtime pins; not a backup of note bodies
 ```
 
-一般安装请使用共享默认目录。旧版显式 旧版配置 仍可使用；本版不会自动迁移或合并已有资料库。若主动自定义目录，需要共享内容的客户端应使用同一个物理文件夹。
+一般安装请使用共享默认目录。旧版的显式配置仍兼容；本版不会自动迁移或合并已有资料库。若主动自定义目录，需要共享内容的客户端应使用同一个物理文件夹。
 
 安装和更新必须保留该主目录。阅读状态保存路径和滚动位置，不保存未提交的正文。核心更新目前需要明确提供经过审查的本地可执行文件及 SHA256，没有后台联网更新器。客户端扩展和共享核心分别更新，参见[升级说明](INSTALL.md#managed-core-updates-and-rollback)。
 
