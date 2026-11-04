@@ -27,7 +27,7 @@ def safe_relative(name):
 def inspect_versions(root):
     files = ["web/package.json", "web/package-lock.json", "adapters/claude-desktop/manifest.json"]
     versions = [json.loads((root / name).read_text(encoding="utf-8-sig"))["version"] for name in files]
-    source = (root / "internal/memo/runtime.go").read_text(encoding="utf-8")
+    source = (root / "internal/thoughts/runtime.go").read_text(encoding="utf-8")
     match = re.search(r'(?:const|var) Version = "([^"]+)"', source)
     if not match or any(value != match.group(1) for value in versions):
         return [{"rule": "version_mismatch", "file": "package metadata"}]

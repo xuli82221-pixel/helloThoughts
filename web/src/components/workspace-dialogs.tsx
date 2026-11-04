@@ -6,7 +6,7 @@ import {Checkbox} from '@/components/ui/checkbox'
 import {Dialog,DialogContent,DialogDescription,DialogFooter,DialogHeader,DialogTitle} from '@/components/ui/dialog'
 import {AlertDialog,AlertDialogAction,AlertDialogCancel,AlertDialogContent,AlertDialogDescription,AlertDialogFooter,AlertDialogHeader,AlertDialogTitle} from '@/components/ui/alert-dialog'
 import {Select,SelectContent,SelectItem,SelectTrigger,SelectValue} from '@/components/ui/select'
-import {api,errorMessage,type Note,type Project,type ProjectSnapshot,type Session,type Library} from '@/lib/memo-api'
+import {api,errorMessage,type Note,type Project,type ProjectSnapshot,type Session,type Library} from '@/lib/thoughts-api'
 import {applyLocale,isLocale,languageNames,locales,useI18n,type Locale} from '@/lib/i18n'
 import {noteName,validName} from '@/lib/workspace-model'
 import {PRODUCT_NAME} from '@/lib/product'
@@ -30,7 +30,7 @@ export function NoteDialog({request,onClose,onSubmit,busy,error}:{request:NoteDi
  const description=request?.kind==='project'?t('projectHint'):request?.kind==='rename'?t('renameHint'):request?.kind==='node'?t('noteInProject',{project:request.project.name}):request?.kind==='copy'?t('copyDraftHint'):t('quickNoteHint')
  async function submit(){const value=name.trim();if((request?.kind==='project'||request?.kind==='rename')&&!value||value&&!validName(value)){setInvalid(true);return}setInvalid(false);if(await onSubmit(value,template))onClose()}
  return <Dialog open={!!request} onOpenChange={open=>{if(!open&&!busy)onClose()}}><DialogContent><DialogHeader><DialogTitle>{title}</DialogTitle><DialogDescription>{description}</DialogDescription></DialogHeader><form onSubmit={event=>{event.preventDefault();void submit()}} className="space-y-5">
-  <div className="space-y-2"><label className="text-sm font-medium" htmlFor="memo-item-name">{t(request?.kind==='project'?'projectName':'nodeName')}</label><Input id="memo-item-name" value={name} onChange={event=>setName(event.target.value)} placeholder={request?.kind==='project'?'':t('untitled')} maxLength={80} disabled={busy} autoFocus aria-invalid={invalid}/></div>
+  <div className="space-y-2"><label className="text-sm font-medium" htmlFor="thoughts-item-name">{t(request?.kind==='project'?'projectName':'nodeName')}</label><Input id="thoughts-item-name" value={name} onChange={event=>setName(event.target.value)} placeholder={request?.kind==='project'?'':t('untitled')} maxLength={80} disabled={busy} autoFocus aria-invalid={invalid}/></div>
   {request?.kind==='project'&&<div className="space-y-2"><label className="flex items-center gap-3 text-sm"><Checkbox checked={template} onCheckedChange={value=>setTemplate(value===true)} disabled={busy}/>{t('starterNodes')}</label><p className="text-xs leading-relaxed text-muted-foreground">{t('starterHint')}</p></div>}
   {(invalid||error)&&<p role="alert" className="text-sm text-destructive">{invalid?t('invalidName'):error}</p>}
   <DialogFooter><Button type="button" variant="outline" disabled={busy} onClick={onClose}>{t('cancel')}</Button><Button type="submit" disabled={busy}>{busy&&<LoaderCircle className="animate-spin"/>}{t(request?.kind==='rename'?'rename':request?.kind==='project'?'newProject':request?.kind==='copy'?'saveCopy':'create')}</Button></DialogFooter>

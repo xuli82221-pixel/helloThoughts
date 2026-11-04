@@ -6,7 +6,7 @@
 
 Un outil de notes gratuit et open source pour Windows x64, qui privilégie le stockage local. Confiez la gestion de vos fichiers Markdown à votre assistant IA et consultez-les ou modifiez-les dans une page web locale indépendante.
 
-**Aperçu du code source — 2026-11-04 :** ce dépôt publie le code révisé de `0.3.0-preview.20` sous licence MIT, avec un nouvel historique public. Les 59 tests du backend ont réussi nativement sous Windows. **Aucun programme d’installation Windows n’est encore approuvé pour le téléchargement :** SAC a bloqué le Setup.exe final non signé (erreur 4551). Le code de l’installateur est inclus, mais la diffusion des binaires attend une signature de confiance et la validation finale. Voir la [préparation de la distribution](docs/RELEASE_READINESS_20261104.md), l’[installation](INSTALL.md) et les [tests Windows](docs/WINDOWS_NATIVE_TESTS_20261104.md).
+**Aperçu non signé — 2026-11-04 :** `0.3.0-preview.21` harmonise les noms du code source, de l’exécutable et des configurations clientes sous Thoughts. Le mainteneur a autorisé une [préversion expérimentale non signée](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21) ; les fichiers seront disponibles après compilation et vérification. **Aucune signature d’éditeur de confiance ni validation de version stable n’est revendiquée.** L’approbation de SignPath Foundation reste en attente. Si Windows SAC/SmartScreen bloque l’exécution, arrêtez-vous et gardez la protection active. Voir la [préparation de la distribution](docs/RELEASE_READINESS_20261104.md), l’[installation](INSTALL.md) et les [précédents tests Windows natifs](docs/WINDOWS_NATIVE_TESTS_20261104.md).
 
 ## Vos notes, sur votre ordinateur
 
@@ -16,7 +16,7 @@ L’exécutable Go embarque la page React. **Les versions précompilées n’ont
 
 ## Comment l’installation sera proposée
 
-Lorsqu’une version révisée sera disponible, téléchargez **`thoughts-<version>-windows-amd64-setup.exe`** depuis [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases), vérifiez sa somme de contrôle et la signature de l’éditeur, puis ouvrez-le par double-clic et choisissez **Install**. L’installateur initialise le dossier de base partagé et crée les raccourcis du bureau et du menu Démarrer sans droits administrateur. Les données existantes sont conservées. La désinstallation retire le lanceur et les raccourcis, mais garde le dossier partagé pour les autres clients. Une archive ZIP portable est également prévue pour l’installation manuelle dans cette version révisée ; aucun des deux paquets n’est actuellement un téléchargement approuvé.
+Cet aperçu expérimental propose **`thoughts-<version>-windows-amd64-setup.exe`**, un ZIP portable et un MCPB Claude Desktop via [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases). Le programme s’appelle **`thoughts.exe`**. Vérifiez SHA256 avant utilisation. Les fichiers actuels **n’ont pas de signature Authenticode** ; une somme concordante n’authentifie pas l’éditeur. Arrêtez-vous si Windows bloque l’exécution. L’installation par utilisateur initialise le dossier partagé et crée les raccourcis du bureau et du menu Démarrer sans droits administrateur. Les données existantes sont conservées ; la désinstallation retire lanceurs et raccourcis et garde le dossier partagé pour les autres clients. Les paquets stables signés restent en attente.
 
 Les utilisateurs de Claude Desktop pourront aussi importer l’extension `.mcpb` de cette version. Pour Codex et Claude Code, l’exécutable du ZIP s’enregistre comme serveur MCP local sur stdio. La page web fonctionne aussi sans client IA. Les commandes figurent dans le [guide de démarrage pour les utilisateurs](INSTALL.md#ordinary-windows-users). Sur GitHub, **Code → Download ZIP** télécharge le code source, pas l’application précompilée.
 
@@ -63,7 +63,7 @@ Interface réelle de `0.3.0-preview.20`, capturée le 2026-11-04 dans une nouvel
   backups/     Previous runtime pins; not a backup of note bodies
 ```
 
-Utilisez normalement le dossier partagé par défaut. L’ancien réglage explicite `MEMO_CONFIG_DIR` reste disponible ; cette version ne migre ni ne fusionne automatiquement une bibliothèque existante. Si vous personnalisez le dossier de base, tous les clients devant partager le contenu doivent utiliser le même dossier physique.
+Utilisez normalement le dossier partagé par défaut. L’ancien réglage explicite la configuration existante reste disponible ; cette version ne migre ni ne fusionne automatiquement une bibliothèque existante. Si vous personnalisez le dossier de base, tous les clients devant partager le contenu doivent utiliser le même dossier physique.
 
 Les installations et mises à jour doivent préserver ce dossier. L’état de lecture stocke les chemins et positions de défilement, pas le texte non enregistré. Les mises à jour du cœur exigent actuellement un exécutable local révisé et son SHA256, fournis explicitement ; aucune mise à jour réseau ne s’effectue en arrière-plan. La mise à jour de l’extension cliente et celle du cœur partagé sont deux opérations distinctes. Voir les [instructions de mise à niveau](INSTALL.md#managed-core-updates-and-rollback).
 
@@ -71,7 +71,7 @@ SmartScreen, Smart App Control ou une politique de contrôle des applications de
 
 ## Espace de travail
 
-Voir l’[organisation des dossiers](docs/WORKSPACE_LAYOUT.md) et l’[index de documentation](docs/README.md). Les anciens besoins et rapports sont préservés dans une archive locale. Les chemins internes Memo sont des noms de compatibilité, pas des produits supplémentaires ni des fichiers à supprimer librement.
+Voir l’[organisation des dossiers](docs/WORKSPACE_LAYOUT.md) et l’[index de documentation](docs/README.md). Les anciens besoins et rapports sont préservés dans une archive locale. Le code et les exécutables portent le nom Thoughts ; les anciens identifiants de données sont conservés pour la compatibilité.
 
 ## Compilation
 

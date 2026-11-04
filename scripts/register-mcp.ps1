@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory=$true)][ValidateSet('codex','claude-code')][string]$Client,
-    [string]$Executable = (Join-Path $PSScriptRoot 'memo.exe'),
+    [string]$Executable = (Join-Path $PSScriptRoot 'thoughts.exe'),
     [Parameter(Mandatory=$true)][ValidatePattern('^[a-fA-F0-9]{64}$')][string]$ExpectedSha256,
     [string]$ThoughtsHome = 'auto',
     [switch]$Apply

@@ -1,4 +1,4 @@
-import type {Library,Note,Project} from './memo-api'
+import type {Library,Note,Project} from './thoughts-api'
 
 export function noteName(note:Pick<Note,'path'> & {name?:string}){return note.name??note.path.split('/').at(-1)!.replace(/\.md$/i,'')}
 export function projectForNote(library:Library,path:string){return library.projects.find(project=>project.nodes.some(note=>note.path===path))}

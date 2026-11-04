@@ -6,7 +6,7 @@
 
 Free, open-source, local-first notes for Windows x64. Let your AI assistant manage Markdown files and read them in an independent local webpage.
 
-**Source preview — 2026-11-04:** This repository publishes the reviewed `0.3.0-preview.20` source under the MIT license, starting with a fresh public history. All 59 backend tests passed natively on Windows. **There is no approved Windows installer download yet:** SAC blocked the final unsigned Setup.exe (error 4551). Installer source is included, but binary releases await trusted signing and final acceptance. See [release readiness](docs/RELEASE_READINESS_20261104.md), [installation](INSTALL.md) and [Windows tests](docs/WINDOWS_NATIVE_TESTS_20261104.md).
+**Unsigned preview — 2026-11-04:** `0.3.0-preview.21` standardizes the source, executable and client configuration names as Thoughts. The maintainer has authorized an **unsigned experimental prerelease** at [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21); assets are available once the build and checks complete. **No trusted publisher signature or stable-release acceptance is claimed.** SignPath Foundation approval is pending. Windows SAC/SmartScreen may block it; stop if blocked and keep protection enabled. See [release readiness](docs/RELEASE_READINESS_20261104.md), [installation](INSTALL.md) and [earlier native Windows tests](docs/WINDOWS_NATIVE_TESTS_20261104.md).
 
 ## Your notes, on your computer
 
@@ -16,7 +16,7 @@ The Go executable embeds the React webpage. **Precompiled releases need no Node.
 
 ## How users will install
 
-When a reviewed release is available, download **`thoughts-<version>-windows-amd64-setup.exe`** from [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases), verify its checksum and publisher signature, double-click it and click **Install**. Setup initializes the shared home and creates desktop/Start-menu shortcuts without administrator privileges. Existing data is retained; uninstall removes the launcher/shortcuts and retains the shared home for other clients. A portable ZIP is planned for manual installation in that reviewed release; neither package is currently an approved download.
+This experimental preview offers **`thoughts-<version>-windows-amd64-setup.exe`**, a portable ZIP and a Claude Desktop MCPB through [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases). The program inside is **`thoughts.exe`**. Verify SHA256 before use; the current files have **no Authenticode signature**. Do not treat a matching hash as publisher authentication. Windows may refuse to run them; stop if blocked. Setup is per-user, initializes the shared home and creates desktop/Start-menu shortcuts without administrator privileges. Existing data is retained; uninstall removes launchers/shortcuts and retains the shared home for other clients. Signed stable packages remain pending.
 
 Claude Desktop users can instead import the release's `.mcpb` extension. Codex and Claude Code users register the executable from the ZIP as a local stdio MCP server. The webpage can also run without an AI client. Follow the [end-user quick start](INSTALL.md#ordinary-windows-users) for the supported commands. GitHub's **Code → Download ZIP** downloads source code, not the precompiled application.
 
@@ -63,7 +63,7 @@ See [INSTALL.md](INSTALL.md) for SHA256 checks, inspect-first commands and all t
   backups/     Previous runtime pins; not a backup of note bodies
 ```
 
-Use the shared default for normal installations. Explicit legacy `MEMO_CONFIG_DIR` remains available; this release does not automatically migrate or merge an existing library. If deliberately customizing the home, use the same physical folder across the clients that should share it.
+Use the shared default for normal installations. Explicit legacy the legacy configuration override remains available; this release does not automatically migrate or merge an existing library. If deliberately customizing the home, use the same physical folder across the clients that should share it.
 
 Installations and updates must retain this home. Reading state stores paths and scroll positions, not unsaved text. Core updates currently require an explicitly supplied, reviewed local executable and SHA256; there is no background network updater. Updating a client extension and updating the shared core are separate steps. See the [upgrade instructions](INSTALL.md#managed-core-updates-and-rollback).
 
@@ -71,7 +71,7 @@ Unsigned Windows programs or scripts may be blocked by SmartScreen, Smart App Co
 
 ## Workspace
 
-See [workspace layout](docs/WORKSPACE_LAYOUT.md) and the [documentation index](docs/README.md). Old requirements/reports are preserved in a local archive. Internal Memo paths remain compatibility names; they are not extra products or disposable files.
+See [workspace layout](docs/WORKSPACE_LAYOUT.md) and the [documentation index](docs/README.md). Old requirements/reports are preserved in a local archive. Current source and executable names use Thoughts. Legacy data identifiers are retained for compatibility.
 
 ## Build
 

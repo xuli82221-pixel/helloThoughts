@@ -6,7 +6,7 @@
 
 Kostenlose, quelloffene Notizen für Windows x64 mit lokaler Datenhaltung. Lass deinen KI-Assistenten Markdown-Dateien verwalten und lies und bearbeite sie auf einer eigenständigen lokalen Webseite.
 
-**Quellcode-Vorschau — 2026-11-04:** Dieses Repository veröffentlicht den geprüften Quellcode von `0.3.0-preview.20` unter der MIT-Lizenz mit einer neuen öffentlichen Git-Historie. Alle 59 Backend-Tests wurden nativ unter Windows bestanden. **Es gibt noch keinen freigegebenen Windows-Installer zum Herunterladen:** SAC hat die endgültige unsignierte Setup.exe blockiert (Fehler 4551). Der Installer-Quellcode ist enthalten; Binärveröffentlichungen erfordern noch eine vertrauenswürdige Signatur und die abschließende Abnahme. Siehe [Veröffentlichungsvorbereitung](docs/RELEASE_READINESS_20261104.md), [Installation](INSTALL.md) und [Windows-Tests](docs/WINDOWS_NATIVE_TESTS_20261104.md).
+**Unsignierte Vorschau — 2026-11-04:** `0.3.0-preview.21` vereinheitlicht Quellcode, Programmdatei und Client-Konfiguration unter dem Namen Thoughts. Der Maintainer hat eine [unsignierte experimentelle Vorabversion](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21) freigegeben; die Dateien werden nach Build und Prüfung bereitgestellt. **Eine vertrauenswürdige Herausgebersignatur oder Abnahme als stabile Version wird nicht behauptet.** Die Genehmigung der SignPath Foundation steht aus. Wenn Windows SAC/SmartScreen die Ausführung blockiert, brich sie ab und lasse den Schutz aktiv. Siehe [Veröffentlichungsvorbereitung](docs/RELEASE_READINESS_20261104.md), [Installation](INSTALL.md) und [frühere native Windows-Tests](docs/WINDOWS_NATIVE_TESTS_20261104.md).
 
 ## Deine Notizen auf deinem Computer
 
@@ -16,7 +16,7 @@ Die Go-Anwendung enthält die React-Webseite. **Vorkompilierte Pakete benötigen
 
 ## So wird die Installation möglich sein
 
-Sobald eine geprüfte Veröffentlichung verfügbar ist, lade **`thoughts-<version>-windows-amd64-setup.exe`** von [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases) herunter, prüfe Prüfsumme und Herausgebersignatur, öffne die Datei per Doppelklick und wähle **Install**. Das Setup initialisiert das gemeinsame Basisverzeichnis und erstellt Desktop- und Startmenüverknüpfungen ohne Administratorrechte. Vorhandene Daten bleiben erhalten. Die Deinstallation entfernt Programmstarter und Verknüpfungen; das gemeinsame Basisverzeichnis bleibt für andere Clients bestehen. Für diese Veröffentlichung ist auch ein portables ZIP zur manuellen Installation vorgesehen. Beide Pakete sind derzeit noch keine freigegebenen Downloads.
+Diese experimentelle Vorschau bietet **`thoughts-<version>-windows-amd64-setup.exe`**, ein portables ZIP und ein Claude-Desktop-MCPB über [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases). Die Programmdatei heißt **`thoughts.exe`**. Prüfe vor der Nutzung SHA256. Die Dateien haben derzeit **keine Authenticode-Signatur**; eine passende Prüfsumme bestätigt nicht den Herausgeber. Brich ab, wenn Windows die Ausführung blockiert. Das Setup installiert pro Benutzer und erstellt ohne Administratorrechte das gemeinsame Basisverzeichnis sowie Desktop- und Startmenüverknüpfungen. Vorhandene Daten bleiben erhalten; die Deinstallation entfernt Starter und Verknüpfungen und behält das Basisverzeichnis für andere Clients. Signierte stabile Pakete stehen noch aus.
 
 Claude-Desktop-Nutzer können dann alternativ die `.mcpb`-Erweiterung der Veröffentlichung importieren. Codex und Claude Code registrieren die ausführbare Datei aus dem ZIP als lokalen stdio-MCP-Server. Die Webseite funktioniert auch ohne KI-Client. Die Befehle stehen im [Schnellstart für Anwender](INSTALL.md#ordinary-windows-users). **Code → Download ZIP** auf GitHub lädt Quellcode herunter, keine vorkompilierte Anwendung.
 
@@ -63,7 +63,7 @@ Tatsächliche Oberfläche von `0.3.0-preview.20`, aufgenommen am 2026-11-04 in e
   backups/     Previous runtime pins; not a backup of note bodies
 ```
 
-Verwende normalerweise den gemeinsamen Standard. Das ausdrücklich gesetzte ältere `MEMO_CONFIG_DIR` bleibt verfügbar; diese Version migriert oder vereinigt bestehende Bibliotheken nicht automatisch. Bei einem eigenen Basisverzeichnis müssen Clients, die Inhalte teilen sollen, denselben physischen Ordner verwenden.
+Verwende normalerweise den gemeinsamen Standard. Das ausdrücklich gesetzte ältere die bisherige Konfiguration bleibt verfügbar; diese Version migriert oder vereinigt bestehende Bibliotheken nicht automatisch. Bei einem eigenen Basisverzeichnis müssen Clients, die Inhalte teilen sollen, denselben physischen Ordner verwenden.
 
 Installation und Aktualisierungen müssen dieses Verzeichnis erhalten. Der Lesestatus speichert Pfade und Scrollpositionen, keinen ungespeicherten Text. Kernaktualisierungen benötigen derzeit eine ausdrücklich angegebene, geprüfte lokale Programmdatei samt SHA256; es gibt keinen automatischen Netzwerk-Updater im Hintergrund. Client-Erweiterung und gemeinsamer Kern werden getrennt aktualisiert. Siehe [Aktualisierung und Rollback](INSTALL.md#managed-core-updates-and-rollback).
 
@@ -71,7 +71,7 @@ Unsignierte Windows-Programme oder Skripte können von SmartScreen, Smart App Co
 
 ## Arbeitsbereich
 
-Siehe [Verzeichnisstruktur](docs/WORKSPACE_LAYOUT.md) und [Dokumentationsindex](docs/README.md). Frühere Anforderungen und Berichte bleiben in einem lokalen Archiv erhalten. Interne Memo-Pfade sind Kompatibilitätsnamen, keine zusätzlichen Produkte oder entbehrlichen Dateien.
+Siehe [Verzeichnisstruktur](docs/WORKSPACE_LAYOUT.md) und [Dokumentationsindex](docs/README.md). Frühere Anforderungen und Berichte bleiben in einem lokalen Archiv erhalten. Quellcode und Programmdateien verwenden Thoughts; alte Datenkennungen bleiben für die Kompatibilität erhalten.
 
 ## Selbst bauen
 

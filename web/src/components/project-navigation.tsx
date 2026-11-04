@@ -10,7 +10,7 @@ import {ThoughtsBrand} from '@/components/thoughts-brand'
 import {ProjectsIcon,QuickNotesIcon,SettingsIcon} from '@/components/navigation-icons'
 import {treeBranchOpen} from '@/lib/workspace-tabs'
 import {nodeLabel,noteName} from '@/lib/workspace-model'
-import type {Library,Note,Project} from '@/lib/memo-api'
+import type {Library,Note,Project} from '@/lib/thoughts-api'
 
 type Props={
  library:Library;selectedPath?:string;page:string;expanded:Record<string,boolean>;busy:boolean
@@ -62,20 +62,20 @@ export function ProjectNavigation(props:Props){
    </div>
   </ContextMenuTrigger><ContextMenuContent>{actions(note,true)}</ContextMenuContent></ContextMenu>
  }
- return <Sidebar collapsible="offcanvas" className="memo-navigation">
-  <div className="memo-navigation-top">
-  <SidebarHeader className="memo-sidebar-header"><ThoughtsBrand/><SidebarTrigger aria-label={t('collapseNav')}/></SidebarHeader>
+ return <Sidebar collapsible="offcanvas" className="thoughts-navigation">
+  <div className="thoughts-navigation-top">
+  <SidebarHeader className="thoughts-sidebar-header"><ThoughtsBrand/><SidebarTrigger aria-label={t('collapseNav')}/></SidebarHeader>
   <form role="search" className="sidebar-search" onSubmit={event=>{event.preventDefault();props.onSearch();if(isMobile)setOpenMobile(false)}}>
    <Search className="size-3.5"/>
    <Input ref={searchInput} type="search" value={props.query} disabled={props.searchDisabled} onFocus={()=>{if(props.page!=='search')props.onSearch()}} onChange={event=>props.onQuery(event.target.value)} placeholder={t('searchLibrary')} aria-label={t('searchLibrary')} aria-keyshortcuts="Control+k Meta+k"/>
    {!props.query&&<kbd aria-hidden="true">Ctrl K</kbd>}
   </form>
   </div>
-  <SidebarContent className="memo-navigation-scroll">
-   <SidebarGroup className="memo-shortcuts"><div className="navigation-section-heading"><SidebarMenuButton className="navigation-section-toggle" isActive={inboxActive} onClick={()=>props.onToggle('ui:inbox')} aria-expanded={inboxOpen}><ChevronRight className={inboxOpen?'rotate-90':''}/><QuickNotesIcon/><span>{t('inbox')}</span></SidebarMenuButton><Button variant="ghost" size="icon-sm" className="navigation-section-action" disabled={props.busy} onClick={props.onNewNote} aria-label={t('newNote')}><Plus/></Button></div>
+  <SidebarContent className="thoughts-navigation-scroll">
+   <SidebarGroup className="thoughts-shortcuts"><div className="navigation-section-heading"><SidebarMenuButton className="navigation-section-toggle" isActive={inboxActive} onClick={()=>props.onToggle('ui:inbox')} aria-expanded={inboxOpen}><ChevronRight className={inboxOpen?'rotate-90':''}/><QuickNotesIcon/><span>{t('inbox')}</span></SidebarMenuButton><Button variant="ghost" size="icon-sm" className="navigation-section-action" disabled={props.busy} onClick={props.onNewNote} aria-label={t('newNote')}><Plus/></Button></div>
     {inboxOpen&&<div className="quick-note-nodes">{props.library.inbox.length?props.library.inbox.map(note=>noteRow(note)):<p className="project-empty-label">{t('projectEmpty')}</p>}</div>}
    </SidebarGroup>
-   <SidebarGroup className="memo-project-group"><div className="navigation-section-heading"><SidebarMenuButton className="navigation-section-toggle" onClick={()=>props.onToggle('ui:projects')} aria-expanded={projectsOpen}><ChevronRight className={projectsOpen?'rotate-90':''}/><ProjectsIcon/><span>{t('projects')}</span></SidebarMenuButton><Button variant="ghost" size="icon-sm" className="navigation-section-action" aria-label={t('newProject')} disabled={props.busy} onClick={props.onNewProject}><Plus/></Button></div>
+   <SidebarGroup className="thoughts-project-group"><div className="navigation-section-heading"><SidebarMenuButton className="navigation-section-toggle" onClick={()=>props.onToggle('ui:projects')} aria-expanded={projectsOpen}><ChevronRight className={projectsOpen?'rotate-90':''}/><ProjectsIcon/><span>{t('projects')}</span></SidebarMenuButton><Button variant="ghost" size="icon-sm" className="navigation-section-action" aria-label={t('newProject')} disabled={props.busy} onClick={props.onNewProject}><Plus/></Button></div>
     {projectsOpen&&<SidebarGroupContent><div className="project-navigation-tree">
      {props.library.projects.filter(project=>!project.archived).map(project=>{
       const expanded=props.expanded[project.path]===true
@@ -86,10 +86,10 @@ export function ProjectNavigation(props:Props){
      })}
     </div></SidebarGroupContent>}
    </SidebarGroup>
-   {props.library.projects.some(project=>project.archived)&&<SidebarGroup className="memo-shortcuts"><SidebarMenu><SidebarMenuItem><SidebarMenuButton isActive={props.page==='archive'||!!archivedSelection} onClick={()=>go('archive')}><Archive/><span>{t('archivedProjects')}</span><small className="ml-auto text-muted-foreground">{props.library.projects.filter(p=>p.archived).length}</small></SidebarMenuButton></SidebarMenuItem></SidebarMenu>
+   {props.library.projects.some(project=>project.archived)&&<SidebarGroup className="thoughts-shortcuts"><SidebarMenu><SidebarMenuItem><SidebarMenuButton isActive={props.page==='archive'||!!archivedSelection} onClick={()=>go('archive')}><Archive/><span>{t('archivedProjects')}</span><small className="ml-auto text-muted-foreground">{props.library.projects.filter(p=>p.archived).length}</small></SidebarMenuButton></SidebarMenuItem></SidebarMenu>
     {archivedSelection&&<div className="quick-note-nodes">{archivedSelection.nodes.filter(note=>note.path===props.selectedPath).map(note=>noteRow(note))}</div>}
    </SidebarGroup>}
   </SidebarContent>
-  <SidebarFooter className="memo-navigation-footer"><SidebarMenu><SidebarMenuItem><SidebarMenuButton isActive={props.page==='trash'} onClick={()=>go('trash')}><Trash2/><span>{t('trash')}</span></SidebarMenuButton></SidebarMenuItem><SidebarMenuItem><SidebarMenuButton onClick={props.onSettings}><SettingsIcon/><span>{t('settings')}</span></SidebarMenuButton></SidebarMenuItem></SidebarMenu></SidebarFooter>
+  <SidebarFooter className="thoughts-navigation-footer"><SidebarMenu><SidebarMenuItem><SidebarMenuButton isActive={props.page==='trash'} onClick={()=>go('trash')}><Trash2/><span>{t('trash')}</span></SidebarMenuButton></SidebarMenuItem><SidebarMenuItem><SidebarMenuButton onClick={props.onSettings}><SettingsIcon/><span>{t('settings')}</span></SidebarMenuButton></SidebarMenuItem></SidebarMenu></SidebarFooter>
  </Sidebar>
 }

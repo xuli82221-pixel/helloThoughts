@@ -6,7 +6,7 @@
 
 Windows x64용 무료 오픈 소스 로컬 우선 노트 도구입니다. AI 어시스턴트로 Markdown 파일을 관리하고, 독립적인 로컬 웹페이지에서 읽고 편집할 수 있습니다.
 
-**소스 미리보기 — 2026-11-04:** 이 저장소는 검토한 `0.3.0-preview.20` 소스를 새로운 공개 이력으로 시작하여 MIT 라이선스로 공개합니다. 백엔드 테스트 59개가 모두 네이티브 Windows에서 통과했습니다. **승인된 Windows 설치 프로그램은 아직 다운로드할 수 없습니다.** SAC가 최종 미서명 Setup.exe를 차단했습니다(오류 4551). 설치 프로그램 소스는 포함되어 있지만, 바이너리 배포에는 신뢰할 수 있는 서명과 최종 검증이 필요합니다. [배포 준비](docs/RELEASE_READINESS_20261104.md), [설치 안내](INSTALL.md), [Windows 테스트](docs/WINDOWS_NATIVE_TESTS_20261104.md)를 확인하세요.
+**미서명 미리보기 — 2026-11-04:** `0.3.0-preview.21`은 소스, 실행 파일, 클라이언트 설정의 이름을 Thoughts로 통일합니다. 관리자가 [미서명 실험용 사전 릴리스](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21) 공개를 승인했으며, 빌드와 검증이 끝나면 파일을 제공합니다. **신뢰할 수 있는 게시자 서명이나 안정 버전 검증을 뜻하지 않습니다.** SignPath Foundation 승인은 아직 받지 않았습니다. Windows SAC/SmartScreen이 차단하면 실행을 멈추고 보호를 유지하세요. [배포 준비](docs/RELEASE_READINESS_20261104.md), [설치 안내](INSTALL.md), [이전 네이티브 Windows 테스트](docs/WINDOWS_NATIVE_TESTS_20261104.md)를 확인하세요.
 
 ## 노트는 내 컴퓨터에
 
@@ -16,7 +16,7 @@ Go 실행 파일에 React 웹페이지가 내장되어 있습니다. **미리 �
 
 ## 향후 설치 방법
 
-검토된 릴리스가 제공되면 [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases)에서 **`thoughts-<version>-windows-amd64-setup.exe`**를 다운로드하고 체크섬과 게시자 서명을 확인한 뒤, 두 번 클릭하고 **Install**을 선택합니다. 관리자 권한 없이 공유 홈을 초기화하고 바탕 화면 및 시작 메뉴 바로가기를 만듭니다. 기존 데이터는 유지되며, 제거 시 실행 진입점과 바로가기만 없애고 다른 클라이언트를 위해 공유 홈은 남깁니다. 해당 릴리스에는 수동 설치용 포터블 ZIP도 제공할 예정이며, 현재 두 패키지 모두 승인된 다운로드가 아닙니다.
+이 실험용 미리보기는 [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases)에서 **`thoughts-<version>-windows-amd64-setup.exe`**, 포터블 ZIP, Claude Desktop MCPB를 제공합니다. 내부 프로그램 이름은 **`thoughts.exe`**입니다. 사용 전 SHA256을 확인하세요. 현재 파일에는 **Authenticode 서명이 없으며**, 해시 일치가 게시자 신원을 증명하지는 않습니다. Windows가 차단하면 실행을 멈추세요. 설치는 사용자별로 이루어지며 관리자 권한 없이 공유 홈과 바탕 화면·시작 메뉴 바로가기를 만듭니다. 기존 자료는 보존하고 제거 후에도 다른 클라이언트를 위해 공유 홈을 남깁니다. 서명된 안정 버전은 아직 제공하지 않습니다.
 
 Claude Desktop 사용자는 해당 릴리스의 `.mcpb` 확장을 가져오는 방법도 사용할 수 있습니다. Codex와 Claude Code 사용자는 ZIP의 실행 파일을 로컬 stdio MCP 서버로 등록합니다. 웹페이지는 AI 클라이언트 없이도 실행할 수 있습니다. 명령은 [일반 사용자 빠른 시작](INSTALL.md#ordinary-windows-users)을 확인하세요. GitHub의 **Code → Download ZIP**은 소스 코드를 받는 기능이며, 미리 빌드된 앱을 받는 기능이 아닙니다.
 
@@ -63,7 +63,7 @@ SHA256 확인, 실행 전 점검할 명령 및 세 클라이언트의 절차는 
   backups/     Previous runtime pins; not a backup of note bodies
 ```
 
-일반 설치에는 공유 기본 홈을 사용하세요. 명시적으로 지정한 기존 `MEMO_CONFIG_DIR`도 계속 지원하지만, 이 버전은 기존 라이브러리를 자동으로 이전하거나 합치지 않습니다. 홈을 직접 바꾸면 공유하려는 클라이언트 모두에서 동일한 물리 폴더를 사용하세요.
+일반 설치에는 공유 기본 홈을 사용하세요. 명시적으로 지정한 기존 기존 설정도 계속 지원하지만, 이 버전은 기존 라이브러리를 자동으로 이전하거나 합치지 않습니다. 홈을 직접 바꾸면 공유하려는 클라이언트 모두에서 동일한 물리 폴더를 사용하세요.
 
 설치와 업데이트는 홈을 보존해야 합니다. 읽기 상태에는 경로와 스크롤 위치가 저장되며 미저장 본문은 저장되지 않습니다. 코어 업데이트에는 검토된 로컬 실행 파일과 SHA256을 명시적으로 제공해야 하며, 백그라운드 네트워크 업데이트 기능은 없습니다. 클라이언트 확장과 공유 코어는 별도로 업데이트합니다. [업그레이드 안내](INSTALL.md#managed-core-updates-and-rollback)를 확인하세요.
 
@@ -71,7 +71,7 @@ SHA256 확인, 실행 전 점검할 명령 및 세 클라이언트의 절차는 
 
 ## 작업 공간
 
-[작업 공간 구성](docs/WORKSPACE_LAYOUT.md)과 [문서 목록](docs/README.md)을 확인하세요. 이전 요구사항과 보고서는 로컬 보관소에 보존합니다. 내부 Memo 경로는 호환성을 위한 이름이며 별도 제품이나 마음대로 지워도 되는 파일을 뜻하지 않습니다.
+[작업 공간 구성](docs/WORKSPACE_LAYOUT.md)과 [문서 목록](docs/README.md)을 확인하세요. 이전 요구사항과 보고서는 로컬 보관소에 보존합니다. 소스와 실행 파일 이름은 Thoughts로 통일하며 기존 데이터 식별자는 호환성을 위해 유지합니다.
 
 ## 빌드
 

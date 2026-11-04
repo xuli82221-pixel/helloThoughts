@@ -1,5 +1,6 @@
-param([Parameter(Mandatory=$true)][string]$Python, [string]$Go='', [string]$Output='', [switch]$PublicRelease, [string]$CertificateThumbprint='', [string]$TimestampUrl='', [string]$SignTool='', [Parameter(Mandatory=$true)][string]$InnoCompiler)
+param([Parameter(Mandatory=$true)][string]$Python, [string]$Go='', [string]$Output='', [switch]$PublicRelease, [switch]$UnsignedPreview, [string]$SourceCommit='', [string]$BuildUrl='', [string]$CertificateThumbprint='', [string]$TimestampUrl='', [string]$SignTool='', [Parameter(Mandatory=$true)][string]$InnoCompiler)
 $ErrorActionPreference='Stop'
+if ($UnsignedPreview -and ($PublicRelease -or $CertificateThumbprint -or $SourceCommit -notmatch '^[a-f0-9]{40}$')) { throw 'UnsignedPreview requires an exact source commit and cannot enable signed public-release mode' }
 if ([Environment]::OSVersion.Platform -ne [PlatformID]::Win32NT) { throw 'This release entry runs on Windows only; macOS work is deferred' }
 $taskRoot=Split-Path -Parent $PSScriptRoot
 if (-not $Go) { $Go=Join-Path $taskRoot '.tools/go/bin/go.exe' }
@@ -33,12 +34,12 @@ try {
         $taskParts=$taskTarget.Split('-'); $env:GOOS=$taskParts[0]; $env:GOARCH=$taskParts[1]
         $taskFolder=Join-Path $taskBins $taskTarget
         New-Item -ItemType Directory -Force -Path $taskFolder | Out-Null
-        $taskName=if ($env:GOOS -eq 'windows') { 'memo.exe' } else { 'memo' }
-        & $Go build -trimpath -ldflags '-s -w' -o (Join-Path $taskFolder $taskName) ./cmd/memo
+        $taskName=if ($env:GOOS -eq 'windows') { 'thoughts.exe' } else { 'thoughts' }
+        & $Go build -trimpath -ldflags '-s -w' -o (Join-Path $taskFolder $taskName) ./cmd/thoughts
         if ($LASTEXITCODE) { throw ('Compile failed: '+$taskTarget) }
     }
     $env:GOOS=$taskOldOS; $env:GOARCH=$taskOldArch; $env:CGO_ENABLED=$taskOldCGO
-    $taskBinary=Join-Path $taskBins 'windows-amd64/memo.exe'
+    $taskBinary=Join-Path $taskBins 'windows-amd64/thoughts.exe'
     $taskInstaller=Join-Path $taskBins 'common/register-mcp.ps1'
     Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'register-mcp.ps1') -Destination $taskInstaller
     if ($CertificateThumbprint) {
@@ -59,6 +60,7 @@ try {
     if ($LASTEXITCODE) { throw 'Notices generation failed' }
     $taskPackArgs=@('-X','utf8',(Join-Path $PSScriptRoot 'pack-desktop-adapters.py'),'--bin-dir',$taskBins,'--output',$Output,'--setup-file',$taskSetup)
     if ($PublicRelease) { $taskPackArgs+='--public-release' }
+    if ($UnsignedPreview) { $taskPackArgs+=@('--unsigned-preview','--source-commit',$SourceCommit,'--build-url',$BuildUrl) }
     & $Python @taskPackArgs
     if ($LASTEXITCODE) { throw 'Packaging failed' }
     & $Python -X utf8 (Join-Path $PSScriptRoot 'validate-desktop-adapters.py') $Output

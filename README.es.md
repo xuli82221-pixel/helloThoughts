@@ -6,7 +6,7 @@
 
 Una herramienta de notas gratuita y de código abierto para Windows x64 que prioriza el almacenamiento local. Deja que tu asistente de IA gestione archivos Markdown y léelos o edítalos en una página web local independiente.
 
-**Vista previa del código fuente — 2026-11-04:** este repositorio publica el código revisado de `0.3.0-preview.20` bajo la licencia MIT, con un historial público nuevo. Las 59 pruebas del backend se superaron de forma nativa en Windows. **Todavía no hay un instalador de Windows aprobado para descargar:** SAC bloqueó el Setup.exe final sin firmar (error 4551). Se incluye el código del instalador, pero la publicación de binarios requiere una firma de confianza y la validación final. Consulta la [preparación de la publicación](docs/RELEASE_READINESS_20261104.md), la [instalación](INSTALL.md) y las [pruebas de Windows](docs/WINDOWS_NATIVE_TESTS_20261104.md).
+**Vista previa sin firmar — 2026-11-04:** `0.3.0-preview.21` unifica los nombres del código fuente, el ejecutable y las configuraciones de clientes como Thoughts. El responsable ha autorizado una [versión preliminar experimental sin firmar](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21); los archivos estarán disponibles al terminar la compilación y las comprobaciones. **No se afirma que tenga una firma de editor de confianza ni validación como versión estable.** La aprobación de SignPath Foundation sigue pendiente. Si Windows SAC/SmartScreen bloquea la ejecución, detente y mantén la protección activada. Consulta la [preparación de la publicación](docs/RELEASE_READINESS_20261104.md), la [instalación](INSTALL.md) y las [pruebas nativas de Windows anteriores](docs/WINDOWS_NATIVE_TESTS_20261104.md).
 
 ## Tus notas, en tu ordenador
 
@@ -16,7 +16,7 @@ El ejecutable de Go incorpora la página React. **Las versiones precompiladas no
 
 ## Cómo se podrá instalar
 
-Cuando esté disponible una versión revisada, descarga **`thoughts-<version>-windows-amd64-setup.exe`** desde [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases), comprueba su suma de verificación y la firma del editor, ábrelo con doble clic y selecciona **Install**. El instalador inicializa el directorio base compartido y crea accesos directos en el escritorio y el menú Inicio sin permisos de administrador. Conserva los datos existentes. La desinstalación quita el lanzador y los accesos directos, pero mantiene el directorio compartido para otros clientes. También se prevé un ZIP portátil para la instalación manual en esa versión revisada; ninguno de los dos paquetes es actualmente una descarga aprobada.
+Esta vista previa experimental ofrece **`thoughts-<version>-windows-amd64-setup.exe`**, un ZIP portátil y un MCPB de Claude Desktop en [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases). El programa se llama **`thoughts.exe`**. Comprueba SHA256 antes de usarlo. Los archivos actuales **no tienen firma Authenticode**; una suma coincidente no autentica al editor. Si Windows bloquea la ejecución, detente. La instalación por usuario inicializa el directorio compartido y crea accesos directos en el escritorio y el menú Inicio sin permisos de administrador. Los datos existentes se conservan; la desinstalación quita lanzadores y accesos directos y mantiene el directorio compartido para otros clientes. Los paquetes estables firmados siguen pendientes.
 
 Los usuarios de Claude Desktop también podrán importar la extensión `.mcpb` de esa versión. Para Codex y Claude Code, el ejecutable del ZIP se registra como servidor MCP local por stdio. La página web puede funcionar sin un cliente de IA. Consulta los comandos de la [guía rápida para usuarios](INSTALL.md#ordinary-windows-users). **Code → Download ZIP** de GitHub descarga código fuente, no la aplicación precompilada.
 
@@ -63,7 +63,7 @@ Interfaz real de `0.3.0-preview.20`, capturada el 2026-11-04 en una biblioteca t
   backups/     Previous runtime pins; not a backup of note bodies
 ```
 
-En las instalaciones normales, usa el directorio compartido predeterminado. La configuración explícita antigua `MEMO_CONFIG_DIR` sigue disponible; esta versión no migra ni combina automáticamente bibliotecas existentes. Si personalizas el directorio base, usa la misma carpeta física en los clientes que deban compartir contenido.
+En las instalaciones normales, usa el directorio compartido predeterminado. La configuración explícita antigua la configuración anterior sigue disponible; esta versión no migra ni combina automáticamente bibliotecas existentes. Si personalizas el directorio base, usa la misma carpeta física en los clientes que deban compartir contenido.
 
 Las instalaciones y actualizaciones deben conservar ese directorio. El estado de lectura guarda rutas y posiciones de desplazamiento, no texto sin guardar. Actualmente las actualizaciones del núcleo requieren un ejecutable local revisado y su SHA256 indicados expresamente; no hay actualizaciones de red en segundo plano. La extensión del cliente y el núcleo compartido se actualizan por separado. Consulta las [instrucciones de actualización](INSTALL.md#managed-core-updates-and-rollback).
 
@@ -71,7 +71,7 @@ SmartScreen, Smart App Control o las políticas de control de aplicaciones de un
 
 ## Espacio de trabajo
 
-Consulta la [organización del espacio de trabajo](docs/WORKSPACE_LAYOUT.md) y el [índice de documentación](docs/README.md). Los requisitos e informes anteriores se conservan en un archivo local. Las rutas internas Memo son nombres de compatibilidad, no productos adicionales ni archivos que se puedan desechar sin más.
+Consulta la [organización del espacio de trabajo](docs/WORKSPACE_LAYOUT.md) y el [índice de documentación](docs/README.md). Los requisitos e informes anteriores se conservan en un archivo local. El código y los ejecutables usan Thoughts; se conservan los identificadores de datos anteriores por compatibilidad.
 
 ## Compilación
 

@@ -18,13 +18,11 @@
 
 The Chinese start-here guide and installed-program shortcut are workstation conveniences, not package installation or automatic migration. No source, note library or installed extension is moved merely by opening a guide.
 
-## Memo compatibility names
+## Thoughts naming and compatibility
 
-The public product is **Thoughts**. Existing `memo.exe`, `cmd/memo`, `internal/memo`, the Go module `memo.local/memo`, the preserved `plugins/memo` integration, `memo.ui.*` browser preferences and legacy `Memo` configuration/data paths remain active compatibility names. Build scripts, manifests, client registrations, service identity checks and existing user data may depend on them. They are not disposable duplicate implementations.
+Current source uses `cmd/thoughts`, `internal/thoughts`, Go module `thoughts.local/thoughts`, and `thoughts.exe`. Frontend helpers and CSS use Thoughts names. Framework APIs such as React `useMemo` and Inno Setup `UpdateReadyMemo` retain their required upstream names.
 
-The private frontend package is now named `thoughts-web`. This label has no effect on note paths, installed MCP configuration or package executable names. Historical binary packages retain their original bytes and names.
-
-Do not mass-rename these identifiers or move a live library as cosmetic cleanup. A future internal-name migration would need its own compatibility and installation checks. Current code and new UI use Thoughts branding.
+Legacy on-disk Trash/runtime paths, browser preference keys, local protocol identifiers and explicit old configuration overrides remain unchanged so existing data, running integrations and software rollback remain readable. Existing historical executable versions are never renamed or deleted. New release packages and client examples use only `thoughts.exe`.
 
 ## Local archive policy
 

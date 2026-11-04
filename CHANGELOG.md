@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.0-preview.21 — unsigned experimental prerelease
+
+- Standardize the executable, source directories, Go module, frontend helpers, CSS and client examples as Thoughts (`thoughts.exe`). Preserve legacy data, protocol identifiers and immutable runtime pins for compatibility and rollback.
+- Add an explicitly authorized manual unsigned-preview build with commit/run provenance, checksums and bounded synthetic acceptance evidence. Signed stable-release gates remain unchanged.
+- Publish only as a clearly labeled unsigned prerelease; no Foundation approval, clean-SAC or complete native-client acceptance is claimed. No note-management feature is added.
+
+
 ## Documentation preparation — 2026-11-04 (unreleased)
 
 - Add complete eight-language READMEs with shared navigation and a dedicated Donate page using the existing maintainer configuration.

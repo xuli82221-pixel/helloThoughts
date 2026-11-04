@@ -14,7 +14,7 @@ import './style.css'
 import {applyLocale,locale} from './lib/i18n'
 import {restoreCachedTheme} from './lib/themes'
 
-const styleNonce=document.querySelector('meta[name="memo-style-nonce"]')?.getAttribute('content')
+const styleNonce=document.querySelector('meta[name="thoughts-style-nonce"]')?.getAttribute('content')
 if(styleNonce)setNonce(styleNonce)
 applyLocale(locale())
 restoreCachedTheme()

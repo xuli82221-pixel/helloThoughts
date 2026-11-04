@@ -4,6 +4,7 @@ This directory contains current Thoughts documentation. Earlier plans, reports a
 
 | Document | Purpose |
 | --- | --- |
+| [Unsigned preview](UNSIGNED_PREVIEW.md) | Explicitly authorized unsigned experimental packages, public build provenance and acceptance limits |
 | [Code signing policy](CODE_SIGNING_POLICY.md) | Pending Foundation application; unsigned status, scope, provenance, real roles, MFA and privacy |
 | [SignPath application preparation](SIGNPATH_APPLICATION.md) | Factual draft and unresolved eligibility requirements; not submitted |
 | [Donate](../DONATE.md) | Optional support using the existing maintainer address; no paid features |
@@ -24,4 +25,4 @@ This directory contains current Thoughts documentation. Earlier plans, reports a
 
 For installation see [INSTALL.md](../INSTALL.md); for product information see [README.md](../README.md). Package archives are immutable local candidates. Source/documentation can be newer than the documents inside a previously built archive.
 
-Product READMEs: [English](../README.md) · [简体中文](../README.zh-CN.md) · [繁體中文](../README.zh-TW.md) · [日本語](../README.ja.md) · [한국어](../README.ko.md) · [Deutsch](../README.de.md) · [Français](../README.fr.md) · [Español](../README.es.md). English is the content baseline. Current version: `0.3.0-preview.20`, Windows x64 source preview; no approved binary downloads.
+Product READMEs: [English](../README.md) · [简体中文](../README.zh-CN.md) · [繁體中文](../README.zh-TW.md) · [日本語](../README.ja.md) · [한국어](../README.ko.md) · [Deutsch](../README.de.md) · [Français](../README.fr.md) · [Español](../README.es.md). English is the content baseline. Current version: `0.3.0-preview.21`, Windows x64 unsigned experimental prerelease; no signed stable downloads.

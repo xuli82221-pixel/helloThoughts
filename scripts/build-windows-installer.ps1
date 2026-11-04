@@ -9,7 +9,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $TaskRoot = Split-Path -Parent $PSScriptRoot
-$TaskBinary = Join-Path $BinDir 'windows-amd64/memo.exe'
+$TaskBinary = Join-Path $BinDir 'windows-amd64/thoughts.exe'
 $TaskVersion = (Get-Content -LiteralPath (Join-Path $TaskRoot 'adapters/claude-desktop/manifest.json') -Raw | ConvertFrom-Json).version
 if ($TaskVersion -notmatch '^[0-9]+\.[0-9]+\.[0-9]+(?:-[A-Za-z0-9.-]+)?$') { throw 'Invalid version' }
 if ($InstallerId -notmatch '^Thoughts\.[A-Za-z0-9.-]+$') { throw 'Invalid installer ID' }

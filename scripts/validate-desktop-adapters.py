@@ -33,7 +33,7 @@ for package in index["packages"]:
         assert all(not PurePosixPath(n).is_absolute() and ".." not in PurePosixPath(n).parts and "\\" not in n for n in names)
         assert not any(n.lower().endswith(("runtime.json", "config.json", ".log", ".env", ".pfx", ".pem", ".key")) for n in names)
         assert not any(n.startswith(("Inbox/", "Projects/", "library/", ".memo/", "node_modules/", ".git/")) for n in names)
-        binary = "server/memo.exe" if package["file"].endswith(".mcpb") else "memo.exe"
+        binary = "server/thoughts.exe" if package["file"].endswith(".mcpb") else "thoughts.exe"
         data = bundle.read(binary)
         assert data.startswith(b"MZ")
         pe = int.from_bytes(data[0x3c:0x40], "little")
@@ -61,7 +61,7 @@ for package in index["packages"]:
             assert m["version"] == index["version"]
             assert m["compatibility"]["platforms"] == ["win32"]
             assert m["server"]["type"] == "binary"
-            assert m["server"]["mcp_config"] == {"command": "${__dirname}/server/memo.exe", "args": ["mcp"], "env": {"THOUGHTS_HOME": "${user_config.thoughts_home}"}}
+            assert m["server"]["mcp_config"] == {"command": "${__dirname}/server/thoughts.exe", "args": ["mcp"], "env": {"THOUGHTS_HOME": "${user_config.thoughts_home}"}}
             assert m["user_config"]["thoughts_home"]["required"] is False
             assert m["user_config"]["thoughts_home"]["default"] == "auto"
             assert m["user_config"]["thoughts_home"]["type"] == "string"

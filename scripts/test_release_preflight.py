@@ -12,7 +12,7 @@ SPEC.loader.exec_module(PREFLIGHT)
 class SourceBoundaryTests(unittest.TestCase):
     def test_private_artifacts_and_escaping_paths_are_rejected(self):
         for name in ("../outside.md", "/outside.md", "C:/private.md", "docs\\private.md", ".git/config",
-                     "library/note.md", "web/node_modules/a/index.js", ".env", "dist/memo.exe", "signing.pfx"):
+                     "library/note.md", "web/node_modules/a/index.js", ".env", "dist/thoughts.exe", "signing.pfx"):
             with self.subTest(name=name):
                 self.assertFalse(PREFLIGHT.safe_relative(name))
         self.assertTrue(PREFLIGHT.safe_relative("release/windows/Thoughts.iss"))
@@ -25,7 +25,7 @@ class SourceBoundaryTests(unittest.TestCase):
                 file = root / relative
                 file.parent.mkdir(parents=True, exist_ok=True)
                 file.write_text(json.dumps({"version": "1.0.0"}), encoding="utf-8")
-            runtime = root / "internal/memo/runtime.go"
+            runtime = root / "internal/thoughts/runtime.go"
             runtime.parent.mkdir(parents=True)
             runtime.write_text('const Version = "1.0.1"', encoding="utf-8")
             self.assertEqual(PREFLIGHT.inspect_versions(root)[0]["rule"], "version_mismatch")

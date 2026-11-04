@@ -1,32 +1,32 @@
 # Install Thoughts — Windows x64
 
-No public release is created by this preparation. These instructions apply when a reviewed release exists in [hello-Thoughts-](https://github.com/xuli82221-pixel/hello-Thoughts-). Precompiled packages need no Thoughts account, API key, Node, Go, Python or Docker. Install your AI client separately; its own account requirements still apply.
+An explicitly authorized unsigned experimental prerelease is being published in [hello-Thoughts-](https://github.com/xuli82221-pixel/hello-Thoughts-). Precompiled packages need no Thoughts account, API key, Node, Go, Python or Docker. Install your AI client separately; its own account requirements still apply.
 
-**Code signing policy:** [Pending — SignPath Foundation application not yet approved](docs/CODE_SIGNING_POLICY.md). All current Windows programs remain unsigned. No approved installer, portable ZIP or MCPB download is available. The Foundation application has not been submitted by this preparation; a future core signature alone will not satisfy the installer/helper release gates.
+**Code signing policy:** [Pending — SignPath Foundation application not yet approved](docs/CODE_SIGNING_POLICY.md). All current Windows programs remain unsigned. The experimental preview offers unsigned Setup.exe/ZIP/MCPB assets; no signed stable package is available. The Foundation application has not been submitted by this preparation; a future core signature alone will not satisfy the installer/helper release gates.
 
 ## Ordinary Windows users
 
-**Current availability — 2026-11-04:** reviewed source is public, but there are no approved Release binaries. The current preview runs locally on the author's machine. Developers can follow README.md / CONTRIBUTING.md to build the source; ordinary users should wait for a signed, accepted package. The steps below describe installation once that package is published.
+**Current availability — 2026-11-04:** `0.3.0-preview.21` is an explicitly authorized **unsigned experimental prerelease**. Download assets from its GitHub Release once the automated build and checks complete. The executable is `thoughts.exe`. No trusted publisher signature, clean-SAC acceptance or complete native AI-client acceptance is claimed. Ordinary users who need those assurances should wait for a signed stable release. Stop if Windows blocks the files; do not disable protection or bypass warnings.
 
-The recommended ordinary-user route is the **offline installer**:
+The preview includes an **offline installer**:
 
 1. From **Releases**, download `thoughts-<version>-windows-amd64-setup.exe` and `SHA256SUMS.txt`. **Code → Download ZIP** is source code, not the application.
-2. Complete [Verify first](#verify-first), including the installer publisher signature. Double-click Setup.exe and click **Install**. No administrator prompt, terminal commands or developer tools are required. Setup chooses the Windows language automatically; its eight languages match the application languages.
+2. Complete [Verify first](#verify-first), including the stated **NotSigned** status. A valid publisher signature is a requirement for a future signed stable release, not a property of this preview. Double-click Setup.exe and click **Install**. No administrator prompt, terminal commands or developer tools are required. Setup chooses the Windows language automatically; its eight languages match the application languages.
 3. Finish setup and open **Thoughts** from the desktop or Start menu. Setup initializes the shared library and the managed runtime automatically. It does not install or configure an AI client.
 
 The installer is offline and per-user. Program/shortcut files live under `%LOCALAPPDATA%\Programs\Thoughts`; the shared home is `%USERPROFILE%\Thoughts`. Existing library selection, notes and images are retained. A reinstallation updates through the checked runtime mechanism; unsaved editors can block an upgrade until their drafts are saved. No service or autostart registration is added. Opening Thoughts starts the local service when needed.
 
 Use **Windows Settings → Apps → Installed apps → Thoughts → Uninstall** to remove the launcher, shortcuts and installer registration. **Uninstall intentionally retains the shared home, configuration and managed executable versions**, because other MCP clients may still use them. It does not wipe notes/images or stop an unrelated/shared client service. Independent note backups remain the user's responsibility; software rollback is not a note backup.
 
-The final local unsigned installer was actually blocked by SAC with Windows error 4551. It is a review artifact, not an accepted end-user package. Earlier local installer-flow passes do not certify the final file. Stop if Windows blocks it; keep protection enabled. Public binary distribution still requires trusted signing and clean-machine testing. This guide does not announce a release.
+The final local unsigned installer was actually blocked by SAC with Windows error 4551. It is a review artifact, not an accepted end-user package. Earlier local installer-flow passes do not certify the final file. Stop if Windows blocks it; keep protection enabled. This historical block remains relevant to unsigned previews. Signed stable distribution still requires trusted signing and clean-machine testing; this preview is separately authorized and does not claim to resolve SAC trust.
 
 ### Portable ZIP alternative
 
 Download `thoughts-<version>-windows-amd64.zip` and verify its archive checksum. Extract it into a new stable folder such as `C:\Tools\Thoughts`. Open PowerShell in that folder and run the following. Each command stops on an error; no security setting is changed.
 
 ```powershell
-$ThoughtsExe = (Resolve-Path -LiteralPath '.\memo.exe').Path
-$ExecutableSha = (Get-Content -LiteralPath '.\checksums.json' -Raw | ConvertFrom-Json).files.'memo.exe'
+$ThoughtsExe = (Resolve-Path -LiteralPath '.\thoughts.exe').Path
+$ExecutableSha = (Get-Content -LiteralPath '.\checksums.json' -Raw | ConvertFrom-Json).files.'thoughts.exe'
 & $ThoughtsExe init --json
 if ($LASTEXITCODE) { throw 'Library initialization failed; keep the error and stop.' }
 & $ThoughtsExe runtime install --source $ThoughtsExe --sha256 $ExecutableSha --json
@@ -35,7 +35,7 @@ if ($LASTEXITCODE) { throw 'Runtime installation failed; keep the error and stop
 if ($LASTEXITCODE) { throw 'Thoughts could not open; keep the error for diagnosis.' }
 ```
 
-The browser opens the local application. The default library is `%USERPROFILE%\Thoughts\library`; repeat initialization preserves an existing configured library. On later launches, run `memo.exe open --browser system --json` from the same extracted folder. Keep this launcher folder in place. Windows x64 is the application target; using Linux to build the Windows executable does not make the application a Linux release.
+The browser opens the local application. The default library is `%USERPROFILE%\Thoughts\library`; repeat initialization preserves an existing configured library. On later launches, run `thoughts.exe open --browser system --json` from the same extracted folder. Keep this launcher folder in place. Windows x64 is the application target; using Linux to build the Windows executable does not make the application a Linux release.
 
 An AI client is optional for reading and editing through the webpage. For AI access, use the matching route below:
 
@@ -54,14 +54,14 @@ Download Setup.exe (or the portable ZIP / Claude Desktop MCPB) and `SHA256SUMS.t
 For each package, use its exact downloaded filename:
 
 ```powershell
-$ArchiveName = Read-Host 'Exact downloaded ZIP or MCPB filename'
+$ArchiveName = Read-Host 'Exact downloaded Setup.exe, ZIP or MCPB filename'
 $Matches = @(Get-Content -LiteralPath '.\SHA256SUMS.txt' | Where-Object { $_ -match ('^[a-fA-F0-9]{64}  ' + [regex]::Escape($ArchiveName) + '$') })
 if ($Matches.Count -ne 1) { throw 'Missing or ambiguous checksum' }
 $Expected = $Matches[0].Substring(0,64).ToLowerInvariant()
 if ((Get-FileHash -LiteralPath $ArchiveName -Algorithm SHA256).Hash.ToLowerInvariant() -ne $Expected) { throw 'SHA256 mismatch. Stop.' }
 ```
 
-For Setup.exe, inspect **Properties → Digital Signatures** before running it, or use `Get-AuthenticodeSignature` on the exact file. The publisher should match the reviewed release notes. A hash is not publisher authentication. For the ZIP alternative, extract into a new stable directory and inspect the helper, configuration examples, security documentation and extracted `memo.exe` signature. Unsigned candidates may be blocked. Do not disable protection, change execution policy or bypass warnings.
+For Setup.exe, inspect **Properties → Digital Signatures** before running it, or use `Get-AuthenticodeSignature` on the exact file. This preview is expected to report `NotSigned` and has no trusted publisher to authenticate. Future signed releases must match their documented publisher. A hash is not publisher authentication. For the ZIP alternative, extract into a new stable directory and inspect the helper, configuration examples, security documentation and extracted `thoughts.exe` signature. Unsigned candidates may be blocked. Do not disable protection, change execution policy or bypass warnings.
 
 ## One shared home
 
@@ -69,7 +69,7 @@ From preview.8, all three adapters default to the **same Windows account profile
 
 ```powershell
 $ThoughtsHome = Join-Path ([Environment]::GetFolderPath('UserProfile')) 'Thoughts'
-$ThoughtsExe = 'C:\Tools\Thoughts\memo.exe' # replace with the real extracted path
+$ThoughtsExe = 'C:\Tools\Thoughts\thoughts.exe' # replace with the real extracted path
 & $ThoughtsExe paths --json # read-only, before initialization too
 ```
 
@@ -95,7 +95,7 @@ After verifying the extracted package and `checksums.json`, select the intended 
 ```powershell
 $env:THOUGHTS_HOME = $ThoughtsHome
 & $ThoughtsExe init --json
-$ExeSha = (Get-Content -LiteralPath 'C:\Tools\Thoughts\checksums.json' -Raw | ConvertFrom-Json).files.'memo.exe'
+$ExeSha = (Get-Content -LiteralPath 'C:\Tools\Thoughts\checksums.json' -Raw | ConvertFrom-Json).files.'thoughts.exe'
 & $ThoughtsExe runtime install --source $ThoughtsExe --sha256 $ExeSha --json
 & $ThoughtsExe runtime status --json
 ```
@@ -105,8 +105,8 @@ Use the returned installed executable path as `$ThoughtsExe` for Claude Code/Cod
 For a later reviewed package extracted into a **new** directory, verify its archive and executable checksums first:
 
 ```powershell
-$CandidateExe = 'C:\Tools\Thoughts-new\memo.exe'
-$CandidateSha = (Get-Content -LiteralPath 'C:\Tools\Thoughts-new\checksums.json' -Raw | ConvertFrom-Json).files.'memo.exe'
+$CandidateExe = 'C:\Tools\Thoughts-new\thoughts.exe'
+$CandidateSha = (Get-Content -LiteralPath 'C:\Tools\Thoughts-new\checksums.json' -Raw | ConvertFrom-Json).files.'thoughts.exe'
 & $ThoughtsExe runtime upgrade --source $CandidateExe --sha256 $CandidateSha --json
 & $ThoughtsExe doctor --json
 # Explicitly return to the previous software version when needed:
@@ -121,7 +121,7 @@ An updated MCPB may still delegate to the previously pinned core. Check `runtime
 
 ## Claude Desktop — official MCPB format
 
-1. Verify the MCPB SHA256. Its ZIP-compatible contents include `manifest.json`, `server/memo.exe` and notices; inspect before installing.
+1. Verify the MCPB SHA256. Its ZIP-compatible contents include `manifest.json`, `server/thoughts.exe` and notices; inspect before installing.
 2. Go to **Settings → Desktop app → Extensions → Manage**, or **Settings → Extensions** in older versions.
 3. Use **Advanced settings → Install Extension…**, select the reviewed `.mcpb` and review local access.
 4. Leave **Shared Thoughts home (advanced)** on `auto`. For an existing deliberately customized home, retain its absolute path instead. Check `thoughts_status` for the actual library.
@@ -160,7 +160,7 @@ The official CLI registers a named entry; do not replace the entire `~/.codex/co
 After verifying/extracting the archive, read its embedded executable checksum:
 
 ```powershell
-$ExeSha = (Get-Content -LiteralPath '.\checksums.json' -Raw | ConvertFrom-Json).files.'memo.exe'
+$ExeSha = (Get-Content -LiteralPath '.\checksums.json' -Raw | ConvertFrom-Json).files.'thoughts.exe'
 .\register-mcp.ps1 -Client codex -Executable $ThoughtsExe -ExpectedSha256 $ExeSha -ThoughtsHome $ThoughtsHome
 ```
 

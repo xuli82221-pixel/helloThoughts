@@ -1,4 +1,4 @@
-import type { Note } from './memo-api'
+import type { Note } from './thoughts-api'
 import {localeTag,t} from './i18n'
 export type Filter={kind:'all'|'recent'|'folder';path?:string}
 export type FolderNode={name:string;path:string;count:number;children:FolderNode[]}

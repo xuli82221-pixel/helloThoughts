@@ -1,12 +1,12 @@
 # Code signing policy
 
-Updated: 2026-11-04. Scope: Thoughts, Windows x64, source preview `0.3.0-preview.20`.
+Updated: 2026-11-04. Scope: Thoughts, Windows x64, unsigned preview `0.3.0-preview.21`.
 
 ## Signing status
 
 **Pending — SignPath Foundation application not yet approved.**
 
-The application has not been submitted by this preparation. All current Thoughts Windows programs remain unsigned. There is no approved binary Release, trusted publisher claim, SignPath certification or signed download. Source publication and passing tests do not confer signing trust. Do not disable SAC, bypass SmartScreen or use a self-signed certificate to imply trusted signing.
+The application has not been submitted by this preparation. All current Thoughts Windows programs remain unsigned. The maintainer has separately authorized an explicitly labeled unsigned experimental prerelease; there is no signed stable release, trusted publisher claim, SignPath certification or signed download. Source publication and passing tests do not confer signing trust. Do not disable SAC, bypass SmartScreen or use a self-signed certificate to imply trusted signing.
 
 ## Signing provider
 
@@ -16,13 +16,13 @@ This is a conditional future arrangement, not a statement that a subscription or
 
 ## What we sign
 
-The proposed initial Foundation scope is **`memo.exe`**, the first-party Windows x64 executable built from `cmd/memo` and the Thoughts source, including its embedded React UI. The same executable is included in the portable ZIP and Claude Desktop MCPB. Internal Memo naming is retained for compatibility.
+The proposed initial Foundation scope is **`thoughts.exe`**, the first-party Windows x64 executable built from `cmd/thoughts` and the Thoughts source, including its embedded React UI. The same executable is included in the portable ZIP and Claude Desktop MCPB. New executable names and source paths use Thoughts; legacy stored identifiers remain for data/runtime compatibility.
 
 Inspection of `scripts/build-desktop-adapters.ps1`, `scripts/pack-desktop-adapters.py` and `release/windows/Thoughts.iss` confirms these package outputs:
 
 | Output | Proposed treatment |
 | --- | --- |
-| `memo.exe` | Proposed first-party executable; pending Foundation review and source verification |
+| `thoughts.exe` | Proposed first-party executable; pending Foundation review and source verification |
 | `thoughts-<version>-windows-amd64.zip` | Container with the core; retain package SHA256, not an Authenticode executable |
 | Claude Desktop `.mcpb` | Container with the same core; core signing does not sign the extension/container |
 | `thoughts-<version>-windows-amd64-setup.exe` and generated uninstaller | Use the upstream Inno Setup runtime; excluded from the initial first-party-only Foundation scope pending explicit provider review of package/runtime rules and a compliant signing design |
@@ -30,7 +30,7 @@ Inspection of `scripts/build-desktop-adapters.ps1`, `scripts/pack-desktop-adapte
 
 Never sign another project, an upstream executable/DLL, build tools, AI clients or third-party software using Thoughts' signing identity. Dependencies retain their notices and licenses. Shipping a third-party runtime inside an installer does not make that runtime Thoughts-authored source.
 
-The current local `-PublicRelease` build gate requires trusted signatures for the core, registration script and Setup.exe. Signing only `memo.exe` will **not** satisfy that gate. The generated uninstaller also needs release-time signature verification. The installer/helper path must be resolved and reviewed before any formal binary distribution; this policy changes no build logic and grants no release exception.
+The current local `-PublicRelease` build gate requires trusted signatures for the core, registration script and Setup.exe. Signing only `thoughts.exe` will **not** satisfy that gate. The generated uninstaller also needs release-time signature verification. The installer/helper path must be resolved and reviewed before any formal binary distribution; this policy changes no build logic and grants no release exception.
 
 ## Build provenance
 
@@ -43,7 +43,7 @@ The source of record is the [public GitHub repository](https://github.com/xuli82
 - Keep SHA256 checksums for unsigned inputs, signed outputs and final packages, and preserve the commit/tag/run mapping and signature/timestamp verification results. Signing changes executable bytes; recompute downstream checksums after signing.
 - Verify the final signed artifacts and packaged copies, then complete clean-Windows and native-client acceptance before human release approval.
 
-**Current implementation:** `.github/workflows/ci.yml` performs read-only source checks on Windows and Linux. It does not upload a trusted Windows release artifact, request signing or publish releases. Local packaging/checksum scripts exist, but are not SignPath provenance verification. There are no public version tags yet. Enforced PE product/version metadata, a trusted release build, protected manual signing approval and the SignPath integration are pending. No Secrets were added during this preparation.
+**Current implementation:** `.github/workflows/ci.yml` performs read-only source checks on Windows and Linux. The source-check workflow does not upload release artifacts, request signing or publish releases. The manual unsigned-preview workflow uploads bounded build artifacts for maintainer review and has no release-publishing step. Local packaging/checksum scripts exist, but are not SignPath provenance verification. The unsigned prerelease is tied to its exact public build commit and version tag. Enforced PE product/version metadata, protected manual signing approval and the SignPath integration are pending. The separate manual unsigned-preview workflow records commit/run provenance; that is not Foundation provenance verification. No Secrets were added during this preparation.
 
 ## Team roles
 

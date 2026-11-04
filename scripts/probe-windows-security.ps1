@@ -21,7 +21,7 @@ foreach ($taskPackage in $taskIndex.packages) {
     Add-Type -AssemblyName System.IO.Compression.FileSystem
     $taskZip=[IO.Compression.ZipFile]::OpenRead($taskArchive)
     try {
-        $taskInner=if ($taskPackage.file.EndsWith('.mcpb')) {'server/memo.exe'} else {'memo.exe'}
+        $taskInner=if ($taskPackage.file.EndsWith('.mcpb')) {'server/thoughts.exe'} else {'thoughts.exe'}
         $taskStream=$taskZip.GetEntry($taskInner).Open()
         $taskMemory=[IO.MemoryStream]::new()
         try { $taskStream.CopyTo($taskMemory); $taskBytes=$taskMemory.ToArray() }
@@ -31,7 +31,7 @@ foreach ($taskPackage in $taskIndex.packages) {
         $taskPE=[BitConverter]::ToInt32($taskBytes,0x3c)
         if ([BitConverter]::ToUInt16($taskBytes,$taskPE+24) -ne 0x20b) { throw 'Expected PE32+ executable' }
         $taskSecurityDirectory=$taskPE+24+112+4*8
-        $taskSource=if ($taskInner.StartsWith('server/')) {'sources/claude-desktop-windows-amd64/server/memo.exe'} else {'sources/windows-amd64/memo.exe'}
+        $taskSource=if ($taskInner.StartsWith('server/')) {'sources/claude-desktop-windows-amd64/server/thoughts.exe'} else {'sources/windows-amd64/thoughts.exe'}
         $taskExe=Join-Path $taskRoot $taskSource
         if ((Get-FileHash -LiteralPath $taskExe).Hash.ToLowerInvariant() -ne $taskHash) { throw 'Archive and unpacked executable differ' }
         $taskSignature=Get-AuthenticodeSignature -LiteralPath $taskExe
@@ -51,7 +51,7 @@ foreach ($taskPackage in $taskIndex.packages) {
 }
 $taskMP=Get-MpComputerStatus
 $taskOS=Get-CimInstance Win32_OperatingSystem
-$taskProcesses=@(Get-CimInstance Win32_Process -Filter "name = 'memo.exe'" | ForEach-Object {
+$taskProcesses=@(Get-CimInstance Win32_Process -Filter "name = 'thoughts.exe'" | ForEach-Object {
     if ($_.ExecutablePath) {
         $taskRunningHash=(Get-FileHash -LiteralPath $_.ExecutablePath).Hash.ToLowerInvariant()
         [ordered]@{pid=$_.ProcessId;sha256=$taskRunningHash;matchesCandidate=($taskHashes -contains $taskRunningHash);authenticode=[string](Get-AuthenticodeSignature -LiteralPath $_.ExecutablePath).Status}

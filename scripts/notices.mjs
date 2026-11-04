@@ -19,7 +19,7 @@ for(const [relative,entry] of Object.entries(lock.packages)){
 parts.push('\n=== Go standard library and runtime ===\n'+fs.readFileSync(path.join(goRoot,'LICENSE'),'utf8'))
 parts.push('\n=== Inno Setup installer runtime ===\nThe offline Windows setup includes the unmodified Inno Setup installer runtime.\n'+fs.readFileSync(path.join(root,'licenses/InnoSetup-LICENSE.txt'),'utf8'))
 const goBinary=path.join(goRoot,'bin',process.platform==='win32'?'go.exe':'go')
-const runtimeModules=new Set(execFileSync(goBinary,['list','-deps','-f','{{if .Module}}{{.Module.Path}}{{end}}','./cmd/memo'],{cwd:root,encoding:'utf8'}).trim().split(/\r?\n/).filter(Boolean))
+const runtimeModules=new Set(execFileSync(goBinary,['list','-deps','-f','{{if .Module}}{{.Module.Path}}{{end}}','./cmd/thoughts'],{cwd:root,encoding:'utf8'}).trim().split(/\r?\n/).filter(Boolean))
 const modules=execFileSync(goBinary,['list','-m','-json','all'],{cwd:root,encoding:'utf8'}).trim().split(/\r?\n(?=\{)/).map(value=>JSON.parse(value))
 for(const module of modules.filter(value=>!value.Main&&runtimeModules.has(value.Path))){
  const licenses=fs.readdirSync(module.Dir).filter(name=>/^(LICENSE|COPYING|NOTICE)(\.|$)/i.test(name)&&fs.statSync(path.join(module.Dir,name)).isFile())

@@ -6,7 +6,7 @@
 
 免费的开源 Windows x64 本地优先笔记工具。让 AI 助手管理 Markdown 文件，在独立的本地网页中阅读和编辑。
 
-**源码预览 — 2026-11-04：**本仓库以全新的公开历史发布经过审查的 `0.3.0-preview.20` 源码，采用 MIT 许可证。59 项后端测试已在原生 Windows 上通过。**目前没有获准下载的 Windows 安装程序：**SAC 拦截了最终的未签名 Setup.exe（错误 4551）。仓库包含安装器源码，二进制发行仍需可信签名和最终验收。参见[发行准备](docs/RELEASE_READINESS_20261104.md)、[安装说明](INSTALL.md)和 [Windows 测试](docs/WINDOWS_NATIVE_TESTS_20261104.md)。
+**未签名预览 — 2026-11-04：**`0.3.0-preview.21` 将源码、可执行文件和客户端配置统一命名为 Thoughts。维护者已授权发布[未签名实验预览版](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21)，文件在构建和检查完成后提供。**不代表已有可信发布者签名或稳定版验收。**SignPath Foundation 尚未批准申请。Windows SAC/SmartScreen 可能拦截；遇到拦截请停止，保持防护开启。参见[发行准备](docs/RELEASE_READINESS_20261104.md)、[安装说明](INSTALL.md)和[此前的原生 Windows 测试](docs/WINDOWS_NATIVE_TESTS_20261104.md)。
 
 ## 笔记就在你的电脑上
 
@@ -16,7 +16,7 @@ Go 可执行文件内嵌 React 网页。**预编译版本运行时不需要 Node
 
 ## 将来如何安装
 
-经过审查的发行版本可用后，可从 [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases) 下载 **`thoughts-<version>-windows-amd64-setup.exe`**，核对校验值和发布者签名，再双击并选择 **Install**。安装器无需管理员权限，会初始化共享主目录并创建桌面和开始菜单快捷方式。已有数据会保留；卸载移除入口和快捷方式，保留共享主目录供其他客户端使用。届时也计划提供便携 ZIP 供手动安装；目前这两种包都不是已获准的下载。
+本实验预览版通过 [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases) 提供 **`thoughts-<version>-windows-amd64-setup.exe`**、便携 ZIP 和 Claude Desktop MCPB，内部程序名为 **`thoughts.exe`**。使用前请核对 SHA256；当前文件**没有 Authenticode 签名**，哈希一致不能证明发布者身份。Windows 可能拒绝运行，遇到拦截请停止。安装器按用户安装，无需管理员权限，会初始化共享主目录并创建桌面和开始菜单快捷方式。已有资料保留；卸载移除入口与快捷方式，保留共享主目录供其他客户端使用。已签名稳定版仍待完成。
 
 Claude Desktop 用户届时也可导入发行版本的 `.mcpb` 扩展。Codex 和 Claude Code 用户将 ZIP 内的可执行文件注册为本地 stdio MCP 服务。网页也能在没有 AI 客户端时运行。具体命令见[普通用户快速入门](INSTALL.md#ordinary-windows-users)。GitHub 的 **Code → Download ZIP** 下载的是源码，而非预编译应用。
 
@@ -63,7 +63,7 @@ SHA256 核验、先检查后执行的命令和三个客户端步骤见 [INSTALL.
   backups/     Previous runtime pins; not a backup of note bodies
 ```
 
-一般安装请使用共享默认目录。旧版显式 `MEMO_CONFIG_DIR` 仍可使用；本版不会自动迁移或合并已有资料库。若主动自定义目录，需要共享内容的客户端应使用同一个物理文件夹。
+一般安装请使用共享默认目录。旧版显式 旧版配置 仍可使用；本版不会自动迁移或合并已有资料库。若主动自定义目录，需要共享内容的客户端应使用同一个物理文件夹。
 
 安装和更新必须保留该主目录。阅读状态保存路径和滚动位置，不保存未提交的正文。核心更新目前需要明确提供经过审查的本地可执行文件及 SHA256，没有后台联网更新器。客户端扩展和共享核心分别更新，参见[升级说明](INSTALL.md#managed-core-updates-and-rollback)。
 
@@ -71,7 +71,7 @@ SHA256 核验、先检查后执行的命令和三个客户端步骤见 [INSTALL.
 
 ## 工作区
 
-参见[工作区布局](docs/WORKSPACE_LAYOUT.md)和[文档索引](docs/README.md)。旧需求和报告保留在本地归档。内部 Memo 路径是兼容名称，不代表额外产品，也不是可以随意删除的文件。
+参见[工作区布局](docs/WORKSPACE_LAYOUT.md)和[文档索引](docs/README.md)。旧需求和报告保留在本地归档。源码与可执行文件已统一使用 Thoughts 名称，旧版数据标识保留兼容。
 
 ## 构建
 

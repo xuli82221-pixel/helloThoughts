@@ -54,7 +54,7 @@ def check():
             'tenFeatures': features == 10,
             'unchangedCodeExamples': FENCE.findall(text) == baseline_blocks,
             'matchingLinkTargets': Counter(LINK.findall(text)) == baseline_links,
-            'versionAndDate': '0.3.0-preview.20' in text and '2026-11-04' in text,
+            'versionAndDate': '0.3.0-preview.21' in text and '2026-11-04' in text,
             'signingPolicyAndDonate': 'docs/CODE_SIGNING_POLICY.md' in text and 'DONATE.md' in text,
         }
         language_results.append({'file': name, 'sections': sections, 'checks': checks})

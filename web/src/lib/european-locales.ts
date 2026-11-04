@@ -231,7 +231,7 @@ export const europeanMessages:Record<MessageKey,readonly [string,string,string]>
  removeThemeHint:['Das aktive Design wird auf Classic zurückgesetzt. Notizen und Bilder bleiben erhalten.','Le thème actif revient à Classic. Les notes et images sont conservées.','El tema activo volverá a Classic. Se conservan las notas e imágenes.'],
  uninstallTheme:['Deinstallieren','Désinstaller','Desinstalar'],
  downloadSampleTheme:['Kostenloses Beispielpaket herunterladen','Télécharger un exemple gratuit','Descargar un paquete de ejemplo gratuito'],
- themePackageHint:['.thoughts-theme / .memo-theme / ZIP · bis 3 MiB','.thoughts-theme / .memo-theme / ZIP · 3 Mio maximum','.thoughts-theme / .memo-theme / ZIP · hasta 3 MiB'],
+ themePackageHint:['.thoughts-theme / .thoughts-theme / ZIP · bis 3 MiB','.thoughts-theme / .thoughts-theme / ZIP · 3 Mio maximum','.thoughts-theme / .thoughts-theme / ZIP · hasta 3 MiB'],
  themeTooLarge:['Designpakete dürfen höchstens 3 MiB groß sein.','Les thèmes ne doivent pas dépasser 3 Mio.','Los paquetes de temas no pueden superar los 3 MiB.'],
  addImage:['Bild hinzufügen','Ajouter une image','Añadir imagen'],
  imageUploading:['Bilder werden hinzugefügt…','Ajout des images…','Añadiendo imágenes…'],

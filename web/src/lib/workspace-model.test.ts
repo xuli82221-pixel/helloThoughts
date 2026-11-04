@@ -1,7 +1,7 @@
 import {test} from 'node:test'
 import assert from 'node:assert/strict'
 import {nextUntitledName,nodeLabel,noteName,projectForNote,validName} from './workspace-model.ts'
-import type {Library,Note} from './memo-api.ts'
+import type {Library,Note} from './thoughts-api.ts'
 const note=(path:string,name:string,title=name):Note=>({path,name,title,content:'',revision:'version',modified:'2026-10-27T00:00:00Z'})
 test('renamed file name stays authoritative even when its original heading is preserved',()=>{
  const renamed=note('Projects/SPXIPO/更细.md','更细','细节')

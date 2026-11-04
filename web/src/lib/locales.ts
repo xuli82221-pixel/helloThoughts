@@ -236,7 +236,7 @@ const baseMessages = {
  removeThemeHint:["The active theme falls back to Classic. Notes and images are kept.","사용 중인 테마는 Classic으로 돌아갑니다. 노트와 이미지는 유지됩니다.","使用中のテーマは Classic に戻ります。ノートと画像は保持されます。","正在使用的主题会切回 Classic，笔记和图片会保留。","使用中的主題會切回 Classic，筆記和圖片會保留。"],
  uninstallTheme:["Uninstall","제거","削除","卸载","解除安裝"],
  downloadSampleTheme:["Download a free sample package","무료 샘플 패키지 다운로드","無料サンプルパッケージをダウンロード","下载免费示例主题包","下載免費範例主題包"],
- themePackageHint:[".thoughts-theme / .memo-theme / ZIP · up to 3 MiB","테마 패키지 / ZIP · 최대 3 MiB","テーマパッケージ / ZIP・最大 3 MiB","主题包 / ZIP · 最大 3 MiB","主題包 / ZIP · 最大 3 MiB"],
+ themePackageHint:[".thoughts-theme / .thoughts-theme / ZIP · up to 3 MiB","테마 패키지 / ZIP · 최대 3 MiB","テーマパッケージ / ZIP・最大 3 MiB","主题包 / ZIP · 最大 3 MiB","主題包 / ZIP · 最大 3 MiB"],
  themeTooLarge:["Theme packages must be at most 3 MiB.","테마 패키지는 3 MiB 이하여야 합니다.","テーマパッケージは 3 MiB 以下にしてください。","主题包不能超过 3 MiB。","主題包不能超過 3 MiB。"],
  addImage:["Add image","이미지 추가","画像を追加","添加图片","新增圖片"],
  imageUploading:["Adding images…","이미지 추가 중…","画像を追加中…","正在添加图片…","正在新增圖片…"],

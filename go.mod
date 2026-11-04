@@ -1,4 +1,4 @@
-module memo.local/memo
+module thoughts.local/thoughts
 
 go 1.27.0
 

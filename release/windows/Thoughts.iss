@@ -42,7 +42,7 @@ UsePreviousTasks=yes
 CloseApplications=no
 RestartApplications=no
 RestartIfNeededByRun=no
-UninstallDisplayIcon={app}\{#LauncherFolder}\memo.exe
+UninstallDisplayIcon={app}\{#LauncherFolder}\thoughts.exe
 UninstallDisplayName=Thoughts (program and shortcuts)
 Compression=lzma2/fast
 SolidCompression=yes
@@ -84,7 +84,7 @@ fr.ReadyLabel1=Installer Thoughts pour ce compte Windows. Les notes, images et p
 es.ReadyLabel1=Instalar Thoughts para esta cuenta de Windows. Se conservan las notas, imágenes y opciones existentes.
 
 [Files]
-Source: "{#CoreDir}\memo.exe"; DestDir: "{app}\{#LauncherFolder}"; Flags: ignoreversion
+Source: "{#CoreDir}\thoughts.exe"; DestDir: "{app}\{#LauncherFolder}"; Flags: ignoreversion
 Source: "{#ProjectRoot}\LICENSE"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#ProjectRoot}\PRIVACY.md"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#ProjectRoot}\INSTALL.md"; DestDir: "{app}"; Flags: ignoreversion
@@ -173,7 +173,7 @@ begin
       (Home = '${HOME}/Thoughts') or (Home = '${HOME}\Thoughts') then
     Home := AddBackslash(WindowsAccountProfile) + 'Thoughts';
   Result := AddBackslash(Home) + 'app\versions\{#AppVersion}-' +
-    Copy('{#CoreSHA256}', 1, 12) + '\memo.exe';
+    Copy('{#CoreSHA256}', 1, 12) + '\thoughts.exe';
 end;
 
 function RunCore(const ExePath, Arguments: String): String;
@@ -217,8 +217,8 @@ begin
     Result := 'Choose a program directory outside your existing library and Thoughts home.';
     Exit;
   end;
-  ExtractTemporaryFile('memo.exe');
-  Core := ExpandConstant('{tmp}\memo.exe');
+  ExtractTemporaryFile('thoughts.exe');
+  Core := ExpandConstant('{tmp}\thoughts.exe');
   if CompareText(GetSHA256OfFile(Core), '{#CoreSHA256}') <> 0 then
   begin
     Result := 'The packaged executable checksum does not match. Installation stopped.';

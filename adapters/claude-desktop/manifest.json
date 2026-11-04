@@ -2,7 +2,7 @@
   "manifest_version": "0.3",
   "name": "thoughts",
   "display_name": "Thoughts",
-  "version": "0.3.0-preview.20",
+  "version": "0.3.0-preview.21",
   "description": "Free, open-source, local-first Markdown notes for Windows x64. No Thoughts account or additional runtime.",
   "long_description": "Local stdio MCP for Claude Desktop, Claude Code and Codex using the same Windows-user Thoughts library by default, regardless of installation order. Keep the advanced home setting on auto unless deliberately selecting a separate library. Notes and images stay on disk; only content explicitly requested by your AI host is returned to that host. Connecting does not initialize or open a library. Unsigned preview: Windows may block it; do not disable protection. Host and clean-Windows acceptance remain pending.",
   "author": {
@@ -18,9 +18,9 @@
   "license": "MIT",
   "server": {
     "type": "binary",
-    "entry_point": "server/memo.exe",
+    "entry_point": "server/thoughts.exe",
     "mcp_config": {
-      "command": "${__dirname}/server/memo.exe",
+      "command": "${__dirname}/server/thoughts.exe",
       "args": [
         "mcp"
       ],

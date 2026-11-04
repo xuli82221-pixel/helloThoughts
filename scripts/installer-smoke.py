@@ -85,7 +85,7 @@ def run(setup, previous, root):
     try:
         install("first-install", icons=True)
         assert registered()
-        core = next((program / "launchers").glob("*/memo.exe"))
+        core = next((program / "launchers").glob("*/thoughts.exe"))
         expected = hashlib.sha256(core.read_bytes()).hexdigest()
         assert json.loads(pins())["current"]["sha256"] == expected
         assert (home / "library").is_dir()

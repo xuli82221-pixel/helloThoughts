@@ -1,5 +1,5 @@
 import {useSyncExternalStore} from 'react'
-import {api,errorMessage,uploadBinary} from './memo-api'
+import {api,errorMessage,uploadBinary} from './thoughts-api'
 import {applyLocale,isLocale} from './i18n'
 import {isLightTheme} from './theme-policy'
 

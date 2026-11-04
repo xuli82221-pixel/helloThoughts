@@ -6,7 +6,7 @@
 
 免費、開放原始碼的 Windows x64 本機優先筆記工具。讓 AI 助理管理 Markdown 檔案，並在獨立的本機網頁中閱讀與編輯。
 
-**原始碼預覽 — 2026-11-04：**本儲存庫以全新的公開歷程發布經過審查的 `0.3.0-preview.20` 原始碼，採用 MIT 授權。59 項後端測試已在原生 Windows 上通過。**目前沒有核准下載的 Windows 安裝程式：**SAC 封鎖了最終未簽章的 Setup.exe（錯誤 4551）。儲存庫包含安裝程式原始碼，但二進位發行仍需可信簽章與最終驗收。請見[發行準備](docs/RELEASE_READINESS_20261104.md)、[安裝說明](INSTALL.md)與 [Windows 測試](docs/WINDOWS_NATIVE_TESTS_20261104.md)。
+**未簽章預覽 — 2026-11-04：**`0.3.0-preview.21` 將原始碼、執行檔與用戶端設定統一命名為 Thoughts。維護者已授權發布[未簽章實驗預覽版](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21)，檔案會在建置與檢查完成後提供。**不代表已有可信發行者簽章或穩定版驗收。**SignPath Foundation 尚未核准申請。Windows SAC/SmartScreen 可能封鎖；遇到封鎖請停止並保持防護啟用。請見[發行準備](docs/RELEASE_READINESS_20261104.md)、[安裝說明](INSTALL.md)與[先前的原生 Windows 測試](docs/WINDOWS_NATIVE_TESTS_20261104.md)。
 
 ## 筆記留在你的電腦上
 
@@ -16,7 +16,7 @@ Go 執行檔內嵌 React 網頁。**預先編譯版本執行時不需要 Node.js
 
 ## 未來如何安裝
 
-經過審查的發行版本可用後，可從 [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases) 下載 **`thoughts-<version>-windows-amd64-setup.exe`**，核對校驗值與發行者簽章，再按兩下並選擇 **Install**。安裝程式無需系統管理員權限，會初始化共用主目錄，並建立桌面與開始功能表捷徑。既有資料會保留；解除安裝會移除程式入口與捷徑，保留共用主目錄供其他用戶端使用。屆時計畫另提供可攜式 ZIP 供手動安裝；目前兩者都不是已核准的下載項目。
+本實驗預覽版透過 [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases) 提供 **`thoughts-<version>-windows-amd64-setup.exe`**、可攜式 ZIP 與 Claude Desktop MCPB，內部程式名稱為 **`thoughts.exe`**。使用前請核對 SHA256；目前檔案**沒有 Authenticode 簽章**，雜湊相符無法證明發行者身分。Windows 可能拒絕執行，遇到封鎖請停止。安裝程式按使用者安裝，無需系統管理員權限，會初始化共用主目錄並建立桌面與開始功能表捷徑。既有資料保留；解除安裝移除入口與捷徑，保留共用主目錄供其他用戶端使用。已簽章穩定版仍待完成。
 
 Claude Desktop 使用者屆時也可匯入該版本的 `.mcpb` 擴充功能。Codex 與 Claude Code 使用者將 ZIP 中的執行檔註冊為本機 stdio MCP 伺服器。網頁也可在沒有 AI 用戶端時運作。具體指令請見[一般使用者快速入門](INSTALL.md#ordinary-windows-users)。GitHub 的 **Code → Download ZIP** 下載的是原始碼，而非預先編譯的應用程式。
 
@@ -63,7 +63,7 @@ SHA256 核對、先檢查後執行的指令與三種用戶端步驟請見 [INSTA
   backups/     Previous runtime pins; not a backup of note bodies
 ```
 
-一般安裝請使用共用預設目錄。舊版明確設定的 `MEMO_CONFIG_DIR` 仍可使用；本版不會自動遷移或合併既有資料庫。若主動自訂目錄，需要共用內容的用戶端應使用同一個實體資料夾。
+一般安裝請使用共用預設目錄。舊版明確設定的 既有設定 仍可使用；本版不會自動遷移或合併既有資料庫。若主動自訂目錄，需要共用內容的用戶端應使用同一個實體資料夾。
 
 安裝與更新必須保留此主目錄。閱讀狀態只記錄路徑與捲動位置，不記錄尚未儲存的文字。核心更新目前需明確提供經過審查的本機執行檔與 SHA256，沒有背景連網更新程式。用戶端擴充功能與共用核心須分別更新，請見[升級說明](INSTALL.md#managed-core-updates-and-rollback)。
 
@@ -71,7 +71,7 @@ SHA256 核對、先檢查後執行的指令與三種用戶端步驟請見 [INSTA
 
 ## 工作區
 
-請見[工作區配置](docs/WORKSPACE_LAYOUT.md)與[文件索引](docs/README.md)。舊需求與報告保留在本機封存中。內部 Memo 路徑是相容名稱，不代表額外產品，也不是可以任意刪除的檔案。
+請見[工作區配置](docs/WORKSPACE_LAYOUT.md)與[文件索引](docs/README.md)。舊需求與報告保留在本機封存中。原始碼與執行檔已統一使用 Thoughts 名稱，舊版資料識別保留相容。
 
 ## 建置
 

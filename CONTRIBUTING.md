@@ -31,7 +31,7 @@ outputs are never deleted. Use a trusted isolated toolchain if SAC rejects your
 local compiler; never disable SAC or alter execution policy for a build.
 
 Linux can test the platform-independent Go code and cross-compile with
-`GOOS=windows GOARCH=amd64 CGO_ENABLED=0 go build -trimpath -o memo.exe ./cmd/memo`.
+`GOOS=windows GOARCH=amd64 CGO_ENABLED=0 go build -trimpath -o thoughts.exe ./cmd/thoughts`.
 Linux skips Windows-only assertions; native Windows testing remains required.
 The Windows installer compiler and actual installation tests require Windows.
 
