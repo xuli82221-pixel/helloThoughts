@@ -10,9 +10,6 @@ jobs:
   windows-preview:
     runs-on: windows-latest
     timeout-minutes: 30
-    env:
-      TEMP: ${{ runner.temp }}
-      TMP: ${{ runner.temp }}
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
@@ -44,6 +41,9 @@ jobs:
           if (-not (Test-Path -LiteralPath (Join-Path $toolDir 'ISCC.exe'))) { throw 'Compiler not found' }
       - name: Build and validate unsigned preview
         shell: pwsh
+        env:
+          TEMP: ${{ runner.temp }}
+          TMP: ${{ runner.temp }}
         run: |
           ./scripts/build-desktop-adapters.ps1 -Python (Get-Command python).Source -Go (Get-Command go).Source -InnoCompiler (Join-Path $env:RUNNER_TEMP 'InnoSetup7/ISCC.exe') -UnsignedPreview -SourceCommit $env:GITHUB_SHA -BuildUrl "https://github.com/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID"
       - name: Source, documentation and security checks
