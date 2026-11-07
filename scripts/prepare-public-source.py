@@ -14,8 +14,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parent.parent
 ROOT_FILES = [".gitignore", ".gitattributes", ".github/workflows/ci.yml", ".github/workflows/unsigned-preview.yml", "README.md", "README.zh-CN.md", "README.zh-TW.md", "README.ja.md", "README.ko.md", "README.de.md", "README.fr.md", "README.es.md", "DONATE.md", "CONTRIBUTING.md", "LICENSE", "SECURITY.md", "INSTALL.md", "CHANGELOG.md", "PRIVACY.md", "THIRD_PARTY_NOTICES.txt", "go.mod", "go.sum"]
 SOURCE_DIRS = ["cmd", "internal", "web", "adapters", "branding", "licenses", "legal", "release", "scripts"]
-DOC_FILES = ["docs/README.md", "docs/WORKSPACE_LAYOUT.md", "docs/DEPENDENCIES.md", "docs/PUBLIC_RELEASE_REVIEW.md", "docs/PUBLIC_SCOPE.md", "docs/SECURITY_AUDIT.md", "docs/WINDOWS_SECURITY_COMPATIBILITY.md", "docs/UI_TABS_IMAGES_ACCEPTANCE.md", "docs/SHARED_LIBRARY_UPGRADE_ACCEPTANCE.md", "docs/PROJECT_WORKSPACE_POLISH.md", "docs/PUBLIC_SOURCE_FILES.md", "docs/WINDOWS_NATIVE_TESTS_20261104.md", "docs/RELEASE_READINESS_20261104.md", "docs/assets/preview.png"]
-DOC_FILES += ["docs/UNSIGNED_PREVIEW.md", "docs/CODE_SIGNING_POLICY.md", "docs/SIGNPATH_APPLICATION.md", "docs/OPEN_SOURCE_READINESS_20261104.md", "docs/assets/README.md", "docs/assets/preview-0.3.0-preview.20.jpg"]
+DOC_FILES = ["docs/README.md", "docs/WORKSPACE_LAYOUT.md", "docs/DEPENDENCIES.md", "docs/PUBLIC_SCOPE.md", "docs/WINDOWS_SECURITY_COMPATIBILITY.md", "docs/RELEASE_READINESS_20261104.md", "docs/UNSIGNED_PREVIEW.md", "docs/CODE_SIGNING_POLICY.md", "docs/assets/README.md", "docs/assets/preview.png", "docs/assets/preview-0.3.0-preview.20.jpg"]
 EXCLUDE_DIRS = {"node_modules", "dist", "__pycache__", ".git", ".artifacts", ".tools"}
 
 
@@ -40,8 +39,6 @@ def prepare(output, private_rules=None):
     if output.exists():
         raise ValueError("Choose a new review directory; previous exports are never overwritten")
     files = source_files()
-    inventory = "# Proposed public source files\n\nOnly this reviewed working-copy snapshot is proposed. No original Git objects, local libraries, personal screenshots, logs, caches, credentials, binaries or historical local reports are included. Public upload and history handling require owner approval.\n\n" + "\n".join("- `" + p.as_posix() + "`" for p in files) + "\n"
-    (ROOT / "docs/PUBLIC_SOURCE_FILES.md").write_text(inventory, encoding="utf-8")
     spec = importlib.util.spec_from_file_location("audit_source", ROOT / "scripts/audit-source.py")
     audit = importlib.util.module_from_spec(spec); spec.loader.exec_module(audit)
     if private_rules:
