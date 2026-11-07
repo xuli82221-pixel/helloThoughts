@@ -6,7 +6,7 @@
 
 Kostenlose, quelloffene Notizen für Windows x64 mit lokaler Datenhaltung. Lass deinen KI-Assistenten Markdown-Dateien verwalten und lies und bearbeite sie auf einer eigenständigen lokalen Webseite.
 
-**Unsignierte Vorschau — 2026-11-04:** `0.3.0-preview.21` vereinheitlicht Quellcode, Programmdatei und Client-Konfiguration unter dem Namen Thoughts. Der Maintainer hat eine [unsignierte experimentelle Vorabversion](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21) freigegeben; die Dateien sind nach erfolgreichem öffentlichem Windows-Build und Prüfung verfügbar. **Eine vertrauenswürdige Herausgebersignatur oder Abnahme als stabile Version wird nicht behauptet.** Die Genehmigung der SignPath Foundation steht aus. Wenn Windows SAC/SmartScreen die Ausführung blockiert, brich sie ab und lasse den Schutz aktiv. Siehe [Veröffentlichungsvorbereitung](docs/RELEASE_READINESS_20261104.md), [Installation](INSTALL.md) und [frühere native Windows-Tests](docs/WINDOWS_NATIVE_TESTS_20261104.md).
+**Unsignierte Vorschau — 2026-11-04:** `0.3.0-preview.21` vereinheitlicht Quellcode, Programmdatei und Client-Konfiguration unter dem Namen Thoughts. Der Maintainer hat eine [unsignierte experimentelle Vorabversion](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21) freigegeben; die Dateien sind nach erfolgreichem öffentlichem Windows-Build und Prüfung verfügbar. **Eine vertrauenswürdige Herausgebersignatur oder Abnahme als stabile Version wird nicht behauptet.** Die Genehmigung der SignPath Foundation steht aus. Wenn Windows SAC/SmartScreen die Ausführung blockiert, brich sie ab und lasse den Schutz aktiv. Siehe [Veröffentlichungsvorbereitung](docs/RELEASE_READINESS_20261104.md), [Installation](INSTALL.md) .
 
 ## Deine Notizen auf deinem Computer
 
@@ -30,7 +30,7 @@ Die KI-Clients starten denselben lokalen Adapter für das standardisierte stdio-
 | Claude Code unter Windows | Lokales stdio MCP, portables Windows-ZIP |
 | OpenAI Codex unter Windows | Lokales stdio MCP, dasselbe portable ZIP |
 
-Dies sind die vorgesehenen Integrationen. Der tatsächliche Abnahmestand ist im Veröffentlichungsbericht dokumentiert. Gewöhnliche ChatGPT-Web-Plugins, macOS, Linux, Mobilgeräte, Remote-MCP und Cloud-Synchronisation gehören nicht zu dieser Phase.
+Dies sind die vorgesehenen Integrationen. Der tatsächliche Abnahmestand ist im [Veröffentlichungsstatus](docs/RELEASE_READINESS_20261104.md) dokumentiert. Gewöhnliche ChatGPT-Web-Plugins, macOS, Linux, Mobilgeräte, Remote-MCP und Cloud-Synchronisation gehören nicht zu dieser Phase.
 
 ## Funktionen
 
@@ -71,7 +71,7 @@ Unsignierte Windows-Programme oder Skripte können von SmartScreen, Smart App Co
 
 ## Arbeitsbereich
 
-Siehe [Verzeichnisstruktur](docs/WORKSPACE_LAYOUT.md) und [Dokumentationsindex](docs/README.md). Frühere Anforderungen und Berichte bleiben in einem lokalen Archiv erhalten. Quellcode und Programmdateien verwenden Thoughts; alte Datenkennungen bleiben für die Kompatibilität erhalten.
+Siehe [Verzeichnisstruktur](docs/WORKSPACE_LAYOUT.md) und [Dokumentationsindex](docs/README.md). Historische Entwicklungsnotizen sind bewusst nicht Teil der öffentlichen Dokumentation. Quellcode und Programmdateien verwenden Thoughts; alte Datenkennungen bleiben für die Kompatibilität erhalten.
 
 ## Selbst bauen
 
@@ -94,7 +94,7 @@ Committe niemals echte Notizen, persönliche Screenshots, Zugangsdaten, Sitzungs
 
 ## Code signing policy
 
-**Ausstehend — der Antrag bei der SignPath Foundation ist noch nicht genehmigt.** Alle aktuellen Windows-Programme sind weiterhin unsigniert. Bei Genehmigung stellt SignPath.io die kostenlose Codesignierung bereit, das Zertifikat die SignPath Foundation. Die [Code signing policy](docs/CODE_SIGNING_POLICY.md) und [Antragsvorbereitung](docs/SIGNPATH_APPLICATION.md) nennen Umfang, tatsächliche Zuständigkeiten und offene Anforderungen. Im Rahmen dieser Vorbereitung wurde kein Antrag eingereicht.
+**Ausstehend — der Antrag bei der SignPath Foundation ist noch nicht genehmigt.** Alle aktuellen Windows-Programme sind weiterhin unsigniert. Bei Genehmigung stellt SignPath.io die kostenlose Codesignierung bereit, das Zertifikat die SignPath Foundation. Die [Code signing policy](docs/CODE_SIGNING_POLICY.md) beschreibt Umfang, aktuellen Signaturstatus und offene Anforderungen. Ein Antrag bei der SignPath Foundation wurde noch nicht eingereicht.
 
 ## Spenden
 
