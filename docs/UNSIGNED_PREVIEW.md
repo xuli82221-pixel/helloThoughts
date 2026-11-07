@@ -6,7 +6,7 @@ The maintainer explicitly authorized publishing an unsigned prerelease while pre
 
 ## Download and status
 
-Release: [v0.3.0-preview.21](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21). Published on 2026-11-04 at 11:00 Asia/Shanghai, after the manually triggered build, validation and maintainer upload completed:
+Release: [v0.3.0-preview.21](https://github.com/xuli82221-pixel/helloThoughts/releases/tag/v0.3.0-preview.21). Published on 2026-11-04 at 11:00 Asia/Shanghai, after the manually triggered build, validation and maintainer upload completed:
 
 - `thoughts-0.3.0-preview.21-windows-amd64-setup.exe`: offline current-user installer.
 - `thoughts-0.3.0-preview.21-windows-amd64.zip`: portable package containing `thoughts.exe` and inspected client configuration examples.
@@ -15,7 +15,7 @@ Release: [v0.3.0-preview.21](https://github.com/xuli82221-pixel/hello-Thoughts-/
 
 Do not interpret GitHub's automatically generated source ZIP as the application. See [INSTALL.md](../INSTALL.md) for checksum and installation steps. These files have no trusted publisher signature. If Windows SAC, SmartScreen or organization policy blocks them, **stop and keep protection enabled**. Do not change execution policy, remove download provenance or use a self-signed certificate to simulate trust. SHA256 checks integrity, not publisher identity.
 
-Build source: [`0b155f8a4d0381315f742bb6661e2e0eb6c738c4`](https://github.com/xuli82221-pixel/hello-Thoughts-/commit/0b155f8a4d0381315f742bb6661e2e0eb6c738c4). [Successful build and test run](https://github.com/xuli82221-pixel/hello-Thoughts-/actions/runs/41762640507). Core SHA256: `6f045833ae29839955edee44fed9f36b0b76b84566951b47c3615ce5f4c9a021`.
+Build source: [`0b155f8a4d0381315f742bb6661e2e0eb6c738c4`](https://github.com/xuli82221-pixel/helloThoughts/commit/0b155f8a4d0381315f742bb6661e2e0eb6c738c4). [Successful build and test run](https://github.com/xuli82221-pixel/helloThoughts/actions/runs/41762640507). Core SHA256: `6f045833ae29839955edee44fed9f36b0b76b84566951b47c3615ce5f4c9a021`.
 
 All seven uploaded asset digests were compared with the downloaded CI outputs before publication. ZIP and MCPB contain the same core bytes. Local file inspection confirmed `NotSigned` for the core, setup and registration helper. The GitHub release is public and explicitly marked prerelease; the tag points to the exact build commit above. No private history or local user data was uploaded.
 
