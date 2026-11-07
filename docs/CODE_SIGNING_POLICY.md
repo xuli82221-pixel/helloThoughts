@@ -34,7 +34,7 @@ The current local `-PublicRelease` build gate requires trusted signatures for th
 
 ## Build provenance
 
-The source of record is the [public GitHub repository](https://github.com/xuli82221-pixel/hello-Thoughts-). For any future signing request:
+The source of record is the [public GitHub repository](https://github.com/xuli82221-pixel/helloThoughts). For any future signing request:
 
 - Build from the public, reviewed source in an isolated, verifiable automated CI run. Include the checked-in workflow, build scripts, dependency lockfiles and third-party notices in review. Never upload an arbitrary local binary for signing as if it had verified CI provenance.
 - Record the exact Git commit, matching version tag, build/run identity and toolchain versions. All binaries in a build must carry the enforced product name `Thoughts` and consistent product version.
