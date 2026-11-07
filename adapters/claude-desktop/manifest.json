@@ -11,9 +11,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xuli82221-pixel/hello-Thoughts-.git"
+    "url": "https://github.com/xuli82221-pixel/helloThoughts.git"
   },
-  "support": "https://github.com/xuli82221-pixel/hello-Thoughts-/issues",
+  "support": "https://github.com/xuli82221-pixel/helloThoughts/issues",
   "icon": "assets/icon.png",
   "license": "MIT",
   "server": {
@@ -50,5 +50,5 @@
       "default": "auto"
     }
   },
-  "homepage": "https://github.com/xuli82221-pixel/hello-Thoughts-"
+  "homepage": "https://github.com/xuli82221-pixel/helloThoughts"
 }
