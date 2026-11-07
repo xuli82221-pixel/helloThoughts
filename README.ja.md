@@ -6,7 +6,7 @@
 
 Windows x64 向けの無料・オープンソースのローカル優先ノートツールです。AI アシスタントで Markdown ファイルを管理し、独立したローカル Web ページで閲覧・編集できます。
 
-**未署名プレビュー — 2026-11-04:** `0.3.0-preview.21` ではソース、実行ファイル、クライアント設定の名称を Thoughts に統一します。管理者は[未署名の実験的プレリリース](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21)の公開を承認しており、公開 Windows ビルドと検証が成功し、ファイルを公開しました。**信頼された発行元署名や安定版の受け入れ完了を意味しません。** SignPath Foundation の承認は未取得です。Windows SAC/SmartScreen がブロックした場合は実行を中止し、保護を維持してください。[公開準備](docs/RELEASE_READINESS_20261104.md)、[インストール](INSTALL.md)をご覧ください。
+**未署名プレビュー — 2026-11-04:** `0.3.0-preview.21` ではソース、実行ファイル、クライアント設定の名称を Thoughts に統一します。管理者は[未署名の実験的プレリリース](https://github.com/xuli82221-pixel/helloThoughts/releases/tag/v0.3.0-preview.21)の公開を承認しており、公開 Windows ビルドと検証が成功し、ファイルを公開しました。**信頼された発行元署名や安定版の受け入れ完了を意味しません。** SignPath Foundation の承認は未取得です。Windows SAC/SmartScreen がブロックした場合は実行を中止し、保護を維持してください。[公開準備](docs/RELEASE_READINESS_20261104.md)、[インストール](INSTALL.md)をご覧ください。
 
 ## ノートは自分のコンピューターに
 
@@ -16,7 +16,7 @@ Go 実行ファイルに React の Web ページを内蔵しています。**ビ
 
 ## ダウンロードとインストール
 
-この実験的プレビューでは、[GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases) から **`thoughts-<version>-windows-amd64-setup.exe`**、ポータブル ZIP、Claude Desktop MCPB を提供します。プログラム名は **`thoughts.exe`** です。使用前に SHA256 を確認してください。現行ファイルに **Authenticode 署名はなく**、ハッシュの一致は発行元の証明にはなりません。Windows にブロックされた場合は中止してください。セットアップはユーザー単位で、管理者権限なしに共有ホームとデスクトップ・スタートメニューのショートカットを作成します。既存データは保持し、アンインストール後も他のクライアント用に共有ホームを残します。署名済み安定版は未提供です。
+この実験的プレビューでは、[GitHub Releases](https://github.com/xuli82221-pixel/helloThoughts/releases) から **`thoughts-<version>-windows-amd64-setup.exe`**、ポータブル ZIP、Claude Desktop MCPB を提供します。プログラム名は **`thoughts.exe`** です。使用前に SHA256 を確認してください。現行ファイルに **Authenticode 署名はなく**、ハッシュの一致は発行元の証明にはなりません。Windows にブロックされた場合は中止してください。セットアップはユーザー単位で、管理者権限なしに共有ホームとデスクトップ・スタートメニューのショートカットを作成します。既存データは保持し、アンインストール後も他のクライアント用に共有ホームを残します。署名済み安定版は未提供です。
 
 Claude Desktop では、そのリリースの `.mcpb` 拡張をインポートする方法もあります。Codex と Claude Code では ZIP 内の実行ファイルをローカル stdio MCP サーバーとして登録します。Web ページは AI クライアントなしでも使用できます。コマンドは[一般利用者向けクイックスタート](INSTALL.md#ordinary-windows-users)をご覧ください。GitHub の **Code → Download ZIP** はソースの取得であり、ビルド済みアプリの取得ではありません。
 
