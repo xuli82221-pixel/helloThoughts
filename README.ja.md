@@ -6,7 +6,7 @@
 
 Windows x64 向けの無料・オープンソースのローカル優先ノートツールです。AI アシスタントで Markdown ファイルを管理し、独立したローカル Web ページで閲覧・編集できます。
 
-**未署名プレビュー — 2026-11-04:** `0.3.0-preview.21` ではソース、実行ファイル、クライアント設定の名称を Thoughts に統一します。管理者は[未署名の実験的プレリリース](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21)の公開を承認しており、公開 Windows ビルドと検証が成功し、ファイルを公開しました。**信頼された発行元署名や安定版の受け入れ完了を意味しません。** SignPath Foundation の承認は未取得です。Windows SAC/SmartScreen がブロックした場合は実行を中止し、保護を維持してください。[公開準備](docs/RELEASE_READINESS_20261104.md)、[インストール](INSTALL.md)、[以前の Windows ネイティブテスト](docs/WINDOWS_NATIVE_TESTS_20261104.md)をご覧ください。
+**未署名プレビュー — 2026-11-04:** `0.3.0-preview.21` ではソース、実行ファイル、クライアント設定の名称を Thoughts に統一します。管理者は[未署名の実験的プレリリース](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21)の公開を承認しており、公開 Windows ビルドと検証が成功し、ファイルを公開しました。**信頼された発行元署名や安定版の受け入れ完了を意味しません。** SignPath Foundation の承認は未取得です。Windows SAC/SmartScreen がブロックした場合は実行を中止し、保護を維持してください。[公開準備](docs/RELEASE_READINESS_20261104.md)、[インストール](INSTALL.md)をご覧ください。
 
 ## ノートは自分のコンピューターに
 
@@ -30,7 +30,7 @@ AI クライアントは同じローカルの標準 stdio MCP アダプターを
 | Windows 版 Claude Code | ローカル stdio MCP、Windows ポータブル ZIP |
 | Windows 版 OpenAI Codex | ローカル stdio MCP、同じポータブル ZIP |
 
-これらは対象とする連携です。実際の受け入れ状況は公開レビューに記載しています。通常の ChatGPT Web プラグイン、macOS、Linux、モバイル、リモート MCP、クラウド同期は今回の対象外です。
+これらは対象とする連携です。実際の受け入れ状況は[公開リリース状況](docs/RELEASE_READINESS_20261104.md)に記載しています。通常の ChatGPT Web プラグイン、macOS、Linux、モバイル、リモート MCP、クラウド同期は今回の対象外です。
 
 ## 機能
 
@@ -71,7 +71,7 @@ SHA256 の確認、実行前に内容を確認するコマンド、3 クライ�
 
 ## ワークスペース
 
-[構成](docs/WORKSPACE_LAYOUT.md)と[ドキュメント一覧](docs/README.md)をご覧ください。旧要件・報告書はローカルアーカイブに保存しています。ソースと実行ファイルは Thoughts 名に統一し、旧データの識別子は互換性のため保持します。
+[構成](docs/WORKSPACE_LAYOUT.md)と[ドキュメント一覧](docs/README.md)をご覧ください。過去の開発記録は公開ドキュメントには含めていません。ソースと実行ファイルは Thoughts 名に統一し、旧データの識別子は互換性のため保持します。
 
 ## ビルド
 
@@ -94,7 +94,7 @@ pwsh -File scripts/build-desktop-adapters.ps1 -Python 'C:\Tools\Python\python.ex
 
 ## コード署名ポリシー
 
-**審査待ち — SignPath Foundation の申請はまだ承認されていません。**現行の Windows プログラムはすべて未署名です。承認された場合、無料のコード署名は SignPath.io、証明書は SignPath Foundation が提供します。[コード署名ポリシー / Code signing policy](docs/CODE_SIGNING_POLICY.md)と[申請準備](docs/SIGNPATH_APPLICATION.md)に、対象範囲、実際の担当者、未完了の要件を記載しています。この準備作業では申請を送信していません。
+**審査待ち — SignPath Foundation の申請はまだ承認されていません。**現行の Windows プログラムはすべて未署名です。承認された場合、無料のコード署名は SignPath.io、証明書は SignPath Foundation が提供します。[コード署名ポリシー / Code signing policy](docs/CODE_SIGNING_POLICY.md)に、署名の対象範囲、現在の状態、未完了の要件を記載しています。SignPath Foundation への申請はまだ送信していません。
 
 ## 寄付
 
