@@ -6,7 +6,7 @@
 
 免費、開放原始碼的 Windows x64 本機優先筆記工具。讓 AI 助理管理 Markdown 檔案，並在獨立的本機網頁中閱讀與編輯。
 
-**未簽章預覽 — 2026-11-04：**`0.3.0-preview.21` 將原始碼、執行檔與用戶端設定統一命名為 Thoughts。維護者已授權發布[未簽章實驗預覽版](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21)，檔案已在公開 Windows 建置與檢查通過後提供。**不代表已有可信發行者簽章或穩定版驗收。**SignPath Foundation 尚未核准申請。Windows SAC/SmartScreen 可能封鎖；遇到封鎖請停止並保持防護啟用。請見[發行準備](docs/RELEASE_READINESS_20261104.md)、[安裝說明](INSTALL.md)。
+**未簽章預覽 — 2026-11-04：**`0.3.0-preview.21` 將原始碼、執行檔與用戶端設定統一命名為 Thoughts。維護者已授權發布[未簽章實驗預覽版](https://github.com/xuli82221-pixel/helloThoughts/releases/tag/v0.3.0-preview.21)，檔案已在公開 Windows 建置與檢查通過後提供。**不代表已有可信發行者簽章或穩定版驗收。**SignPath Foundation 尚未核准申請。Windows SAC/SmartScreen 可能封鎖；遇到封鎖請停止並保持防護啟用。請見[發行準備](docs/RELEASE_READINESS_20261104.md)、[安裝說明](INSTALL.md)。
 
 ## 筆記留在你的電腦上
 
@@ -16,7 +16,7 @@ Go 執行檔內嵌 React 網頁。**預先編譯版本執行時不需要 Node.js
 
 ## 下載與安裝
 
-本實驗預覽版透過 [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases) 提供 **`thoughts-<version>-windows-amd64-setup.exe`**、可攜式 ZIP 與 Claude Desktop MCPB，內部程式名稱為 **`thoughts.exe`**。使用前請核對 SHA256；目前檔案**沒有 Authenticode 簽章**，雜湊相符無法證明發行者身分。Windows 可能拒絕執行，遇到封鎖請停止。安裝程式按使用者安裝，無需系統管理員權限，會初始化共用主目錄並建立桌面與開始功能表捷徑。既有資料保留；解除安裝移除入口與捷徑，保留共用主目錄供其他用戶端使用。已簽章穩定版仍待完成。
+本實驗預覽版透過 [GitHub Releases](https://github.com/xuli82221-pixel/helloThoughts/releases) 提供 **`thoughts-<version>-windows-amd64-setup.exe`**、可攜式 ZIP 與 Claude Desktop MCPB，內部程式名稱為 **`thoughts.exe`**。使用前請核對 SHA256；目前檔案**沒有 Authenticode 簽章**，雜湊相符無法證明發行者身分。Windows 可能拒絕執行，遇到封鎖請停止。安裝程式按使用者安裝，無需系統管理員權限，會初始化共用主目錄並建立桌面與開始功能表捷徑。既有資料保留；解除安裝移除入口與捷徑，保留共用主目錄供其他用戶端使用。已簽章穩定版仍待完成。
 
 Claude Desktop 使用者屆時也可匯入該版本的 `.mcpb` 擴充功能。Codex 與 Claude Code 使用者將 ZIP 中的執行檔註冊為本機 stdio MCP 伺服器。網頁也可在沒有 AI 用戶端時運作。具體指令請見[一般使用者快速入門](INSTALL.md#ordinary-windows-users)。GitHub 的 **Code → Download ZIP** 下載的是原始碼，而非預先編譯的應用程式。
 
