@@ -6,7 +6,7 @@
 
 免费的开源 Windows x64 本地优先笔记工具。让 AI 助手管理 Markdown 文件，在独立的本地网页中阅读和编辑。
 
-**未签名预览 — 2026-11-04：**`0.3.0-preview.21` 将源码、可执行文件和客户端配置统一命名为 Thoughts。维护者已授权发布[未签名实验预览版](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21)，文件已在公开 Windows 构建与检查通过后提供。**不代表已有可信发布者签名或稳定版验收。**SignPath Foundation 尚未批准申请。Windows SAC/SmartScreen 可能拦截；遇到拦截请停止，保持防护开启。参见[发行准备](docs/RELEASE_READINESS_20261104.md)、[安装说明](INSTALL.md)和[此前的原生 Windows 测试](docs/WINDOWS_NATIVE_TESTS_20261104.md)。
+**未签名预览 — 2026-11-04：**`0.3.0-preview.21` 将源码、可执行文件和客户端配置统一命名为 Thoughts。维护者已授权发布[未签名实验预览版](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21)，文件已在公开 Windows 构建与检查通过后提供。**不代表已有可信发布者签名或稳定版验收。**SignPath Foundation 尚未批准申请。Windows SAC/SmartScreen 可能拦截；遇到拦截请停止，保持防护开启。参见[发行准备](docs/RELEASE_READINESS_20261104.md)、[安装说明](INSTALL.md)。
 
 ## 笔记就在你的电脑上
 
@@ -30,7 +30,7 @@ AI 客户端启动同一个本地标准 stdio MCP 适配器，再由它调用经
 | Windows 上的 Claude Code | 本地 stdio MCP，便携 Windows ZIP |
 | Windows 上的 OpenAI Codex | 本地 stdio MCP，同一个便携 ZIP |
 
-这些是目标集成；实际验收状态以发行审查为准。本阶段不支持普通 ChatGPT 网页插件、macOS、Linux、移动端、远程 MCP 或云同步。
+这些是目标集成；实际验收状态请见[发行状态说明](docs/RELEASE_READINESS_20261104.md)。本阶段不支持普通 ChatGPT 网页插件、macOS、Linux、移动端、远程 MCP 或云同步。
 
 ## 功能
 
@@ -71,7 +71,7 @@ SHA256 核验、先检查后执行的命令和三个客户端步骤见 [INSTALL.
 
 ## 工作区
 
-参见[工作区布局](docs/WORKSPACE_LAYOUT.md)和[文档索引](docs/README.md)。旧需求和报告保留在本地归档。源码与可执行文件已统一使用 Thoughts 名称，旧版数据标识保留兼容。
+参见[工作区布局](docs/WORKSPACE_LAYOUT.md)和[文档索引](docs/README.md)。历史开发记录不再纳入公开文档。源码与可执行文件已统一使用 Thoughts 名称，旧版数据标识保留兼容。
 
 ## 构建
 
@@ -94,7 +94,7 @@ pwsh -File scripts/build-desktop-adapters.ps1 -Python 'C:\Tools\Python\python.ex
 
 ## 代码签名政策
 
-**待批准 — SignPath Foundation 申请尚未获批。**所有当前 Windows 程序仍未签名。若获批准，免费代码签名由 SignPath.io 提供，证书由 SignPath Foundation 提供。具体范围、真实团队职责和待办条件见[代码签名政策 / Code signing policy](docs/CODE_SIGNING_POLICY.md)及[申请准备](docs/SIGNPATH_APPLICATION.md)。本次准备未提交申请。
+**待批准 — SignPath Foundation 申请尚未获批。**所有当前 Windows 程序仍未签名。若获批准，免费代码签名由 SignPath.io 提供，证书由 SignPath Foundation 提供。代码签名范围、当前状态和待完成条件见[代码签名政策 / Code signing policy](docs/CODE_SIGNING_POLICY.md)。SignPath Foundation 申请尚未提交。
 
 ## 捐赠
 
