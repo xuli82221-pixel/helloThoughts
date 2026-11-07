@@ -6,7 +6,7 @@
 
 Free, open-source, local-first notes for Windows x64. Let your AI assistant manage Markdown files and read them in an independent local webpage.
 
-**Unsigned preview — 2026-11-04:** `0.3.0-preview.21` standardizes the source, executable and client configuration names as Thoughts. The maintainer has authorized an **unsigned experimental prerelease** at [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21); the assets are now available after a successful public Windows build and checks. **No trusted publisher signature or stable-release acceptance is claimed.** SignPath Foundation approval is pending. Windows SAC/SmartScreen may block it; stop if blocked and keep protection enabled. See [release readiness](docs/RELEASE_READINESS_20261104.md), [installation](INSTALL.md) and [earlier native Windows tests](docs/WINDOWS_NATIVE_TESTS_20261104.md).
+**Unsigned preview — 2026-11-04:** `0.3.0-preview.21` standardizes the source, executable and client configuration names as Thoughts. The maintainer has authorized an **unsigned experimental prerelease** at [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21); the assets are now available after a successful public Windows build and checks. **No trusted publisher signature or stable-release acceptance is claimed.** SignPath Foundation approval is pending. Windows SAC/SmartScreen may block it; stop if blocked and keep protection enabled. See [release readiness](docs/RELEASE_READINESS_20261104.md), [installation](INSTALL.md).
 
 ## Your notes, on your computer
 
@@ -30,7 +30,7 @@ AI clients start the same local stdio MCP adapter. It calls the authenticated lo
 | Claude Code on Windows | Local stdio MCP, portable Windows ZIP |
 | OpenAI Codex on Windows | Local stdio MCP, the same portable ZIP |
 
-These are target integrations; actual acceptance status is in the release review. Ordinary ChatGPT web plugins, macOS, Linux, mobile, remote MCP and cloud sync are outside this phase.
+These are target integrations; actual acceptance status is recorded in the [release readiness](docs/RELEASE_READINESS_20261104.md). Ordinary ChatGPT web plugins, macOS, Linux, mobile, remote MCP and cloud sync are outside this phase.
 
 ## Features
 
@@ -71,7 +71,7 @@ Unsigned Windows programs or scripts may be blocked by SmartScreen, Smart App Co
 
 ## Workspace
 
-See [workspace layout](docs/WORKSPACE_LAYOUT.md) and the [documentation index](docs/README.md). Old requirements/reports are preserved in a local archive. Current source and executable names use Thoughts. Legacy data identifiers are retained for compatibility.
+See [workspace layout](docs/WORKSPACE_LAYOUT.md) and the [documentation index](docs/README.md). Historical development records are intentionally omitted from the public documentation. Current source and executable names use Thoughts. Legacy data identifiers are retained for compatibility.
 
 ## Build
 
@@ -94,7 +94,7 @@ Never commit real notes, personal screenshots, credentials, session files or log
 
 ## Code signing policy
 
-**Pending — SignPath Foundation application not yet approved.** All current Windows programs remain unsigned. If approved, free code signing provided by SignPath.io, certificate by SignPath Foundation. See the [Code signing policy](docs/CODE_SIGNING_POLICY.md) and [application preparation](docs/SIGNPATH_APPLICATION.md) for scope, real team roles and outstanding requirements. No application has been submitted by this preparation.
+**Pending — SignPath Foundation application not yet approved.** All current Windows programs remain unsigned. If approved, free code signing provided by SignPath.io, certificate by SignPath Foundation. See the [Code signing policy](docs/CODE_SIGNING_POLICY.md) for the signing scope and outstanding requirements. The SignPath Foundation application has not yet been submitted.
 
 ## Donate
 
