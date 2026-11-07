@@ -6,7 +6,7 @@
 
 Free, open-source, local-first notes for Windows x64. Let your AI assistant manage Markdown files and read them in an independent local webpage.
 
-**Unsigned preview — 2026-11-04:** `0.3.0-preview.21` standardizes the source, executable and client configuration names as Thoughts. The maintainer has authorized an **unsigned experimental prerelease** at [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21); the assets are now available after a successful public Windows build and checks. **No trusted publisher signature or stable-release acceptance is claimed.** SignPath Foundation approval is pending. Windows SAC/SmartScreen may block it; stop if blocked and keep protection enabled. See [release readiness](docs/RELEASE_READINESS_20261104.md), [installation](INSTALL.md).
+**Unsigned preview — 2026-11-04:** `0.3.0-preview.21` standardizes the source, executable and client configuration names as Thoughts. The maintainer has authorized an **unsigned experimental prerelease** at [GitHub Releases](https://github.com/xuli82221-pixel/helloThoughts/releases/tag/v0.3.0-preview.21); the assets are now available after a successful public Windows build and checks. **No trusted publisher signature or stable-release acceptance is claimed.** SignPath Foundation approval is pending. Windows SAC/SmartScreen may block it; stop if blocked and keep protection enabled. See [release readiness](docs/RELEASE_READINESS_20261104.md), [installation](INSTALL.md).
 
 ## Your notes, on your computer
 
@@ -16,7 +16,7 @@ The Go executable embeds the React webpage. **Precompiled releases need no Node.
 
 ## Downloads and installation
 
-This experimental preview offers **`thoughts-<version>-windows-amd64-setup.exe`**, a portable ZIP and a Claude Desktop MCPB through [GitHub Releases](https://github.com/xuli82221-pixel/hello-Thoughts-/releases). The program inside is **`thoughts.exe`**. Verify SHA256 before use; the current files have **no Authenticode signature**. Do not treat a matching hash as publisher authentication. Windows may refuse to run them; stop if blocked. Setup is per-user, initializes the shared home and creates desktop/Start-menu shortcuts without administrator privileges. Existing data is retained; uninstall removes launchers/shortcuts and retains the shared home for other clients. Signed stable packages remain pending.
+This experimental preview offers **`thoughts-<version>-windows-amd64-setup.exe`**, a portable ZIP and a Claude Desktop MCPB through [GitHub Releases](https://github.com/xuli82221-pixel/helloThoughts/releases). The program inside is **`thoughts.exe`**. Verify SHA256 before use; the current files have **no Authenticode signature**. Do not treat a matching hash as publisher authentication. Windows may refuse to run them; stop if blocked. Setup is per-user, initializes the shared home and creates desktop/Start-menu shortcuts without administrator privileges. Existing data is retained; uninstall removes launchers/shortcuts and retains the shared home for other clients. Signed stable packages remain pending.
 
 Claude Desktop users can instead import the release's `.mcpb` extension. Codex and Claude Code users register the executable from the ZIP as a local stdio MCP server. The webpage can also run without an AI client. Follow the [end-user quick start](INSTALL.md#ordinary-windows-users) for the supported commands. GitHub's **Code → Download ZIP** downloads source code, not the precompiled application.
 
