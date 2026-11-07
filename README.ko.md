@@ -6,7 +6,7 @@
 
 Windows x64용 무료 오픈 소스 로컬 우선 노트 도구입니다. AI 어시스턴트로 Markdown 파일을 관리하고, 독립적인 로컬 웹페이지에서 읽고 편집할 수 있습니다.
 
-**미서명 미리보기 — 2026-11-04:** `0.3.0-preview.21`은 소스, 실행 파일, 클라이언트 설정의 이름을 Thoughts로 통일합니다. 관리자가 [미서명 실험용 사전 릴리스](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21) 공개를 승인했으며, 공개 Windows 빌드와 검증을 통과한 파일을 제공합니다. **신뢰할 수 있는 게시자 서명이나 안정 버전 검증을 뜻하지 않습니다.** SignPath Foundation 승인은 아직 받지 않았습니다. Windows SAC/SmartScreen이 차단하면 실행을 멈추고 보호를 유지하세요. [배포 준비](docs/RELEASE_READINESS_20261104.md), [설치 안내](INSTALL.md), [이전 네이티브 Windows 테스트](docs/WINDOWS_NATIVE_TESTS_20261104.md)를 확인하세요.
+**미서명 미리보기 — 2026-11-04:** `0.3.0-preview.21`은 소스, 실행 파일, 클라이언트 설정의 이름을 Thoughts로 통일합니다. 관리자가 [미서명 실험용 사전 릴리스](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21) 공개를 승인했으며, 공개 Windows 빌드와 검증을 통과한 파일을 제공합니다. **신뢰할 수 있는 게시자 서명이나 안정 버전 검증을 뜻하지 않습니다.** SignPath Foundation 승인은 아직 받지 않았습니다. Windows SAC/SmartScreen이 차단하면 실행을 멈추고 보호를 유지하세요. [배포 준비](docs/RELEASE_READINESS_20261104.md), [설치 안내](INSTALL.md)를 확인하세요.
 
 ## 노트는 내 컴퓨터에
 
@@ -30,7 +30,7 @@ AI 클라이언트는 동일한 로컬 표준 stdio MCP 어댑터를 시작하�
 | Windows용 Claude Code | 로컬 stdio MCP, Windows 포터블 ZIP |
 | Windows용 OpenAI Codex | 로컬 stdio MCP, 동일한 포터블 ZIP |
 
-대상으로 삼는 연동이며, 실제 검증 상태는 배포 검토 문서에 기록되어 있습니다. 일반 ChatGPT 웹 플러그인, macOS, Linux, 모바일, 원격 MCP 및 클라우드 동기화는 이번 단계의 지원 범위에 포함되지 않습니다.
+대상으로 삼는 연동이며, 실제 검증 상태는 [배포 준비 문서](docs/RELEASE_READINESS_20261104.md)에 기록되어 있습니다. 일반 ChatGPT 웹 플러그인, macOS, Linux, 모바일, 원격 MCP 및 클라우드 동기화는 이번 단계의 지원 범위에 포함되지 않습니다.
 
 ## 기능
 
@@ -71,7 +71,7 @@ SHA256 확인, 실행 전 점검할 명령 및 세 클라이언트의 절차는 
 
 ## 작업 공간
 
-[작업 공간 구성](docs/WORKSPACE_LAYOUT.md)과 [문서 목록](docs/README.md)을 확인하세요. 이전 요구사항과 보고서는 로컬 보관소에 보존합니다. 소스와 실행 파일 이름은 Thoughts로 통일하며 기존 데이터 식별자는 호환성을 위해 유지합니다.
+[작업 공간 구성](docs/WORKSPACE_LAYOUT.md)과 [문서 목록](docs/README.md)을 확인하세요. 과거 개발 기록은 공개 문서에서 의도적으로 제외했습니다. 소스와 실행 파일 이름은 Thoughts로 통일하며 기존 데이터 식별자는 호환성을 위해 유지합니다.
 
 ## 빌드
 
@@ -94,7 +94,7 @@ pwsh -File scripts/build-desktop-adapters.ps1 -Python 'C:\Tools\Python\python.ex
 
 ## 코드 서명 정책
 
-**승인 대기 — SignPath Foundation 신청은 아직 승인되지 않았습니다.** 현재 Windows 프로그램은 모두 미서명 상태입니다. 승인되면 무료 코드 서명은 SignPath.io가, 인증서는 SignPath Foundation이 제공합니다. 범위, 실제 담당자 및 미완료 요건은 [코드 서명 정책 / Code signing policy](docs/CODE_SIGNING_POLICY.md)과 [신청 준비](docs/SIGNPATH_APPLICATION.md)에 기록되어 있습니다. 이번 준비 작업은 신청서를 제출하지 않았습니다.
+**승인 대기 — SignPath Foundation 신청은 아직 승인되지 않았습니다.** 현재 Windows 프로그램은 모두 미서명 상태입니다. 승인되면 무료 코드 서명은 SignPath.io가, 인증서는 SignPath Foundation이 제공합니다. 서명 범위, 현재 상태 및 남은 요건은 [코드 서명 정책 / Code signing policy](docs/CODE_SIGNING_POLICY.md)에서 확인할 수 있습니다. SignPath Foundation 신청은 아직 제출되지 않았.
 
 ## 후원
 
