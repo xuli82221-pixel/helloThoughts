@@ -6,7 +6,7 @@
 
 Una herramienta de notas gratuita y de código abierto para Windows x64 que prioriza el almacenamiento local. Deja que tu asistente de IA gestione archivos Markdown y léelos o edítalos en una página web local independiente.
 
-**Vista previa sin firmar — 2026-11-04:** `0.3.0-preview.21` unifica los nombres del código fuente, el ejecutable y las configuraciones de clientes como Thoughts. El responsable ha autorizado una [versión preliminar experimental sin firmar](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21); los archivos están disponibles tras superar la compilación pública de Windows y las comprobaciones. **No se afirma que tenga una firma de editor de confianza ni validación como versión estable.** La aprobación de SignPath Foundation sigue pendiente. Si Windows SAC/SmartScreen bloquea la ejecución, detente y mantén la protección activada. Consulta la [preparación de la publicación](docs/RELEASE_READINESS_20261104.md), la [instalación](INSTALL.md) y las [pruebas nativas de Windows anteriores](docs/WINDOWS_NATIVE_TESTS_20261104.md).
+**Vista previa sin firmar — 2026-11-04:** `0.3.0-preview.21` unifica los nombres del código fuente, el ejecutable y las configuraciones de clientes como Thoughts. El responsable ha autorizado una [versión preliminar experimental sin firmar](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21); los archivos están disponibles tras superar la compilación pública de Windows y las comprobaciones. **No se afirma que tenga una firma de editor de confianza ni validación como versión estable.** La aprobación de SignPath Foundation sigue pendiente. Si Windows SAC/SmartScreen bloquea la ejecución, detente y mantén la protección activada. Consulta la [preparación de la publicación](docs/RELEASE_READINESS_20261104.md), la [instalación](INSTALL.md) .
 
 ## Tus notas, en tu ordenador
 
@@ -30,7 +30,7 @@ Los clientes de IA inician el mismo adaptador MCP local con el protocolo estánd
 | Claude Code en Windows | MCP local por stdio, ZIP portátil para Windows |
 | OpenAI Codex en Windows | MCP local por stdio, el mismo ZIP portátil |
 
-Estas son las integraciones previstas; su estado real de validación figura en la revisión de la publicación. Los plugins web habituales de ChatGPT, macOS, Linux, móviles, MCP remoto y la sincronización en la nube quedan fuera de esta fase.
+Estas son las integraciones previstas; su estado real de validación figura en el [documento de estado de la versión](docs/RELEASE_READINESS_20261104.md). Los plugins web habituales de ChatGPT, macOS, Linux, móviles, MCP remoto y la sincronización en la nube quedan fuera de esta fase.
 
 ## Funciones
 
@@ -71,7 +71,7 @@ SmartScreen, Smart App Control o las políticas de control de aplicaciones de un
 
 ## Espacio de trabajo
 
-Consulta la [organización del espacio de trabajo](docs/WORKSPACE_LAYOUT.md) y el [índice de documentación](docs/README.md). Los requisitos e informes anteriores se conservan en un archivo local. El código y los ejecutables usan Thoughts; se conservan los identificadores de datos anteriores por compatibilidad.
+Consulta la [organización del espacio de trabajo](docs/WORKSPACE_LAYOUT.md) y el [índice de documentación](docs/README.md). Los registros históricos de desarrollo se omiten deliberadamente de la documentación pública. El código y los ejecutables usan Thoughts; se conservan los identificadores de datos anteriores por compatibilidad.
 
 ## Compilación
 
@@ -94,7 +94,7 @@ Nunca incluyas en commits notas reales, capturas personales, credenciales, archi
 
 ## Code signing policy
 
-**Pendiente — la solicitud a SignPath Foundation todavía no se ha aprobado.** Todos los programas actuales de Windows siguen sin firmar. Si se aprueba, SignPath.io proporcionará la firma de código gratuita y SignPath Foundation el certificado. La [Code signing policy](docs/CODE_SIGNING_POLICY.md) y la [preparación de la solicitud](docs/SIGNPATH_APPLICATION.md) detallan el alcance, los responsables reales y los requisitos pendientes. Esta preparación no ha enviado ninguna solicitud.
+**Pendiente — la solicitud a SignPath Foundation todavía no se ha aprobado.** Todos los programas actuales de Windows siguen sin firmar. Si se aprueba, SignPath.io proporcionará la firma de código gratuita y SignPath Foundation el certificado. La [Code signing policy](docs/CODE_SIGNING_POLICY.md) describe el alcance de la firma, el estado actual y los requisitos pendientes. La solicitud a SignPath Foundation todavía no se ha enviado.
 
 ## Donar
 
