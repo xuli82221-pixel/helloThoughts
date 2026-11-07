@@ -4,7 +4,7 @@
 
 **`0.3.0-preview.21` 已于 2026-11-04 11:00（Asia/Shanghai）公开发布为未签名实验预览版（Pre-release）。它不是已签名稳定版，也不代表 SignPath 已批准申请。**
 
-[打开实际 Release 和下载文件](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21)。该 Release 已发布，非草稿，包含七个文件：
+[打开实际 Release 和下载文件](https://github.com/xuli82221-pixel/helloThoughts/releases/tag/v0.3.0-preview.21)。该 Release 已发布，非草稿，包含七个文件：
 
 | 文件 | 用途 |
 | --- | --- |
@@ -16,7 +16,7 @@
 | `ACCEPTANCE.json` | 实际 stdio MCP 和隔离安装测试摘要及验收边界 |
 | `UNSIGNED_NOTICE.txt` | 未签名与实验预览声明 |
 
-构建来源为公开 commit [`0b155f8a4d0381315f742bb6661e2e0eb6c738c4`](https://github.com/xuli82221-pixel/hello-Thoughts-/commit/0b155f8a4d0381315f742bb6661e2e0eb6c738c4)，版本标签 `v0.3.0-preview.21` 指向该 commit。[Windows 构建和验收记录](https://github.com/xuli82221-pixel/hello-Thoughts-/actions/runs/41762640507)已成功完成。发布后的文档修订可以位于 `main` 的后续提交，不改变该标签或已发布文件。
+构建来源为公开 commit [`0b155f8a4d0381315f742bb6661e2e0eb6c738c4`](https://github.com/xuli82221-pixel/helloThoughts/commit/0b155f8a4d0381315f742bb6661e2e0eb6c738c4)，版本标签 `v0.3.0-preview.21` 指向该 commit。[Windows 构建和验收记录](https://github.com/xuli82221-pixel/helloThoughts/actions/runs/41762640507)已成功完成。发布后的文档修订可以位于 `main` 的后续提交，不改变该标签或已发布文件。
 
 preview.21 核心 SHA256：`6f045833ae29839955edee44fed9f36b0b76b84566951b47c3615ce5f4c9a021`。
 preview.21 安装器 SHA256：`869ee203c41eda411c6f337390ed2a10327e69ba6b708f244f45dd14c8202d47`。
