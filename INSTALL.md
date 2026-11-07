@@ -1,6 +1,6 @@
 # Install Thoughts — Windows x64
 
-An explicitly authorized unsigned experimental prerelease is available in [hello-Thoughts-](https://github.com/xuli82221-pixel/hello-Thoughts-). Precompiled packages need no Thoughts account, API key, Node, Go, Python or Docker. Install your AI client separately; its own account requirements still apply.
+An explicitly authorized unsigned experimental prerelease is available in [hello-Thoughts-](https://github.com/xuli82221-pixel/helloThoughts). Precompiled packages need no Thoughts account, API key, Node, Go, Python or Docker. Install your AI client separately; its own account requirements still apply.
 
 **Code signing policy:** [Pending — SignPath Foundation application not yet approved](docs/CODE_SIGNING_POLICY.md). All current Windows programs remain unsigned. The experimental preview offers unsigned Setup.exe/ZIP/MCPB assets; no signed stable package is available. The Foundation application has not been submitted by this preparation; a future core signature alone will not satisfy the installer/helper release gates.
 
