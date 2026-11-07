@@ -6,7 +6,7 @@
 
 免費、開放原始碼的 Windows x64 本機優先筆記工具。讓 AI 助理管理 Markdown 檔案，並在獨立的本機網頁中閱讀與編輯。
 
-**未簽章預覽 — 2026-11-04：**`0.3.0-preview.21` 將原始碼、執行檔與用戶端設定統一命名為 Thoughts。維護者已授權發布[未簽章實驗預覽版](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21)，檔案已在公開 Windows 建置與檢查通過後提供。**不代表已有可信發行者簽章或穩定版驗收。**SignPath Foundation 尚未核准申請。Windows SAC/SmartScreen 可能封鎖；遇到封鎖請停止並保持防護啟用。請見[發行準備](docs/RELEASE_READINESS_20261104.md)、[安裝說明](INSTALL.md)與[先前的原生 Windows 測試](docs/WINDOWS_NATIVE_TESTS_20261104.md)。
+**未簽章預覽 — 2026-11-04：**`0.3.0-preview.21` 將原始碼、執行檔與用戶端設定統一命名為 Thoughts。維護者已授權發布[未簽章實驗預覽版](https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v0.3.0-preview.21)，檔案已在公開 Windows 建置與檢查通過後提供。**不代表已有可信發行者簽章或穩定版驗收。**SignPath Foundation 尚未核准申請。Windows SAC/SmartScreen 可能封鎖；遇到封鎖請停止並保持防護啟用。請見[發行準備](docs/RELEASE_READINESS_20261104.md)、[安裝說明](INSTALL.md)。
 
 ## 筆記留在你的電腦上
 
@@ -30,7 +30,7 @@ AI 用戶端啟動相同的本機標準 stdio MCP 配接器，再呼叫經過驗
 | Windows 上的 Claude Code | 本機 stdio MCP，可攜式 Windows ZIP |
 | Windows 上的 OpenAI Codex | 本機 stdio MCP，相同的可攜式 ZIP |
 
-以上是目標整合；實際驗收狀態請見發行審查。本階段不支援一般 ChatGPT 網頁外掛、macOS、Linux、行動裝置、遠端 MCP 或雲端同步。
+以上是目標整合；實際驗收狀態請見[發行狀態說明](docs/RELEASE_READINESS_20261104.md)。本階段不支援一般 ChatGPT 網頁外掛、macOS、Linux、行動裝置、遠端 MCP 或雲端同步。
 
 ## 功能
 
@@ -71,7 +71,7 @@ SHA256 核對、先檢查後執行的指令與三種用戶端步驟請見 [INSTA
 
 ## 工作區
 
-請見[工作區配置](docs/WORKSPACE_LAYOUT.md)與[文件索引](docs/README.md)。舊需求與報告保留在本機封存中。原始碼與執行檔已統一使用 Thoughts 名稱，舊版資料識別保留相容。
+請見[工作區配置](docs/WORKSPACE_LAYOUT.md)與[文件索引](docs/README.md)。歷史開發紀錄不再納入公開文件。原始碼與執行檔已統一使用 Thoughts 名稱，舊版資料識別保留相容。
 
 ## 建置
 
@@ -94,7 +94,7 @@ pwsh -File scripts/build-desktop-adapters.ps1 -Python 'C:\Tools\Python\python.ex
 
 ## 程式碼簽章政策
 
-**待核准 — SignPath Foundation 申請尚未獲准。**所有目前的 Windows 程式仍未簽章。若獲核准，免費程式碼簽章由 SignPath.io 提供，憑證由 SignPath Foundation 提供。範圍、真實團隊職責與待辦條件請見[程式碼簽章政策 / Code signing policy](docs/CODE_SIGNING_POLICY.md)及[申請準備](docs/SIGNPATH_APPLICATION.md)。本次準備並未提交申請。
+**待核准 — SignPath Foundation 申請尚未獲准。**所有目前的 Windows 程式仍未簽章。若獲核准，免費程式碼簽章由 SignPath.io 提供，憑證由 SignPath Foundation 提供。程式碼簽章範圍、目前狀態與待完成事項請見[程式碼簽章政策 / Code signing policy](docs/CODE_SIGNING_POLICY.md)。SignPath Foundation 申請尚未提交。
 
 ## 捐款
 
