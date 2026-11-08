@@ -28,4 +28,4 @@ Legacy on-disk Trash/runtime paths, browser preference keys, local protocol iden
 
 The 2026-11-01 organization pass preserves every moved file, with before/after SHA256 and a local move receipt. No permanent deletion, Git history rewriting, commit, push, security-policy change or library migration is part of that pass. Earlier screenshots and reports can contain workstation/private-library information; the entire historical archive stays outside the public source allowlist and is ignored by Git.
 
-The original private Git history still contains the separately documented findings. Moving a working-copy report to an archive does not sanitize history. See [SECURITY_AUDIT.md](SECURITY_AUDIT.md) before any future publication.
+The original private Git history still contains the separately documented findings. Moving a working-copy report to an archive does not sanitize history. Review the separately documented findings before any future publication.

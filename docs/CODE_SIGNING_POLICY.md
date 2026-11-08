@@ -71,7 +71,7 @@ When a user authorizes Claude Desktop, Claude Code, OpenAI Codex or another onli
 
 - [ ] Present the explicitly authorized unsigned prerelease to the Foundation for released-form review, and resolve the verifiable-reputation gap; no Foundation acceptance is implied.
 - [ ] Review all bundled component/font/installer licenses against the Foundation's component requirements.
-- [ ] Maintainer reviews [application materials](SIGNPATH_APPLICATION.md), verifies contact details and submits the official application manually.
+- [ ] Maintainer reviews the application materials, verifies contact details and submits the official application manually.
 - [ ] Receive Foundation approval and confirmation of artifact scope; approval is not guaranteed.
 - [ ] Verify GitHub and SignPath MFA; configure real members, roles and manual approvals.
 - [ ] Review the existing public commit/tag-based unsigned build and implement SignPath trusted provenance integration, PE metadata restrictions and least-privilege signing access.

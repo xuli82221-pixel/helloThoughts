@@ -14,7 +14,7 @@ LINK = re.compile(r'!?\[[^\]]*\]\(([^)]+)\)')
 FENCE = re.compile(r'^```[^\n]*\n.*?^```\s*$', re.M | re.S)
 HISTORY_MARKER = '<!-- historical-records:start -->'
 PUBLISHED_VERSION = '0.3.0-preview.21'
-PUBLISHED_URL = 'https://github.com/xuli82221-pixel/hello-Thoughts-/releases/tag/v' + PUBLISHED_VERSION
+PUBLISHED_URL = 'https://github.com/xuli82221-pixel/helloThoughts/releases/tag/v' + PUBLISHED_VERSION
 STALE_RELEASE_CLAIMS = re.compile(
     r'未发布二进制发行版|尚未发布二进制发行版|本次不创建公开二进制\s*Release'
     r'|SOURCE-ONLY PUBLIC PREVIEW|NO (?:PUBLIC )?(?:WINDOWS )?BINARY RELEASE(?:S)?\b'
