@@ -47,7 +47,7 @@ ZIP 与 MCPB 的核心字节一致；七个上传文件的 GitHub 服务端 SHA2
 
 ## 已发布预览版仍未完成的工作
 
-1. **可信签名与 SignPath 审批。** 申请材料已准备，申请未由本次工作提交或获批；签名 CI、MFA 核实、受信来源绑定和产品／版本元数据约束仍待完成。见 [Code signing policy](CODE_SIGNING_POLICY.md) 和[申请材料](SIGNPATH_APPLICATION.md)。
+1. **可信签名与 SignPath 审批。** 申请材料已准备，申请未由本次工作提交或获批；签名 CI、MFA 核实、受信来源绑定和产品／版本元数据约束仍待完成。见 [Code signing policy](CODE_SIGNING_POLICY.md)。
 2. **干净 Windows／SAC 验收。** GitHub runner 安装测试通过不代表所有 SAC 开启的干净系统可安装或运行。
 3. **三个真实 AI 客户端验收。** 真实 stdio 协议测试不等于 Claude Desktop、Claude Code、OpenAI Codex 均已完成最终宿主验收。
 4. **签名稳定版发行。** 仍需签名、安装器／卸载器验证、客户环境测试和单独人工批准。当前未签名预览的发布不使这些门槛自动完成。
@@ -59,7 +59,7 @@ ZIP 与 MCPB 的核心字节一致；七个上传文件的 GitHub 服务端 SHA2
 
 本节仅记录 preview.20 及更早安装器的结果，不作为 preview.21 的安装、哈希或发布状态。preview.20 阶段完成了源码公开准备；当时的授权范围限于源码，二进制文件保留为本地审查候选。维护者后来单独授权 preview.21 未签名预览发布，已按上文完成。
 
-preview.20 本地核心 SHA256 为 `df959a3a34d051d8587f586f9418d2f9b6c13df17a2c1af28b3b9d791678bfda`；该阶段原生 Windows 后端测试记录为 59 项通过、0 失败、0 跳过，前端为 25 项测试通过。见[该阶段 Windows 测试记录](WINDOWS_NATIVE_TESTS_20261104.md)。这些数量和哈希属于旧版本，不能套用到 preview.21。
+preview.20 本地核心 SHA256 为 `df959a3a34d051d8587f586f9418d2f9b6c13df17a2c1af28b3b9d791678bfda`；该阶段原生 Windows 后端测试记录为 59 项通过、0 失败、0 跳过，前端为 25 项测试通过。该阶段测试记录未包含在公开文档中。这些数量和哈希属于旧版本，不能套用到 preview.21。
 
 preview.20 最终本地安装器 SHA256 为 `441cbabb4747fd0ac29d4c4d34aed37175041abf4435f25d4bfa08c282e5a6c2`，Authenticode 为 `NotSigned`；在维护者机器上启动返回 Windows 错误 4551。2026-11-04 06:19:59（本地时间）的 Code Integrity 事件 3033／3077 记录了签名级别或代码完整性策略拦截，后续快捷方式验收因此未完成。该历史拦截结果没有被改成通过，也没有通过修改安全策略规避。
 

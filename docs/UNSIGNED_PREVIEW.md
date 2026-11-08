@@ -37,7 +37,7 @@ Documents inside the archives are frozen at the release build commit and can ret
 
 ## Signing and privacy
 
-**Pending — SignPath Foundation application not yet approved.** The application has not been submitted by this work. If approved, free code signing provided by SignPath.io, certificate by SignPath Foundation. See [Code signing policy](CODE_SIGNING_POLICY.md) and the [application draft](SIGNPATH_APPLICATION.md). Future signing requires provider review and a trusted SignPath integration; an unsigned CI build is not SignPath verification.
+**Pending — SignPath Foundation application not yet approved.** The application has not been submitted by this work. If approved, free code signing provided by SignPath.io, certificate by SignPath Foundation. See [Code signing policy](CODE_SIGNING_POLICY.md). Future signing requires provider review and a trusted SignPath integration; an unsigned CI build is not SignPath verification.
 
 Thoughts stores notes and images locally, does not require a Thoughts account and does not upload local notes automatically. When authorized online AI clients read notes, their tool results may reach those providers under their own policies. Files are not encrypted by Thoughts; keep independent backups. See [PRIVACY.md](../PRIVACY.md).
 

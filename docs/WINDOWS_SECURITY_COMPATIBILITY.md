@@ -6,7 +6,7 @@
 
 ## Historical records / 历史记录
 
-2026-11-01 补充：当时本地界面候选为 `0.3.0-preview.4`。新 exe 和实际服务仍为 NotSigned，核心 SHA256 `8c2a7dd55cf67d64c3bebee51ef9d5646c5811a8345060e78dd21c827686c96b`；同机 SAC On，单文件 Defender 扫描完成且匹配威胁记录 0，安全设置未改动。新证据在 `preview4-security-evidence.json`、`preview4-defender-scan.json`，详见 [界面验收](UI_TABS_IMAGES_ACCEPTANCE.md)。下面保留 .2 的原始测量，不能把其包哈希或扫描结果移用到新版。干净 SAC On/Off 两组验收仍缺失。
+2026-11-01 补充：当时本地界面候选为 `0.3.0-preview.4`。新 exe 和实际服务仍为 NotSigned，核心 SHA256 `8c2a7dd55cf67d64c3bebee51ef9d5646c5811a8345060e78dd21c827686c96b`；同机 SAC On，单文件 Defender 扫描完成且匹配威胁记录 0，安全设置未改动。新证据在 `preview4-security-evidence.json`、`preview4-defender-scan.json`（相关内部界面验收记录未包含在公开文档中）。下面保留 .2 的原始测量，不能把其包哈希或扫描结果移用到新版。干净 SAC On/Off 两组验收仍缺失。
 
 评估日期：2026-11-01（Asia/Shanghai）。候选版本：`0.3.0-preview.2`。仅本地准备，未公开推送、未发布。
 

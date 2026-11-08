@@ -61,7 +61,7 @@ It does not publish releases. Signing, clean-machine acceptance and native-clien
 acceptance must be recorded independently; a green CI run is not release approval.
 
 Follow the [Code signing policy](docs/CODE_SIGNING_POLICY.md) and consult the
-[SignPath application draft](docs/SIGNPATH_APPLICATION.md) before release work.
+SignPath application requirements before release work.
 The Foundation application is not approved; GitHub/SignPath MFA, trusted build
 provenance, artifact metadata and manual signing approvals remain to be verified
 or configured. Documentation and translations use README.md as the English
